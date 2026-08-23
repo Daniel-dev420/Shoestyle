@@ -1,543 +1,1555 @@
-<!DOCTYPE html>
-<html lang="es">
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Manrope:wght@200..800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --rojo: #e10620;
+    --rojo-oscuro: #a20000;
+    --rojo-brillante: #ff2e2e;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    --fondo: #050505;
+    --fondo-2: #0d0d0d;
+    --fondo-3: #151515;
+    --tarjeta: #181818;
 
-    <title>Contáctenos | SHOESTYLE</title>
+    --blanco: #ffffff;
+    --gris-claro: #c7c7c7;
+    --gris: #8c8c8c;
+    --gris-oscuro: #303030;
 
-    <link rel="stylesheet" href="../CSS/CONTACTENOS7.CSS">
+    --borde: rgba(255, 255, 255, 0.08);
+}
 
-    <!-- FUENTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+/* =========================================================
+   RESET
+========================================================= */
 
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
-        rel="stylesheet">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+html {
+    scroll-behavior: smooth;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
-        rel="stylesheet">
+body {
+    margin: 0;
+    padding: 0;
 
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+    background: #050505;
+    color: var(--blanco);
 
-<body>
+    font-family: 'Manrope', sans-serif;
 
-<div id="contenedor">
+    overflow-x: hidden;
+}
 
-    <!-- =========================
-         BANNER
-    ========================== -->
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    <header class="banner-portada">
+img {
+    max-width: 100%;
+    display: block;
+}
 
-        <div class="imagen-banner">
-            <img src="../imagenes/descarga (1).jpg" alt="Banner de SHOESTYLE">
-            <div class="capa-oscura"></div>
-        </div>
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
 
-        <!-- =========================
-             NAVBAR
-        ========================== -->
+/* =========================================================
+   CONTENEDOR
+========================================================= */
 
-        <div class="top-bar">
+#contenedor {
+    width: 100%;
+    min-height: 100vh;
+    background: #050505;
+}
 
-            <a href="../index.php" class="logo">
-                SHOE<span class="logo-rojo">STYLE</span>
-            </a>
+/* =========================================================
+   BANNER
+========================================================= */
 
-            <nav class="navegacion">
+.banner-portada {
+    position: relative;
 
-                <ul>
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
 
-                    <li>
-                        <a href="../index.php">INICIO</a>
-                    </li>
+    display: flex;
+    flex-direction: column;
 
-                    <li>
-                        <a href="../paginas/nuestra empresa.html">
-                            NUESTRA EMPRESA
-                        </a>
-                    </li>
+    justify-content: space-between;
+    align-items: center;
 
-                    <li>
-                        <a href="../paginas/productos.php">
-                            PRODUCTOS
-                        </a>
-                    </li>
+    overflow: hidden;
 
-                    <li>
-                        <a href="#" class="activo">
-                            CONTACTENOS
-                        </a>
-                    </li>
+    color: white;
+}
 
-                    <li>
-                        <a href="../paginas/inicio de sesion.html">
-                            INICIO DE SESIÓN
-                        </a>
-                    </li>
+/* =========================================================
+   IMAGEN BANNER
+========================================================= */
 
-                    <li>
-                        <a href="../paginas/servicios.html">
-                            SERVICIOS
-                        </a>
-                    </li>
+.imagen-banner {
+    position: absolute;
 
-                    <li>
-                        <a href="../paginas/galeria fotografica.html">
-                            GALERIA FOTOGRAFICA
-                        </a>
-                    </li>
+    inset: 0;
 
-                    <li>
-                        <a href="../paginas/registrarse.html">
-                            REGISTRARSE
-                        </a>
-                    </li>
+    width: 100%;
+    height: 100%;
 
-                </ul>
+    z-index: 1;
 
-            </nav>
+    overflow: hidden;
+}
 
-            <div class="top-icons">
+.imagen-banner img {
+    width: 100%;
+    height: 100%;
 
-                <a href="#" class="icon-link">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
+    object-fit: cover;
+}
 
-                <a href="#" class="icon-link">
-                    <i class="fa-regular fa-eye"></i>
-                </a>
+.capa-oscura {
+    position: absolute;
 
-            </div>
+    inset: 0;
 
-            <button class="menu-movil"
-                type="button"
-                aria-label="Abrir menú">
+    width: 100%;
+    height: 100%;
 
-                <i class="fa-solid fa-bars"></i>
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, .55),
+            rgba(0, 0, 0, .85)
+        );
 
-            </button>
+    z-index: 2;
+}
 
-        </div>
+/* =========================================================
+   TOP BAR
+========================================================= */
 
-        <!-- =========================
-             HERO
-        ========================== -->
+.top-bar {
+    position: relative;
 
-        <div class="contenido-centro">
+    z-index: 20;
 
-            <p class="etiqueta-hero">
-                ESTAMOS PARA AYUDARTE
-            </p>
+    width: 100%;
+    min-height: 90px;
 
-            <h1 class="titulo-hero">
-                CONTÁCTANOS
-            </h1>
+    padding: 0 6%;
 
-            <p class="subtitulo">
-                Ponte en contacto con el equipo de SHOESTYLE.
-            </p>
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        </div>
+    border-bottom: 1px solid rgba(255,255,255,.12);
 
-        <div class="lema-centro">
+    background: rgba(0,0,0,.25);
 
-            <p>
-                TU ESTILO EMPIEZA POR LOS PIES
-            </p>
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
 
-        </div>
+/* =========================================================
+   LOGO
+========================================================= */
 
-        <div class="scroll-indicator">
+.logo {
+    flex-shrink: 0;
 
-            <div class="mouse">
-                <div class="rueda"></div>
-            </div>
+    color: white;
 
-        </div>
+    font-family:
+        Impact,
+        'Arial Black',
+        sans-serif;
 
-    </header>
+    font-size: 1.5rem;
 
+    letter-spacing: 1px;
+}
 
-    <!-- =========================
-         CONTACTO
-    ========================== -->
+.logo-rojo {
+    color: var(--rojo);
+}
 
-    <main class="contacto">
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
 
-        <section class="contacto-seccion">
+.navegacion {
+    display: block;
+}
 
-            <!-- IZQUIERDA -->
+.navegacion ul {
+    list-style: none;
 
-            <div class="contacto-info">
+    display: flex;
+    align-items: center;
 
-                <span class="seccion-etiqueta">
-                    SHOESTYLE
-                </span>
+    gap: 28px;
+}
 
-                <h2>
-                    HABLEMOS
-                </h2>
+.navegacion ul li {
+    list-style: none;
+}
 
-                <p class="texto-contacto">
+.navegacion ul li a {
+    position: relative;
 
-                    ¿Tienes alguna pregunta, sugerencia o necesitas
-                    información sobre nuestros productos?
+    display: inline-block;
 
-                    <br><br>
+    color: #b3b3b3;
 
-                    Escríbenos y nuestro equipo estará encantado
-                    de ayudarte.
+    font-family: 'Poppins', sans-serif;
 
-                </p>
+    font-size: .82rem;
 
-                <div class="datos-contacto">
+    font-weight: 600;
 
-                    <div class="dato">
+    letter-spacing: .5px;
 
-                        <div class="dato-icono">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
+    white-space: nowrap;
 
-                        <div>
-                            <h3>TELÉFONOS</h3>
+    transition: .3s ease;
+}
 
-                            <p>+57 310 700 1125</p>
-                            <p>+57 302 200 1695</p>
-                        </div>
+.navegacion ul li a:hover,
+.navegacion ul li a.activo {
+    color: white;
+}
 
-                    </div>
+.navegacion ul li a.activo::after {
+    content: "";
 
-                    <div class="dato">
+    position: absolute;
 
-                        <div class="dato-icono">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
+    left: 0;
+    bottom: -8px;
 
-                        <div>
-                            <h3>CORREO</h3>
-                            <p>shoestyle@gmail.com</p>
-                        </div>
+    width: 100%;
+    height: 2px;
 
-                    </div>
+    background: var(--rojo);
 
-                    <div class="dato">
+    box-shadow:
+        0 0 10px rgba(225,6,32,.7);
+}
 
-                        <div class="dato-icono">
-                            <i class="fa-solid fa-clock"></i>
-                        </div>
+/* =========================================================
+   ICONOS
+========================================================= */
 
-                        <div>
-                            <h3>HORARIO</h3>
-                            <p>8:00 a.m - 7:00 p.m</p>
-                        </div>
+.top-icons {
+    display: flex;
 
-                    </div>
+    align-items: center;
 
-                    <div class="dato">
+    gap: 20px;
 
-                        <div class="dato-icono">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
+    flex-shrink: 0;
+}
 
-                        <div>
-                            <h3>DIRECCIÓN</h3>
-                            <p>Por confirmar</p>
-                        </div>
+.icon-link {
+    color: white;
 
-                    </div>
+    font-size: 1.1rem;
 
-                </div>
+    transition: .3s ease;
+}
 
-            </div>
+.icon-link:hover {
+    color: var(--rojo);
 
+    transform: scale(1.1);
+}
 
-            <!-- DERECHA -->
+/* =========================================================
+   MENÚ MÓVIL
+========================================================= */
 
-            <div class="formulario-contacto">
+.menu-movil {
+    display: none;
 
-                <div class="formulario-header">
+    width: 40px;
+    height: 40px;
 
-                    <span class="formulario-etiqueta">
-                        ESCRÍBENOS
-                    </span>
+    align-items: center;
+    justify-content: center;
 
-                    <h2>
-                        CONTÁCTANOS
-                    </h2>
+    padding: 0;
+    margin: 0;
 
-                </div>
+    border: none;
+    outline: none;
 
-                <form action="../PHP/guardar_contacto.php" method="post">
+    background: transparent;
 
-                    <div class="campo">
+    color: white;
 
-                        <label for="nombre">
-                            NOMBRE COMPLETO
-                        </label>
+    font-size: 22px;
 
-                        <input
-                            type="text"
-                            id="nombre"
-                            name="nombre"
-                            placeholder="Nombre completo"
-                            required>
+    cursor: pointer;
 
-                    </div>
+    z-index: 100;
+}
 
-                    <div class="campo">
+/* =========================================================
+   HERO
+========================================================= */
 
-                        <label for="email">
-                            CORREO ELECTRÓNICO
-                        </label>
+.contenido-centro {
+    position: relative;
 
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Correo electrónico"
-                            required>
+    z-index: 10;
 
-                    </div>
+    width: min(900px, 90%);
 
-                    <div class="campo">
+    padding: 20px;
 
-                        <label for="telefono">
-                            TELÉFONO
-                        </label>
+    text-align: center;
 
-                        <input
-                            type="tel"
-                            id="telefono"
-                            name="telefono"
-                            placeholder="Teléfono (opcional)">
+    margin-top: -30px;
+}
 
-                    </div>
+.etiqueta-hero {
+    margin-bottom: 12px;
 
-                    <div class="campo">
+    color: var(--rojo);
 
-                        <label for="mensaje">
-                            MENSAJE
-                        </label>
+    font-family: 'Bebas Neue', sans-serif;
 
-                        <textarea
-                            id="mensaje"
-                            name="mensaje"
-                            rows="6"
-                            placeholder="Escribe tu mensaje..."
-                            required></textarea>
+    font-size: 1.2rem;
 
-                    </div>
+    letter-spacing: 4px;
+}
 
-                    <button type="submit">
+.titulo-hero {
+    color: white;
 
-                        ENVIAR MENSAJE
+    font-family:
+        'Archivo Black',
+        'Arial Black',
+        sans-serif;
 
-                        <i class="fa-solid fa-paper-plane"></i>
+    font-size: clamp(3rem, 7vw, 6rem);
 
-                    </button>
+    line-height: .95;
 
-                </form>
+    letter-spacing: -2px;
+}
 
-            </div>
+.subtitulo {
+    margin-top: 20px;
 
-        </section>
+    color: #d0d0d0;
 
-    </main>
+    font-size: clamp(.9rem, 2vw, 1.1rem);
 
+    line-height: 1.6;
+}
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+/* =========================================================
+   LEMA
+========================================================= */
 
-    <footer>
+.lema-centro {
+    position: relative;
 
-        <div class="redes-sociales">
+    z-index: 10;
 
-            <h3>
-                ENCUÉNTRANOS TAMBIÉN EN:
-            </h3>
+    width: 100%;
 
-            <div class="iconos-redes">
+    margin-bottom: 25px;
 
-                <a href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
-                    target="_blank">
-                    <img src="../imagenes/facebook.png" alt="Facebook">
-                </a>
+    text-align: center;
+}
 
-                <a href="#">
-                    <img src="../imagenes/instagram.jpg" alt="Instagram">
-                </a>
+.lema-centro p {
+    color: rgba(255,255,255,.75);
 
-                <a href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
-                    target="_blank">
-                    <img src="../imagenes/tiktok.png" alt="TikTok">
-                </a>
+    font-family: 'Bebas Neue', sans-serif;
 
-                <a href="https://x.com/shoestyle397157"
-                    target="_blank">
-                    <img src="../imagenes/twitter.png" alt="Twitter">
-                </a>
+    font-size: clamp(1rem, 2vw, 1.4rem);
 
-                <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
-                    target="_blank">
-                    <img src="../imagenes/whatsapp.png" alt="WhatsApp">
-                </a>
+    letter-spacing: 4px;
+}
 
-            </div>
+/* =========================================================
+   SCROLL
+========================================================= */
 
-        </div>
+.scroll-indicator {
+    position: absolute;
 
+    left: 50%;
+    bottom: 20px;
 
-        <div class="footer-info">
+    transform: translateX(-50%);
 
-            <div class="columna">
+    z-index: 10;
 
-                <h4>AYUDA</h4>
+    opacity: .6;
+}
 
-                <ul>
+.mouse {
+    width: 24px;
+    height: 40px;
 
-                    <li>
-                        <a href="#">
-                            Asistencia
-                        </a>
-                    </li>
+    border: 2px solid white;
 
-                    <li>
-                        <a href="#">
-                            Seguimiento de pedidos
-                        </a>
-                    </li>
+    border-radius: 20px;
 
-                    <li>
-                        <a href="#">
-                            Envíos
-                        </a>
-                    </li>
+    display: flex;
+    justify-content: center;
 
-                    <li>
-                        <a href="#">
-                            Devoluciones
-                        </a>
-                    </li>
+    padding-top: 8px;
+}
 
-                </ul>
+.rueda {
+    width: 4px;
+    height: 8px;
 
-            </div>
+    background: var(--rojo);
 
+    border-radius: 2px;
 
-            <div class="columna">
+    animation:
+        encoger-rueda 1.5s infinite;
+}
 
-                <h4>SHOESTYLE</h4>
+@keyframes encoger-rueda {
 
-                <ul>
-
-                    <li>
-                        <strong>Teléfonos:</strong>
-                        +57 310 700 1125 /
-                        +57 302 200 1695
-                    </li>
-
-                    <li>
-                        <strong>Correo:</strong>
-                        shoestyle@gmail.com
-                    </li>
-
-                    <li>
-                        <strong>Horarios:</strong>
-                        8:00 a.m - 7:00 p.m
-                    </li>
-
-                    <li>
-                        <strong>Dirección:</strong>
-                        Por confirmar
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="columna">
-
-                <h4>INFORMACIÓN LEGAL</h4>
-
-                <ul>
-
-                    <li>
-                        <a href="../paginas/terminos.pdf"
-                            target="_blank">
-                            Términos y Condiciones
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Política de Privacidad
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Condiciones de Uso
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-
-        <div class="copyright">
-
-            <p>
-                &copy; 2025 SHOESTYLE.
-                Todos los derechos reservados.
-            </p>
-
-        </div>
-
-    </footer>
-
-</div>
-
-
-<script>
-
-const botonMenu = document.querySelector(".menu-movil");
-const navegacion = document.querySelector(".navegacion");
-
-botonMenu.addEventListener("click", () => {
-
-    navegacion.classList.toggle("activo");
-
-    const icono = botonMenu.querySelector("i");
-
-    if (navegacion.classList.contains("activo")) {
-
-        icono.classList.remove("fa-bars");
-        icono.classList.add("fa-xmark");
-
-    } else {
-
-        icono.classList.remove("fa-xmark");
-        icono.classList.add("fa-bars");
-
+    0% {
+        opacity: 1;
+        transform: translateY(0);
     }
 
-});
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
 
-</script>
+/* =========================================================
+   MAIN CONTACTO
+========================================================= */
 
-</body>
-</html>
+main.contacto {
+    display: block;
+
+    width: 100%;
+
+    padding: 110px 5% 100px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #050505 0%,
+            #0a0a0a 100%
+        );
+}
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+========================================================= */
+
+.contacto-seccion {
+    width: min(1250px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    /*
+       IZQUIERDA       DERECHA
+       INFORMACIÓN     FORMULARIO
+    */
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(450px, 1fr);
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+/* =========================================================
+   INFORMACIÓN IZQUIERDA
+========================================================= */
+
+.contacto-info {
+    width: 100%;
+
+    padding: 20px 0;
+}
+
+.seccion-etiqueta {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--rojo);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 1.25rem;
+
+    letter-spacing: 4px;
+}
+
+.contacto-info h2 {
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: 28px;
+
+    color: white;
+
+    font-family:
+        'Archivo Black',
+        'Arial Black',
+        sans-serif;
+
+    font-size: clamp(2.8rem, 5vw, 4rem);
+
+    line-height: 1;
+}
+
+.contacto-info h2::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -18px;
+
+    width: 54px;
+    height: 3px;
+
+    background: var(--rojo);
+}
+
+.texto-contacto {
+    max-width: 560px;
+
+    margin-top: 25px;
+
+    color: #c5c5c5;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+/* =========================================================
+   DATOS
+========================================================= */
+
+.datos-contacto {
+    width: 100%;
+
+    margin-top: 38px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.dato {
+    min-height: 98px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181818,
+            #101010
+        );
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 12px;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+}
+
+.dato:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(225,6,32,.5);
+}
+
+.dato-icono {
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(225,6,32,.15);
+
+    color: var(--rojo);
+
+    font-size: 15px;
+}
+
+.dato h3 {
+    margin-bottom: 5px;
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+}
+
+.dato p {
+    color: #888;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+/* =========================================================
+   FORMULARIO DERECHA
+========================================================= */
+
+.formulario-contacto {
+    position: relative;
+
+    width: 100%;
+
+    padding: 42px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191919,
+            #101010
+        );
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+
+    overflow: hidden;
+}
+
+.formulario-contacto::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rojo),
+            #ff3838
+        );
+}
+
+/* =========================================================
+   HEADER FORMULARIO
+========================================================= */
+
+.formulario-header {
+    margin-bottom: 32px;
+}
+
+.formulario-etiqueta {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--rojo);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 1.1rem;
+
+    letter-spacing: 3px;
+}
+
+.formulario-header h2 {
+    color: white;
+
+    font-family:
+        'Archivo Black',
+        'Arial Black',
+        sans-serif;
+
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+
+    line-height: 1.1;
+}
+
+.formulario-header h2::after {
+    content: "";
+
+    display: block;
+
+    width: 44px;
+    height: 3px;
+
+    margin-top: 16px;
+
+    background: var(--rojo);
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.formulario-contacto form {
+    display: block;
+
+    width: 100%;
+}
+
+.campo {
+    width: 100%;
+
+    margin-bottom: 21px;
+}
+
+.campo label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #d7d7d7;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .4px;
+}
+
+.campo input,
+.campo textarea {
+    display: block;
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    background: #080808;
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.campo input {
+    height: 48px;
+}
+
+.campo textarea {
+    min-height: 140px;
+
+    resize: vertical;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #555;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--rojo);
+
+    background: #0b0b0b;
+
+    box-shadow:
+        0 0 0 3px rgba(225,6,32,.08);
+}
+
+/* =========================================================
+   BOTÓN
+========================================================= */
+
+.formulario-contacto button {
+    display: block;
+
+    width: 100%;
+
+    min-height: 50px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rojo),
+            #ff3838
+        );
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .3px;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        filter .3s ease;
+}
+
+.formulario-contacto button i {
+    margin-left: 8px;
+}
+
+.formulario-contacto button:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 10px 25px rgba(225,6,32,.3);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    padding: 70px 5% 25px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0a0a0a,
+            #030303
+        );
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    text-align: center;
+}
+
+/* =========================================================
+   REDES
+========================================================= */
+
+.redes-sociales {
+    margin-bottom: 55px;
+}
+
+.redes-sociales h3 {
+    margin-bottom: 25px;
+
+    color: white;
+
+    font-family: 'Archivo Black', sans-serif;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+}
+
+.iconos-redes {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.iconos-redes a {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 50%;
+
+    background: #111;
+
+    transition: .3s ease;
+}
+
+.iconos-redes a:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--rojo);
+}
+
+.iconos-redes img {
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+/* =========================================================
+   FOOTER INFO
+========================================================= */
+
+.footer-info {
+    width: min(1250px, 100%);
+
+    margin: 0 auto;
+
+    padding: 45px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 60px;
+
+    text-align: left;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+}
+
+.footer-info h4 {
+    margin-bottom: 22px;
+
+    color: white;
+
+    font-family: 'Archivo Black', sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+}
+
+.footer-info h4::after {
+    content: "";
+
+    display: block;
+
+    width: 30px;
+    height: 2px;
+
+    margin-top: 10px;
+
+    background: var(--rojo);
+}
+
+.footer-info ul {
+    list-style: none;
+}
+
+.footer-info li {
+    margin-bottom: 12px;
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.footer-info li a {
+    color: #888;
+
+    transition: .3s ease;
+}
+
+.footer-info li a:hover {
+    color: var(--rojo);
+}
+
+.footer-info li strong {
+    color: #d5d5d5;
+}
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.copyright {
+    padding-top: 25px;
+}
+
+.copyright p {
+    color: #555;
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   LAPTOPS
+========================================================= */
+
+@media (min-width: 801px) and (max-width: 1250px) {
+
+    .top-bar {
+        padding: 0 3%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .navegacion ul {
+        gap: 12px;
+    }
+
+    .navegacion ul li a {
+        font-size: .62rem;
+
+        letter-spacing: .2px;
+    }
+
+    .top-icons {
+        gap: 12px;
+    }
+
+    .icon-link {
+        font-size: .95rem;
+    }
+
+    .contacto-seccion {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(400px, 1fr);
+
+        gap: 40px;
+    }
+
+    .formulario-contacto {
+        padding: 32px;
+    }
+
+    .dato {
+        padding: 14px;
+
+        gap: 10px;
+    }
+}
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .top-bar {
+        height: 65px;
+        min-height: 65px;
+
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .navegacion {
+        display: none !important;
+    }
+
+    .top-icons {
+        display: none;
+    }
+
+    .menu-movil {
+        display: flex;
+    }
+
+    /* MENÚ ABIERTO */
+
+    .navegacion.activo {
+        display: block !important;
+
+        position: fixed;
+
+        top: 70px;
+        left: 10px;
+        right: 10px;
+
+        width: auto;
+
+        padding: 8px;
+
+        max-height: calc(100vh - 80px);
+
+        overflow-y: auto;
+
+        background: rgba(10,10,10,.98);
+
+        border:
+            1px solid rgba(255,255,255,.12);
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.8);
+
+        z-index: 1000;
+    }
+
+    .navegacion.activo ul {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        width: 100%;
+    }
+
+    .navegacion.activo ul li {
+        width: 100%;
+    }
+
+    .navegacion.activo ul li a {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 10px;
+
+        color: #ccc;
+
+        font-size: .75rem;
+
+        border-bottom:
+            1px solid rgba(255,255,255,.07);
+    }
+
+    /* HERO */
+
+    .banner-portada {
+        min-height: 600px;
+    }
+
+    .contenido-centro {
+        width: 95%;
+
+        margin-top: 0;
+    }
+
+    /* MAIN */
+
+    main.contacto {
+        padding: 70px 5% 80px;
+    }
+
+    .contacto-seccion {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .contacto-info {
+        text-align: center;
+    }
+
+    .seccion-etiqueta {
+        text-align: center;
+    }
+
+    .contacto-info h2::after {
+        left: 50%;
+
+        transform:
+            translateX(-50%);
+    }
+
+    .texto-contacto {
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+    }
+
+    .datos-contacto {
+        width: min(650px,100%);
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .formulario-contacto {
+        width: 100%;
+
+        padding: 35px;
+    }
+
+    /* FOOTER */
+
+    .footer-info {
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap: 40px;
+    }
+}
+
+/* =========================================================
+   CELULARES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .top-bar {
+        height: 60px;
+        min-height: 60px;
+
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: .9rem;
+    }
+
+    .menu-movil {
+        width: 38px;
+        height: 38px;
+
+        font-size: 21px;
+    }
+
+    .navegacion.activo {
+        top: 65px;
+
+        left: 8px;
+        right: 8px;
+
+        max-height:
+            calc(100vh - 75px);
+    }
+
+    .banner-portada {
+        min-height: 540px;
+    }
+
+    .etiqueta-hero {
+        font-size: 1rem;
+
+        letter-spacing: 3px;
+    }
+
+    .titulo-hero {
+        font-size:
+            clamp(2.6rem,13vw,4rem);
+
+        letter-spacing: -1px;
+    }
+
+    .subtitulo {
+        font-size: .85rem;
+
+        margin-top: 15px;
+    }
+
+    .lema-centro p {
+        font-size: .9rem;
+
+        letter-spacing: 2px;
+
+        padding: 0 15px;
+    }
+
+    /* MAIN */
+
+    main.contacto {
+        padding: 60px 16px 70px;
+    }
+
+    .contacto-seccion {
+        gap: 45px;
+    }
+
+    .contacto-info {
+        padding: 0;
+    }
+
+    .seccion-etiqueta {
+        font-size: 1.05rem;
+
+        letter-spacing: 3px;
+    }
+
+    .contacto-info h2 {
+        font-size:
+            clamp(2.3rem,12vw,3.3rem);
+    }
+
+    .texto-contacto {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    /* DATOS */
+
+    .datos-contacto {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 30px;
+    }
+
+    .dato {
+        min-height: 85px;
+
+        padding: 15px;
+    }
+
+    /* FORM */
+
+    .formulario-contacto {
+        padding: 27px 20px;
+
+        border-radius: 15px;
+    }
+
+    .formulario-header {
+        margin-bottom: 27px;
+    }
+
+    .formulario-etiqueta {
+        font-size: 1rem;
+
+        letter-spacing: 2.5px;
+    }
+
+    .formulario-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .campo {
+        margin-bottom: 17px;
+    }
+
+    .campo input {
+        height: 46px;
+    }
+
+    .campo input,
+    .campo textarea {
+        padding: 12px;
+
+        font-size: 12px;
+    }
+
+    .campo textarea {
+        min-height: 120px;
+    }
+
+    .formulario-contacto button {
+        min-height: 48px;
+
+        font-size: 11px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        padding: 55px 16px 25px;
+    }
+
+    .redes-sociales {
+        margin-bottom: 40px;
+    }
+
+    .footer-info {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 35px 0;
+
+        text-align: center;
+    }
+
+    .footer-info h4::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-info li {
+        font-size: 12px;
+    }
+}
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .top-bar {
+        height: 55px;
+        min-height: 55px;
+
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: .82rem;
+    }
+
+    .menu-movil {
+        width: 36px;
+        height: 36px;
+
+        font-size: 20px;
+    }
+
+    .navegacion.activo {
+        top: 60px;
+
+        left: 6px;
+        right: 6px;
+
+        max-height:
+            calc(100vh - 68px);
+    }
+
+    .banner-portada {
+        min-height: 500px;
+    }
+
+    .titulo-hero {
+        font-size: 2.4rem;
+    }
+
+    .lema-centro p {
+        font-size: .78rem;
+
+        letter-spacing: 1.5px;
+    }
+
+    main.contacto {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .formulario-contacto {
+        padding: 24px 16px;
+    }
+
+    .formulario-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .dato {
+        padding: 13px;
+    }
+
+    .dato p {
+        font-size: 10px;
+    }
+}
+
+/* =========================================================
+   PC
+========================================================= */
+
+@media (min-width: 801px) {
+
+    .menu-movil {
+        display: none !important;
+    }
+
+    .navegacion {
+        display: block !important;
+    }
+
+    .top-icons {
+        display: flex !important;
+    }
+}
