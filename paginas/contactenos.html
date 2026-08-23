@@ -7,42 +7,31 @@
 
     <title>Contáctenos | SHOESTYLE</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="../CSS/CONTACTENOS7.CSS">
 
-    <!-- =====================================================
-         FUENTES
-    ====================================================== -->
-
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
         rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
         rel="stylesheet">
 
-    <!-- =====================================================
-         FONT AWESOME
-    ====================================================== -->
-
-    <link
-        rel="stylesheet"
+    <!-- ICONOS -->
+    <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
-
 <body>
 
 <div id="contenedor">
-
 
     <!-- =====================================================
          BANNER
@@ -50,14 +39,12 @@
 
     <header class="banner-portada">
 
-
         <!-- IMAGEN -->
-
         <div class="imagen-banner">
 
             <img
                 src="../imagenes/descarga (1).jpg"
-                alt="Banner de contacto">
+                alt="Banner de productos">
 
             <div class="capa-oscura"></div>
 
@@ -70,39 +57,18 @@
 
         <div class="top-bar">
 
-
             <!-- LOGO -->
 
             <a href="../index.php" class="logo">
-
                 SHOE<span class="logo-rojo">STYLE</span>
-
             </a>
 
 
             <!-- =================================================
-                 MENÚ HAMBURGUESA
+                 MENÚ
             ================================================== -->
 
-            <button
-                class="menu-movil"
-                type="button"
-                aria-label="Abrir menú"
-                aria-expanded="false"
-                aria-controls="menu-principal">
-
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
-
-
-            <!-- =================================================
-                 NAVEGACIÓN
-            ================================================== -->
-
-            <nav
-                class="navegacion"
-                id="menu-principal">
+            <nav class="navegacion">
 
                 <ul>
 
@@ -125,9 +91,7 @@
                     </li>
 
                     <li>
-                        <a
-                            href="../paginas/contactenos.html"
-                            class="activo">
+                        <a href="#" class="activo">
                             CONTACTENOS
                         </a>
                     </li>
@@ -146,7 +110,7 @@
 
                     <li>
                         <a href="../paginas/galeria fotografica.html">
-                            GALERÍA FOTOGRÁFICA
+                            GALERIA FOTOGRAFICA
                         </a>
                     </li>
 
@@ -167,46 +131,41 @@
 
             <div class="top-icons">
 
-                <a
-                    href="#"
-                    class="icon-link"
-                    aria-label="Carrito">
-
+                <a href="#" class="icon-link">
                     <i class="fa-solid fa-cart-shopping"></i>
-
                 </a>
 
-                <a
-                    href="#"
-                    class="icon-link"
-                    aria-label="Visitas">
-
+                <a href="#" class="icon-link">
                     <i class="fa-regular fa-eye"></i>
-
                 </a>
 
             </div>
+
+            <!-- MENÚ MÓVIL -->
+
+            <button class="menu-movil" type="button" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
         </div>
 
 
         <!-- =================================================
-             CONTENIDO HERO
+             CONTENIDO DEL BANNER
         ================================================== -->
 
         <div class="contenido-centro">
 
             <p class="etiqueta-hero">
-                SHOESTYLE
+                ESTAMOS PARA AYUDARTE
             </p>
 
             <h1 class="titulo-hero">
-                CONTÁCTENOS
+                CONTÁCTANOS
             </h1>
 
             <p class="subtitulo">
-                Estamos aquí para ayudarte.
-                Comunícate con nosotros y resolveremos tus dudas.
+                Ponte en contacto con el equipo de SHOESTYLE.
             </p>
 
         </div>
@@ -243,223 +202,253 @@
 
 
     <!-- =====================================================
-         CONTACTO
+         CONTENIDO PRINCIPAL
     ====================================================== -->
 
-    <main>
+    <main class="contacto">
 
-        <section class="contacto">
+        <!-- =================================================
+             SECCIÓN CONTACTO
+        ================================================== -->
 
-            <h2>
-                HABLEMOS
-            </h2>
-
-            <p class="descripcion-contacto">
-                Si tienes preguntas sobre nuestros productos,
-                pedidos o servicios, puedes comunicarte con
-                nuestro equipo a través de cualquiera de
-                nuestros canales.
-            </p>
+        <section class="contacto-seccion">
 
 
             <!-- =================================================
-                 TARJETAS
+                 INFORMACIÓN
             ================================================== -->
 
-            <div class="contacto-grid">
+            <div class="contacto-info">
+
+                <span class="seccion-etiqueta">
+                    SHOESTYLE
+                </span>
+
+                <h2>
+                    HABLEMOS
+                </h2>
+
+                <p class="texto-contacto">
+
+                    ¿Tienes alguna pregunta, sugerencia o necesitas
+                    información sobre nuestros productos?
+
+                    <br><br>
+
+                    Escríbenos y nuestro equipo estará encantado
+                    de ayudarte.
+
+                </p>
 
 
-                <!-- TELÉFONO -->
+                <!-- DATOS -->
 
-                <article class="contacto-card">
-
-                    <div class="contacto-icono">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-
-                    <h3>
-                        TELÉFONOS
-                    </h3>
-
-                    <p>
-                        Comunícate directamente con nuestro
-                        equipo de atención.
-                    </p>
-
-                    <a href="tel:+573107001125">
-                        +57 310 700 1125
-                    </a>
-
-                    <a href="tel:+573022001695">
-                        +57 302 200 1695
-                    </a>
-
-                </article>
+                <div class="datos-contacto">
 
 
-                <!-- CORREO -->
+                    <!-- TELÉFONOS -->
 
-                <article class="contacto-card">
+                    <div class="dato">
 
-                    <div class="contacto-icono">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
+                        <div class="dato-icono">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
 
-                    <h3>
-                        CORREO ELECTRÓNICO
-                    </h3>
+                        <div>
 
-                    <p>
-                        Escríbenos y responderemos
-                        tus inquietudes.
-                    </p>
+                            <h3>
+                                TELÉFONOS
+                            </h3>
 
-                    <a href="mailto:shoestyle@gmail.com">
-                        shoestyle@gmail.com
-                    </a>
+                            <p>
+                                +57 310 700 1125
+                            </p>
 
-                </article>
+                            <p>
+                                +57 302 2001695
+                            </p>
 
-
-                <!-- WHATSAPP -->
-
-                <article class="contacto-card">
-
-                    <div class="contacto-icono">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-
-                    <h3>
-                        WHATSAPP
-                    </h3>
-
-                    <p>
-                        Habla directamente con SHOESTYLE
-                        mediante nuestro canal de WhatsApp.
-                    </p>
-
-                    <a
-                        href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        CONTACTAR
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </article>
-
-
-                <!-- HORARIOS -->
-
-                <article class="contacto-card">
-
-                    <div class="contacto-icono">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-
-                    <h3>
-                        HORARIOS
-                    </h3>
-
-                    <p>
-                        Nuestro horario de atención
-                        es:
-                    </p>
-
-                    <strong>
-                        8:00 a.m. - 7:00 p.m.
-                    </strong>
-
-                </article>
-
-
-                <!-- UBICACIÓN -->
-
-                <article class="contacto-card">
-
-                    <div class="contacto-icono">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-
-                    <h3>
-                        UBICACIÓN
-                    </h3>
-
-                    <p>
-                        Encuentra información sobre
-                        nuestra tienda y ubicación.
-                    </p>
-
-                    <strong>
-                        Dirección por confirmar
-                    </strong>
-
-                </article>
-
-
-                <!-- REDES -->
-
-                <article class="contacto-card">
-
-                    <div class="contacto-icono">
-                        <i class="fa-solid fa-share-nodes"></i>
-                    </div>
-
-                    <h3>
-                        REDES SOCIALES
-                    </h3>
-
-                    <p>
-                        Síguenos para conocer novedades,
-                        productos y promociones.
-                    </p>
-
-                    <div class="mini-redes">
-
-                        <a
-                            href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Facebook">
-
-                            <i class="fa-brands fa-facebook-f"></i>
-
-                        </a>
-
-                        <a
-                            href="#"
-                            aria-label="Instagram">
-
-                            <i class="fa-brands fa-instagram"></i>
-
-                        </a>
-
-                        <a
-                            href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="TikTok">
-
-                            <i class="fa-brands fa-tiktok"></i>
-
-                        </a>
-
-                        <a
-                            href="https://x.com/shoestyle397157"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="X">
-
-                            <i class="fa-brands fa-x-twitter"></i>
-
-                        </a>
+                        </div>
 
                     </div>
 
-                </article>
+
+                    <!-- CORREO -->
+
+                    <div class="dato">
+
+                        <div class="dato-icono">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                CORREO
+                            </h3>
+
+                            <p>
+                                shoestyle@gmail.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- HORARIO -->
+
+                    <div class="dato">
+
+                        <div class="dato-icono">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                HORARIO
+                            </h3>
+
+                            <p>
+                                8:00 a.m - 7:00 p.m
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DIRECCIÓN -->
+
+                    <div class="dato">
+
+                        <div class="dato-icono">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                DIRECCIÓN
+                            </h3>
+
+                            <p>
+                                Por confirmar
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 FORMULARIO
+            ================================================== -->
+
+            <div class="formulario-contacto">
+
+                <div class="formulario-header">
+
+                    <span class="formulario-etiqueta">
+                        ESCRÍBENOS
+                    </span>
+
+                    <h2>
+                        CONTÁCTANOS
+                    </h2>
+
+                </div>
+
+
+                <form action="../PHP/guardar_contacto.php" method="post">
+
+                    <!-- NOMBRE -->
+
+                    <div class="campo">
+
+                        <label for="nombre">
+                            NOMBRE COMPLETO
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Nombre completo"
+                            required>
+
+                    </div>
+
+
+                    <!-- CORREO -->
+
+                    <div class="campo">
+
+                        <label for="email">
+                            CORREO ELECTRÓNICO
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Correo electrónico"
+                            required>
+
+                    </div>
+
+
+                    <!-- TELÉFONO -->
+
+                    <div class="campo">
+
+                        <label for="telefono">
+                            TELÉFONO
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefono"
+                            name="telefono"
+                            placeholder="Teléfono (opcional)">
+
+                    </div>
+
+
+                    <!-- MENSAJE -->
+
+                    <div class="campo">
+
+                        <label for="mensaje">
+                            MENSAJE
+                        </label>
+
+                        <textarea
+                            id="mensaje"
+                            name="mensaje"
+                            rows="6"
+                            placeholder="Escribe tu mensaje..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <!-- BOTÓN -->
+
+                    <button type="submit">
+
+                        ENVIAR MENSAJE
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                    </button>
+
+                </form>
 
             </div>
 
@@ -488,8 +477,7 @@
 
                 <a
                     href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    target="_blank">
 
                     <img
                         src="../imagenes/facebook.png"
@@ -509,8 +497,7 @@
 
                 <a
                     href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    target="_blank">
 
                     <img
                         src="../imagenes/tiktok.png"
@@ -521,20 +508,18 @@
 
                 <a
                     href="https://x.com/shoestyle397157"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    target="_blank">
 
                     <img
                         src="../imagenes/twitter.png"
-                        alt="X">
+                        alt="Twitter">
 
                 </a>
 
 
                 <a
                     href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    target="_blank">
 
                     <img
                         src="../imagenes/whatsapp.png"
@@ -547,10 +532,14 @@
         </div>
 
 
-        <!-- INFORMACIÓN -->
+        <!-- =================================================
+             INFORMACIÓN FOOTER
+        ================================================== -->
 
         <div class="footer-info">
 
+
+            <!-- AYUDA -->
 
             <div class="columna">
 
@@ -589,6 +578,8 @@
             </div>
 
 
+            <!-- SHOESTYLE -->
+
             <div class="columna">
 
                 <h4>
@@ -599,8 +590,7 @@
 
                     <li>
                         <strong>Teléfonos:</strong>
-                        +57 310 700 1125 /
-                        +57 302 200 1695
+                        +57 310 700 1125 / +57 302 2001695
                     </li>
 
                     <li>
@@ -610,7 +600,7 @@
 
                     <li>
                         <strong>Horarios:</strong>
-                        8:00 a.m. - 7:00 p.m.
+                        8:00 a.m - 7:00 p.m
                     </li>
 
                     <li>
@@ -622,6 +612,8 @@
 
             </div>
 
+
+            <!-- INFORMACIÓN LEGAL -->
 
             <div class="columna">
 
@@ -675,53 +667,36 @@
 
 
 <!-- =====================================================
-     JAVASCRIPT MENÚ
+     JAVASCRIPT
 ====================================================== -->
 
 <script>
 
-document.addEventListener("DOMContentLoaded", () => {
+document.querySelectorAll('a[href="#"]').forEach(enlace => {
 
-    const botonMenu =
-        document.querySelector(".menu-movil");
+    enlace.addEventListener("click", function(e) {
 
-    const navegacion =
-        document.querySelector(".navegacion");
+        e.preventDefault();
 
-    const icono =
-        botonMenu?.querySelector("i");
+    });
 
-
-    if (!botonMenu || !navegacion || !icono) {
-        return;
-    }
+});
 
 
-    /* =====================================================
-       ABRIR / CERRAR MENÚ
-    ===================================================== */
+/* MENÚ MÓVIL */
 
-    botonMenu.addEventListener("click", (evento) => {
+const botonMenu = document.querySelector(".menu-movil");
+const navegacion = document.querySelector(".navegacion");
 
-        evento.stopPropagation();
+if (botonMenu && navegacion) {
 
-        const abierto =
-            navegacion.classList.toggle("activo");
+    botonMenu.addEventListener("click", function () {
 
+        navegacion.classList.toggle("activo");
 
-        botonMenu.setAttribute(
-            "aria-expanded",
-            abierto ? "true" : "false"
-        );
+        const icono = botonMenu.querySelector("i");
 
-
-        botonMenu.setAttribute(
-            "aria-label",
-            abierto ? "Cerrar menú" : "Abrir menú"
-        );
-
-
-        if (abierto) {
+        if (navegacion.classList.contains("activo")) {
 
             icono.classList.remove("fa-bars");
             icono.classList.add("fa-xmark");
@@ -735,95 +710,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-
-    /* =====================================================
-       CERRAR AL SELECCIONAR UNA OPCIÓN
-    ===================================================== */
-
-    navegacion.querySelectorAll("a").forEach(enlace => {
-
-        enlace.addEventListener("click", () => {
-
-            navegacion.classList.remove("activo");
-
-            icono.classList.remove("fa-xmark");
-            icono.classList.add("fa-bars");
-
-            botonMenu.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            botonMenu.setAttribute(
-                "aria-label",
-                "Abrir menú"
-            );
-
-        });
-
-    });
-
-
-    /* =====================================================
-       CERRAR AL HACER CLICK FUERA
-    ===================================================== */
-
-    document.addEventListener("click", (evento) => {
-
-        if (
-            navegacion.classList.contains("activo") &&
-            !navegacion.contains(evento.target) &&
-            !botonMenu.contains(evento.target)
-        ) {
-
-            navegacion.classList.remove("activo");
-
-            icono.classList.remove("fa-xmark");
-            icono.classList.add("fa-bars");
-
-            botonMenu.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            botonMenu.setAttribute(
-                "aria-label",
-                "Abrir menú"
-            );
-
-        }
-
-    });
-
-
-    /* =====================================================
-       CERRAR AL VOLVER A PC
-    ===================================================== */
-
-    window.addEventListener("resize", () => {
-
-        if (window.innerWidth > 850) {
-
-            navegacion.classList.remove("activo");
-
-            icono.classList.remove("fa-xmark");
-            icono.classList.add("fa-bars");
-
-            botonMenu.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            botonMenu.setAttribute(
-                "aria-label",
-                "Abrir menú"
-            );
-
-        }
-
-    });
-
-});
+}
 
 </script>
 
