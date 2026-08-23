@@ -144,7 +144,9 @@ img {
 .navegacion ul {
     display: flex;
     align-items: center;
+
     gap: 28px;
+
     list-style: none;
 }
 
@@ -154,7 +156,9 @@ img {
     color: #b3b3b3;
 
     font-family: 'Poppins', sans-serif;
+
     font-size: 0.8  5rem;
+
     font-weight: 600;
 
     letter-spacing: 0.7px;
@@ -187,7 +191,6 @@ img {
 
 /* =========================================================
    HAMBURGUESA
-   OCULTA EN PC
 ========================================================= */
 
 .menu-hamburguesa {
@@ -251,6 +254,7 @@ img {
 
     transform: translateY(-3px);
 }
+
 
 /* =========================================================
    HERO
@@ -492,9 +496,11 @@ main {
 
 .bloque-empresa {
     width: min(1200px, 90%);
+
     margin: auto;
 
     display: flex;
+
     flex-direction: column;
 
     min-height: auto;
@@ -511,10 +517,11 @@ main {
     padding: 70px 0;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
 }
-
 
 .numero-seccion {
     color: #e50914;
@@ -526,7 +533,6 @@ main {
     letter-spacing: 3px;
 }
 
-
 .empresa-texto h2 {
     margin-top: 15px;
 
@@ -534,7 +540,6 @@ main {
 
     font-size: 34px;
 }
-
 
 .empresa-texto p {
     margin-top: 18px;
@@ -556,7 +561,6 @@ main {
 ========================================================= */
 
 .empresa-destacado {
-
     position: relative;
 
     width: 100%;
@@ -581,9 +585,7 @@ main {
     margin-bottom: 40px;
 }
 
-
 .empresa-destacado::before {
-
     content: "";
 
     position: absolute;
@@ -591,16 +593,12 @@ main {
     width: 400px;
     height: 400px;
 
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 
     border-radius: 50%;
 }
 
-
 .empresa-destacado::after {
-
     content: "";
 
     position: absolute;
@@ -608,16 +606,12 @@ main {
     width: 250px;
     height: 250px;
 
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
     border-radius: 50%;
 }
 
-
 .destacado-contenido {
-
     position: relative;
 
     z-index: 2;
@@ -627,25 +621,19 @@ main {
     padding: 30px;
 }
 
-
 .destacado-contenido i {
-
     font-size: 70px;
 
     margin-bottom: 30px;
 }
 
-
 .destacado-contenido h3 {
-
     font-family: "Michroma", sans-serif;
 
     font-size: 38px;
 }
 
-
 .destacado-contenido span {
-
     display: block;
 
     margin-top: 10px;
@@ -656,6 +644,8 @@ main {
 
     letter-spacing: 3px;
 }
+
+
 /* =========================================================
    MISIÓN Y VISIÓN
 ========================================================= */
@@ -682,6 +672,8 @@ main {
     border: 1px solid rgba(255, 255, 255, 0.08);
 
     transition: 0.35s ease;
+
+    min-width: 0;
 }
 
 .tarjeta-info:hover {
@@ -726,6 +718,8 @@ main {
     line-height: 1.8;
 
     font-size: 15px;
+
+    overflow-wrap: anywhere;
 }
 
 
@@ -735,6 +729,7 @@ main {
 
 .valores {
     width: min(1200px, 90%);
+
     margin: 130px auto;
 }
 
@@ -744,20 +739,27 @@ main {
 
 .cabecera-seccion span {
     color: #e50914;
+
     font-family: "Michroma", sans-serif;
+
     font-size: 12px;
+
     letter-spacing: 3px;
 }
 
 .cabecera-seccion h2 {
     margin-top: 15px;
+
     font-family: "Poppins", sans-serif;
+
     font-size: clamp(30px, 4vw, 45px);
 }
 
 .cabecera-seccion p {
     margin-top: 15px;
+
     color: rgba(255, 255, 255, 0.6);
+
     font-family: "Matangi", sans-serif;
 }
 
@@ -775,11 +777,13 @@ main {
     gap: 20px;
 
     align-items: stretch;
+
+    width: 100%;
 }
 
 
 /* =========================================================
-   TARJETA
+   TARJETA DE VALOR
 ========================================================= */
 
 .valor {
@@ -798,14 +802,17 @@ main {
     transition: 0.3s ease;
 
     display: flex;
+
     flex-direction: column;
+
+    overflow-wrap: anywhere;
 }
 
 .valor:hover {
     border-color: #e50914;
+
     transform: translateY(-8px);
 }
-
 
 .valor-icono {
     flex-shrink: 0;
@@ -817,7 +824,6 @@ main {
     margin-bottom: 25px;
 }
 
-
 .valor h3 {
     font-family: "Poppins", sans-serif;
 
@@ -825,7 +831,6 @@ main {
 
     margin-bottom: 15px;
 }
-
 
 .valor p {
     color: rgba(255, 255, 255, 0.6);
@@ -836,8 +841,9 @@ main {
 
     font-size: 14px;
 
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
 }
+
 
 /* =========================================================
    FRASE FINAL
@@ -940,6 +946,8 @@ footer {
     align-items: center;
 
     gap: 15px;
+
+    flex-wrap: wrap;
 }
 
 .iconos-redes a {
@@ -958,6 +966,8 @@ footer {
     transition: 0.3s ease;
 
     overflow: hidden;
+
+    flex-shrink: 0;
 }
 
 .iconos-redes a:hover {
@@ -1018,6 +1028,8 @@ footer {
     font-size: 13px;
 
     line-height: 1.6;
+
+    overflow-wrap: anywhere;
 }
 
 .columna a {
@@ -1051,6 +1063,7 @@ footer {
     font-size: 12px;
 }
 
+
 /* =========================================================
    MENÚ RESPONSIVE
 ========================================================= */
@@ -1072,6 +1085,7 @@ footer {
 
     .logo {
         font-size: 1.2rem;
+
         flex-shrink: 0;
     }
 
@@ -1081,13 +1095,17 @@ footer {
 
     .navegacion ul li a {
         font-size: 0.85rem;
+
         letter-spacing: 0.7px;
+
         white-space: nowrap;
     }
 
     .top-icons {
         gap: 12px;
+
         font-size: 1rem;
+
         flex-shrink: 0;
     }
 
@@ -1103,26 +1121,31 @@ footer {
 
 @media (max-width: 800px) {
 
-    /* BARRA SUPERIOR */
+    /* =====================================================
+       BARRA SUPERIOR
+    ===================================================== */
 
     .top-bar {
         min-height: 65px;
+
         height: 65px;
 
         padding: 0 16px;
 
         position: relative;
+
         z-index: 100000;
     }
 
     .logo {
         font-size: 1rem;
+
         white-space: nowrap;
     }
 
 
     /* =====================================================
-       OCULTAR NAVEGACIÓN NORMAL
+       OCULTAR NAVEGACIÓN
     ===================================================== */
 
     .navegacion {
@@ -1144,7 +1167,6 @@ footer {
     ===================================================== */
 
     .menu-movil {
-
         display: flex !important;
 
         align-items: center;
@@ -1195,7 +1217,6 @@ footer {
     ===================================================== */
 
     .navegacion.activo {
-
         display: block !important;
 
         position: fixed !important;
@@ -1212,6 +1233,7 @@ footer {
         max-height: calc(100vh - 75px);
 
         overflow-y: auto;
+
         overflow-x: hidden;
 
         padding: 8px;
@@ -1226,6 +1248,7 @@ footer {
             0 20px 50px rgba(0, 0, 0, 0.8);
 
         backdrop-filter: blur(15px);
+
         -webkit-backdrop-filter: blur(15px);
 
         z-index: 100001;
@@ -1239,7 +1262,6 @@ footer {
     ===================================================== */
 
     .navegacion.activo ul {
-
         display: flex !important;
 
         flex-direction: column;
@@ -1256,9 +1278,7 @@ footer {
         box-sizing: border-box;
     }
 
-
     .navegacion.activo ul li {
-
         display: block;
 
         width: 100%;
@@ -1275,7 +1295,6 @@ footer {
     ===================================================== */
 
     .navegacion.activo ul li a {
-
         display: block;
 
         width: 100%;
@@ -1304,18 +1323,11 @@ footer {
             background 0.2s ease;
     }
 
-
-    /* ÚLTIMO ELEMENTO */
-
     .navegacion.activo ul li:last-child a {
         border-bottom: none;
     }
 
-
-    /* HOVER */
-
     .navegacion.activo ul li a:hover {
-
         color: #ffffff;
 
         background:
@@ -1324,12 +1336,11 @@ footer {
 
 
     /* =====================================================
-       🔥 QUITAR LÍNEA ROJA DEL ACTIVO EN MÓVIL
+       QUITAR LÍNEA ROJA EN MÓVIL
     ===================================================== */
 
     .navegacion.activo ul li a.activo::after,
     .navegacion.activo ul li a.active::after {
-
         content: none !important;
 
         display: none !important;
@@ -1342,14 +1353,108 @@ footer {
         box-shadow: none !important;
     }
 
-
-    /* POR SI EL ACTIVO USA OTRA REGLA */
-
     .navegacion.activo ul li a.activo,
     .navegacion.activo ul li a.active {
-
         border-bottom:
             1px solid rgba(255, 255, 255, 0.07);
+    }
+
+
+    /* =====================================================
+       MISIÓN Y VISIÓN
+       UNA DEBAJO DE LA OTRA
+    ===================================================== */
+
+    .mision-vision {
+        width: 90%;
+
+        margin: 70px auto;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .tarjeta-info {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 35px 25px;
+
+        overflow-wrap: anywhere;
+    }
+
+    .tarjeta-info h2 {
+        font-size: 25px;
+    }
+
+    .tarjeta-info p {
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+       VALORES
+       UNA SOLA COLUMNA
+    ===================================================== */
+
+    .valores {
+        width: 90%;
+
+        margin: 80px auto;
+    }
+
+    .valores-grid {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        width: 100%;
+    }
+
+    .valor {
+        width: 100%;
+
+        min-width: 0;
+
+        min-height: auto;
+
+        padding: 30px 25px;
+
+        overflow-wrap: anywhere;
+    }
+
+    .valor p {
+        overflow-wrap: anywhere;
+
+        word-break: normal;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer-info {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        width: 90%;
+    }
+
+    .redes-sociales {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
@@ -1361,13 +1466,12 @@ footer {
 @media (max-width: 600px) {
 
     .top-bar {
-
         min-height: 60px;
+
         height: 60px;
 
         padding: 0 12px;
     }
-
 
     .logo {
         font-size: 0.9rem;
@@ -1377,8 +1481,8 @@ footer {
     /* HAMBURGUESA */
 
     .menu-movil {
-
         width: 38px;
+
         height: 38px;
 
         font-size: 21px;
@@ -1388,10 +1492,10 @@ footer {
     /* MENÚ */
 
     .navegacion.activo {
-
         top: 65px;
 
         left: 8px;
+
         right: 8px;
 
         max-height: calc(100vh - 75px);
@@ -1399,23 +1503,79 @@ footer {
         padding: 7px;
     }
 
-
     .navegacion.activo ul li a {
-
         padding: 11px 9px;
 
         font-size: 0.72rem;
     }
 
 
-    /* PRODUCTOS */
+    /* =====================================================
+       MISIÓN / VISIÓN
+    ===================================================== */
+
+    .mision-vision {
+        width: 92%;
+
+        margin: 60px auto;
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .tarjeta-info {
+        padding: 30px 22px;
+    }
+
+
+    /* =====================================================
+       VALORES
+    ===================================================== */
+
+    .valores {
+        width: 92%;
+
+        margin: 70px auto;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .valor {
+        padding: 28px 22px;
+
+        min-height: auto;
+    }
+
+
+    /* =====================================================
+       PRODUCTOS
+    ===================================================== */
 
     .productos {
-
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
         gap: 12px;
+    }
+
+
+    /* =====================================================
+       REDES
+    ===================================================== */
+
+    .iconos-redes {
+        gap: 12px;
+    }
+
+    .iconos-redes a {
+        width: 43px;
+
+        height: 43px;
     }
 }
 
@@ -1427,33 +1587,30 @@ footer {
 @media (max-width: 380px) {
 
     .top-bar {
-
         min-height: 55px;
+
         height: 55px;
 
         padding: 0 10px;
     }
 
-
     .logo {
         font-size: 0.82rem;
     }
 
-
     .menu-movil {
-
         width: 36px;
+
         height: 36px;
 
         font-size: 20px;
     }
 
-
     .navegacion.activo {
-
         top: 60px;
 
         left: 6px;
+
         right: 6px;
 
         max-height: calc(100vh - 68px);
@@ -1461,12 +1618,66 @@ footer {
         padding: 6px;
     }
 
-
     .navegacion.activo ul li a {
-
         padding: 10px 8px;
 
         font-size: 0.68rem;
+    }
+
+
+    /* =====================================================
+       MISIÓN / VISIÓN
+    ===================================================== */
+
+    .mision-vision {
+        width: 92%;
+
+        margin: 50px auto;
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .tarjeta-info {
+        padding: 28px 20px;
+    }
+
+    .tarjeta-info h2 {
+        font-size: 23px;
+    }
+
+    .tarjeta-info p {
+        font-size: 13px;
+
+        line-height: 1.65;
+    }
+
+
+    /* =====================================================
+       VALORES
+    ===================================================== */
+
+    .valores {
+        width: 92%;
+
+        margin: 60px auto;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .valor {
+        padding: 28px 20px;
+    }
+
+    .valor p {
+        font-size: 13px;
+
+        line-height: 1.65;
     }
 }
 
@@ -1487,5 +1698,24 @@ footer {
 
     .top-icons {
         display: flex !important;
+    }
+
+
+    /* =====================================================
+       MISIÓN Y VISIÓN - PC
+    ===================================================== */
+
+    .mision-vision {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* =====================================================
+       VALORES - PC
+    ===================================================== */
+
+    .valores-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
     }
 }
