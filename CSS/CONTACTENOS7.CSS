@@ -1,18 +1,249 @@
+/* =========================================================
+   FUENTES
+========================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --negro: #080808;
+    --negro-2: #111111;
+    --negro-3: #090909;
+
+    --rojo: #e50914;
+    --rojo-hover: #b80710;
+
+    --blanco: #ffffff;
+
+    --borde: #292929;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: var(--negro);
+    color: var(--blanco);
+
+    font-family: 'Manrope', sans-serif;
+
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+#contenedor {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BANNER
+========================================================= */
+
+.banner-portada {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+
+/* =========================================================
+   IMAGEN BANNER
+========================================================= */
+
+.imagen-banner {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+.imagen-banner img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.capa-oscura {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.75) 0%,
+            rgba(0,0,0,.35) 40%,
+            rgba(0,0,0,.70) 100%
+        );
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top-bar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 20;
+
+    width: 100%;
+    min-height: 90px;
+
+    padding: 0 4%;
+
+    display: flex;
+    align-items: center;
+
+    background: rgba(0,0,0,.35);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    flex: 0 0 auto;
+
+    color: #fff;
+
+    font-family: 'Archivo Black', sans-serif;
+
+    font-size: 1.45rem;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+.logo-rojo {
+    color: var(--rojo);
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+.navegacion {
+    margin-left: auto;
+}
+
+.navegacion ul {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    list-style: none;
+}
+
+.navegacion a {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 10px 0;
+
+    color: #fff;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: .62rem;
+    font-weight: 600;
+
+    letter-spacing: .5px;
+
+    transition: color .3s ease;
+}
+
+
+/* IMPORTANTE:
+   NO SE USA LÍNEA ROJA ABAJO */
+
+.navegacion a::after {
+    display: none;
+}
 
 .navegacion a:hover,
 .navegacion a.activo {
     color: var(--rojo);
 }
 
-.navegacion a:hover::after,
-.navegacion a.activo::after {
-    width: 100%;
-}
-
 
 /* =========================================================
-   ICONOS
+   ICONOS TOP
 ========================================================= */
 
 .top-icons {
@@ -104,6 +335,7 @@
     color: var(--rojo);
 
     font-family: 'Poppins', sans-serif;
+
     font-size: .85rem;
     font-weight: 700;
 
@@ -128,6 +360,7 @@
     color: #d0d0d0;
 
     font-family: 'Poppins', sans-serif;
+
     font-size: 1rem;
 }
 
@@ -202,6 +435,7 @@
 }
 
 @keyframes scroll {
+
     0% {
         transform: translateY(0);
         opacity: 1;
@@ -250,11 +484,12 @@
 
 
 /* =========================================================
-   INFORMACIÓN
+   INFORMACIÓN CONTACTO
 ========================================================= */
 
 .contacto-info {
     width: 100%;
+
     padding-top: 20px;
 }
 
@@ -378,43 +613,71 @@
 
 .formulario-contacto {
     width: 100%;
+    max-width: 100%;
 
-    padding: 45px;
+    padding: 42px;
 
-    background: var(--negro-2);
+    background: #111111;
 
-    border: 1px solid var(--borde);
+    border: 1px solid #292929;
 
     border-top: 3px solid var(--rojo);
 
-    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    border-radius: 6px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+
+    overflow: hidden;
 }
 
+
+/* =========================================================
+   HEADER FORMULARIO
+========================================================= */
+
 .formulario-header {
+    width: 100%;
+
     margin-bottom: 30px;
 }
 
 .formulario-etiqueta {
+    display: block;
+
+    margin-bottom: 8px;
+
     color: var(--rojo);
 
     font-family: 'Poppins', sans-serif;
 
-    font-size: .75rem;
+    font-size: .72rem;
     font-weight: 800;
 
     letter-spacing: 3px;
 }
 
 .formulario-header h2 {
-    margin-top: 8px;
+    margin: 0;
 
     color: #fff;
 
     font-family: 'Bebas Neue', sans-serif;
 
-    font-size: 3rem;
+    font-size: 3.2rem;
+    font-weight: 400;
+
+    line-height: 1;
 
     letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.formulario-contacto form {
+    width: 100%;
 }
 
 
@@ -424,15 +687,18 @@
 
 .campo {
     width: 100%;
-    margin-bottom: 22px;
+
+    margin: 0 0 22px;
 }
 
 .campo label {
     display: block;
 
-    margin-bottom: 8px;
+    width: 100%;
 
-    color: #ddd;
+    margin: 0 0 8px;
+
+    color: #dedede;
 
     font-family: 'Poppins', sans-serif;
 
@@ -442,14 +708,22 @@
     letter-spacing: 1px;
 }
 
-.campo input,
-.campo textarea {
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+
     display: block;
 
     width: 100%;
+    max-width: 100%;
 
     color: #fff;
-    background: var(--negro-3);
+
+    background: #090909;
 
     border: 1px solid #303030;
 
@@ -461,33 +735,66 @@
 
     font-size: .88rem;
 
-    transition: .3s ease;
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
 }
 
-.campo input {
-    height: 48px;
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.formulario-contacto input {
+    height: 50px;
+
     padding: 0 16px;
 }
 
-.campo textarea {
-    min-height: 140px;
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.formulario-contacto textarea {
+
+    min-height: 145px;
 
     padding: 14px 16px;
 
     resize: vertical;
+
+    line-height: 1.6;
 }
 
-.campo input::placeholder,
-.campo textarea::placeholder {
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.formulario-contacto input::placeholder,
+.formulario-contacto textarea::placeholder {
+
     color: #666;
+
+    opacity: 1;
 }
 
-.campo input:focus,
-.campo textarea:focus {
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+
+    background: #0c0c0c;
+
     border-color: var(--rojo);
 
     box-shadow:
-        0 0 0 2px rgba(229,9,20,.12);
+        0 0 0 3px rgba(229,9,20,.10);
 }
 
 
@@ -496,8 +803,14 @@
 ========================================================= */
 
 .formulario-contacto form button {
+
     width: 100%;
+
     min-height: 52px;
+
+    margin-top: 5px;
+
+    padding: 14px 20px;
 
     display: flex;
 
@@ -506,33 +819,41 @@
 
     gap: 12px;
 
-    margin-top: 8px;
-
     color: #fff;
+
     background: var(--rojo);
 
-    border: 0;
+    border: none;
+
     border-radius: 4px;
 
     font-family: 'Poppins', sans-serif;
 
-    font-size: .8rem;
+    font-size: .78rem;
     font-weight: 800;
 
     letter-spacing: 1px;
 
     cursor: pointer;
 
-    transition: .3s ease;
+    transition:
+        background .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .formulario-contacto form button:hover {
+
     background: var(--rojo-hover);
 
     transform: translateY(-2px);
 
     box-shadow:
         0 10px 25px rgba(229,9,20,.25);
+}
+
+.formulario-contacto form button i {
+    font-size: .85rem;
 }
 
 
@@ -550,10 +871,11 @@ footer {
 
 
 /* =========================================================
-   REDES
+   REDES SOCIALES
 ========================================================= */
 
 .redes-sociales {
+
     width: 100%;
 
     padding: 50px 5%;
@@ -564,6 +886,7 @@ footer {
 }
 
 .redes-sociales h3 {
+
     margin-bottom: 25px;
 
     color: #fff;
@@ -576,6 +899,7 @@ footer {
 }
 
 .iconos-redes {
+
     display: flex;
 
     justify-content: center;
@@ -585,6 +909,7 @@ footer {
 }
 
 .iconos-redes a {
+
     width: 45px;
     height: 45px;
 
@@ -601,6 +926,7 @@ footer {
 }
 
 .iconos-redes img {
+
     width: 100%;
     height: 100%;
 
@@ -608,6 +934,7 @@ footer {
 }
 
 .iconos-redes a:hover {
+
     transform: translateY(-5px) scale(1.08);
 }
 
@@ -617,6 +944,7 @@ footer {
 ========================================================= */
 
 .footer-info {
+
     width: min(1200px, 90%);
 
     margin: auto;
@@ -632,6 +960,7 @@ footer {
 }
 
 .columna h4 {
+
     margin-bottom: 20px;
 
     color: #fff;
@@ -644,10 +973,12 @@ footer {
 }
 
 .columna ul {
+
     list-style: none;
 }
 
 .columna li {
+
     margin-bottom: 12px;
 
     color: #888;
@@ -658,16 +989,19 @@ footer {
 }
 
 .columna a {
+
     color: #888;
 
     transition: .3s ease;
 }
 
 .columna a:hover {
+
     color: var(--rojo);
 }
 
 .columna strong {
+
     color: #ccc;
 }
 
@@ -677,6 +1011,7 @@ footer {
 ========================================================= */
 
 .copyright {
+
     width: 100%;
 
     padding: 20px 5%;
@@ -687,6 +1022,7 @@ footer {
 }
 
 .copyright p {
+
     color: #666;
 
     font-size: .72rem;
@@ -712,16 +1048,20 @@ footer {
     }
 
     .top-icons {
+
         gap: 6px;
+
         margin-left: 10px;
     }
 
     .icon-link {
+
         width: 35px;
         height: 35px;
     }
 
     .contacto-seccion {
+
         gap: 40px;
     }
 }
@@ -734,13 +1074,17 @@ footer {
 @media (max-width: 950px) {
 
     .top-bar {
+
         min-height: 80px;
+
         padding: 0 22px;
     }
 
-    /* OCULTAR NAV DESKTOP */
+
+    /* NAV */
 
     .navegacion {
+
         position: absolute;
 
         top: 100%;
@@ -761,13 +1105,13 @@ footer {
         backdrop-filter: blur(15px);
     }
 
-    /* MOSTRAR CUANDO JS AGREGA ACTIVO */
-
     .navegacion.activo {
+
         display: block;
     }
 
     .navegacion ul {
+
         width: 100%;
 
         display: flex;
@@ -780,10 +1124,12 @@ footer {
     }
 
     .navegacion li {
+
         width: 100%;
     }
 
     .navegacion a {
+
         width: 100%;
 
         display: block;
@@ -794,39 +1140,53 @@ footer {
     }
 
     .navegacion a::after {
+
         display: none;
     }
+
 
     /* ICONOS */
 
     .top-icons {
+
         margin-left: auto;
+
         margin-right: 5px;
     }
+
 
     /* HAMBURGUESA */
 
     .menu-movil {
+
         display: flex;
     }
+
 
     /* CONTACTO */
 
     .contacto-seccion {
+
         grid-template-columns: 1fr;
 
         gap: 55px;
     }
 
     .contacto-info {
+
         padding-top: 0;
     }
 
     .formulario-contacto {
+
         width: 100%;
     }
 
+
+    /* FOOTER */
+
     .footer-info {
+
         gap: 35px;
     }
 }
@@ -839,41 +1199,61 @@ footer {
 @media (max-width: 600px) {
 
     .banner-portada {
+
         height: 90vh;
+
         min-height: 600px;
     }
 
+
+    /* TOP BAR */
+
     .top-bar {
+
         min-height: 70px;
 
         padding: 0 15px;
     }
 
     .logo {
+
         font-size: 1.15rem;
     }
 
+
+    /* ICONOS */
+
     .top-icons {
+
         gap: 6px;
 
         margin-right: 3px;
     }
 
     .icon-link {
+
         width: 33px;
         height: 33px;
 
         font-size: .8rem;
     }
 
+
+    /* MENU */
+
     .menu-movil {
+
         width: 38px;
         height: 38px;
 
         margin-left: 6px;
     }
 
+
+    /* NAV */
+
     .navegacion {
+
         top: 70px;
 
         max-height: calc(100vh - 70px);
@@ -882,32 +1262,38 @@ footer {
     }
 
     .navegacion a {
+
         padding: 16px 10px;
 
         font-size: .78rem;
     }
 
+
     /* HERO */
 
     .contenido-centro {
+
         width: 94%;
 
         padding-top: 125px;
     }
 
     .etiqueta-hero {
+
         font-size: .62rem;
 
         letter-spacing: 2px;
     }
 
     .titulo-hero {
+
         font-size: clamp(3.2rem, 17vw, 5rem);
 
         letter-spacing: 2px;
     }
 
     .subtitulo {
+
         margin-top: 20px;
 
         padding: 0 12px;
@@ -917,15 +1303,18 @@ footer {
         line-height: 1.6;
     }
 
+
     /* LEMA */
 
     .lema-centro {
+
         bottom: 65px;
 
         padding: 0 15px;
     }
 
     .lema-centro p {
+
         font-size: .95rem;
 
         letter-spacing: 2px;
@@ -933,27 +1322,33 @@ footer {
         line-height: 1.3;
     }
 
+
     /* CONTACTO */
 
     .contacto {
+
         padding: 65px 18px;
     }
 
     .contacto-seccion {
+
         gap: 50px;
     }
 
     .contacto-info h2 {
+
         font-size: 3.8rem;
     }
 
     .texto-contacto {
+
         font-size: .84rem;
 
         line-height: 1.75;
     }
 
     .datos-contacto {
+
         grid-template-columns: 1fr;
 
         gap: 25px;
@@ -962,56 +1357,100 @@ footer {
     }
 
     .dato {
+
         gap: 13px;
     }
 
     .dato-icono {
+
         flex-basis: 44px;
 
         width: 44px;
         height: 44px;
     }
 
+
     /* FORMULARIO */
 
     .formulario-contacto {
-        padding: 25px 18px;
+
+        width: 100%;
+
+        padding: 28px 20px;
+
+        border-radius: 5px;
     }
 
     .formulario-header {
+
         margin-bottom: 25px;
     }
 
+    .formulario-etiqueta {
+
+        font-size: .68rem;
+
+        letter-spacing: 2px;
+    }
+
     .formulario-header h2 {
-        font-size: 2.5rem;
+
+        font-size: 2.6rem;
     }
 
     .campo {
-        margin-bottom: 18px;
+
+        margin-bottom: 19px;
     }
+
+    .campo label {
+
+        font-size: .68rem;
+    }
+
+    .formulario-contacto input {
+
+        height: 48px;
+    }
+
+    .formulario-contacto textarea {
+
+        min-height: 130px;
+    }
+
+    .formulario-contacto form button {
+
+        min-height: 50px;
+    }
+
 
     /* FOOTER */
 
     .redes-sociales {
+
         padding: 40px 15px;
     }
 
     .redes-sociales h3 {
+
         font-size: .72rem;
 
         letter-spacing: 1.5px;
     }
 
     .iconos-redes {
+
         gap: 10px;
     }
 
     .iconos-redes a {
+
         width: 40px;
         height: 40px;
     }
 
     .footer-info {
+
         width: 88%;
 
         grid-template-columns: 1fr;
@@ -1022,10 +1461,12 @@ footer {
     }
 
     .columna h4 {
+
         font-size: 1.4rem;
     }
 
     .columna li {
+
         font-size: .78rem;
     }
 }
@@ -1038,48 +1479,70 @@ footer {
 @media (max-width: 400px) {
 
     .top-bar {
+
         padding: 0 12px;
     }
 
     .logo {
+
         font-size: 1.05rem;
     }
 
     .top-icons {
+
         gap: 4px;
     }
 
     .icon-link {
+
         width: 31px;
         height: 31px;
     }
 
     .menu-movil {
+
         width: 36px;
         height: 36px;
     }
 
     .contenido-centro {
+
         padding-top: 115px;
     }
 
     .titulo-hero {
+
         font-size: 3.1rem;
     }
 
     .contacto-info h2 {
+
         font-size: 3.3rem;
     }
 
     .formulario-contacto {
-        padding: 22px 15px;
+
+        padding: 24px 16px;
+    }
+
+    .formulario-header h2 {
+
+        font-size: 2.35rem;
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+
+        font-size: .82rem;
     }
 
     .iconos-redes {
+
         gap: 7px;
     }
 
     .iconos-redes a {
+
         width: 37px;
         height: 37px;
     }
