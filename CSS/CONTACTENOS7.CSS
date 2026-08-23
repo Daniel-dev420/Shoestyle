@@ -188,22 +188,13 @@ img {
     transition: color 0.3s ease;
 }
 
-
-/* HOVER */
-
 .navegacion ul li a:hover {
     color: #ffffff;
 }
 
-
-/* PÁGINA ACTIVA */
-
 .navegacion ul li a.activo {
     color: rgba(255, 255, 255, 0.65);
 }
-
-
-/* LÍNEA ROJA SOLO EN ACTIVO */
 
 .navegacion ul li a.activo::after {
     content: "";
@@ -265,10 +256,19 @@ img {
 
 /* =========================================================
    BOTÓN HAMBURGUESA
+   IGUAL AL INDEX
 ========================================================= */
 
 .menu-movil {
     display: none !important;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
 
     border: none;
     outline: none;
@@ -281,7 +281,13 @@ img {
 
     cursor: pointer;
 
-    padding: 5px;
+    z-index: 100002;
+
+    flex-shrink: 0;
+}
+
+.menu-movil:hover {
+    color: #e50914;
 }
 
 
@@ -319,6 +325,8 @@ img {
 ========================================================= */
 
 .etiqueta-hero {
+    width: 100%;
+
     margin-bottom: 18px;
 
     color: #e50914;
@@ -340,6 +348,13 @@ img {
 ========================================================= */
 
 .titulo-hero {
+    width: 100%;
+
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+
     color: #ffffff;
 
     font-family: 'Impact', 'Arial Black', sans-serif;
@@ -363,9 +378,11 @@ img {
 ========================================================= */
 
 .subtitulo {
+    width: 100%;
+
     max-width: 620px;
 
-    margin-top: 25px;
+    margin: 25px auto 0;
 
     color: rgba(255, 255, 255, 0.72);
 
@@ -682,11 +699,6 @@ main {
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.4);
 }
-
-
-/* =========================================================
-   HEADER FORMULARIO
-========================================================= */
 
 .formulario-header {
     margin-bottom: 30px;
@@ -1069,6 +1081,8 @@ footer {
 
         display: flex;
 
+        align-items: center;
+
         justify-content: space-between;
     }
 
@@ -1091,7 +1105,9 @@ footer {
     }
 
 
-    /* HAMBURGUESA */
+    /* =====================================================
+       HAMBURGUESA — IGUAL AL INDEX
+    ===================================================== */
 
     .menu-movil {
         display: flex !important;
@@ -1099,14 +1115,15 @@ footer {
         align-items: center;
         justify-content: center;
 
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
 
         margin-left: auto;
 
         padding: 0;
 
         border: none;
+        outline: none;
 
         background: transparent;
 
@@ -1117,10 +1134,18 @@ footer {
         cursor: pointer;
 
         z-index: 100002;
+
+        flex-shrink: 0;
+    }
+
+    .menu-movil:hover {
+        color: #e50914;
     }
 
 
-    /* MENÚ ABIERTO */
+    /* =====================================================
+       MENÚ ABIERTO
+    ===================================================== */
 
     .navegacion.activo {
 
@@ -1151,6 +1176,7 @@ footer {
             0 20px 50px rgba(0, 0, 0, 0.8);
 
         backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
 
         z-index: 100001;
     }
@@ -1178,7 +1204,7 @@ footer {
 
         width: 100%;
 
-        padding: 12px 10px;
+        padding: 13px 12px;
 
         color: #c7c7c7;
 
@@ -1209,28 +1235,56 @@ footer {
     }
 
 
-    /* HERO */
+    /* =====================================================
+       HERO CENTRADO
+    ===================================================== */
 
     .contenido-centro {
         width: 92%;
 
         min-height: calc(100vh - 65px);
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
     }
 
     .etiqueta-hero {
+        width: 100%;
+
         font-size: 11px;
 
         letter-spacing: 3px;
+
+        text-align: center;
     }
 
     .titulo-hero {
+        width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
         font-size: clamp(45px, 12vw, 75px);
+
+        text-align: center;
     }
 
     .subtitulo {
+        width: 100%;
+
         max-width: 500px;
 
+        margin-left: auto;
+        margin-right: auto;
+
         font-size: 14px;
+
+        text-align: center;
     }
 
 
@@ -1287,11 +1341,19 @@ footer {
         font-size: 0.9rem;
     }
 
-    .menu-movil {
-        width: 38px;
-        height: 38px;
 
-        font-size: 21px;
+    /* HAMBURGUESA */
+
+    .menu-movil {
+        display: flex !important;
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 22px;
+
+        align-items: center;
+        justify-content: center;
     }
 
     .navegacion.activo {
@@ -1308,23 +1370,39 @@ footer {
         width: 94%;
 
         min-height: calc(100vh - 60px);
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
     }
 
     .etiqueta-hero {
+        width: 100%;
+
         font-size: 9px;
 
         letter-spacing: 2px;
 
         margin-bottom: 14px;
+
+        text-align: center;
     }
 
     .titulo-hero {
+        width: 100%;
+
         font-size: clamp(40px, 15vw, 60px);
 
         letter-spacing: 2px;
+
+        text-align: center;
     }
 
     .subtitulo {
+        width: 100%;
+
         margin-top: 18px;
 
         padding: 0 10px;
@@ -1332,6 +1410,8 @@ footer {
         font-size: 12px;
 
         line-height: 1.7;
+
+        text-align: center;
     }
 
     .scroll-indicator {
@@ -1470,10 +1550,10 @@ footer {
     }
 
     .menu-movil {
-        width: 36px;
-        height: 36px;
+        width: 38px;
+        height: 38px;
 
-        font-size: 20px;
+        font-size: 21px;
     }
 
     .navegacion.activo {
@@ -1492,7 +1572,17 @@ footer {
     }
 
     .titulo-hero {
+        width: 100%;
+
         font-size: 3rem;
+
+        text-align: center;
+    }
+
+    .subtitulo {
+        width: 100%;
+
+        text-align: center;
     }
 
     .contacto-info h2 {
@@ -1530,5 +1620,12 @@ footer {
 
     .top-icons {
         display: flex !important;
+    }
+
+    .titulo-hero,
+    .subtitulo {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
