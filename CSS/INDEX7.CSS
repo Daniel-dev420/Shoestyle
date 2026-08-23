@@ -2,32 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-
 /* =========================================================
    VARIABLES
 ========================================================= */
 
 :root {
     --rojo: #e10620;
-    --rojo-oscuro: #a20000;
-    --rojo-brillante: #ff2e2e;
-
+    --rojo-hover: #ff263f;
     --fondo: #050505;
-    --fondo-2: #0d0d0d;
+    --fondo-2: #0c0c0c;
     --fondo-3: #151515;
     --tarjeta: #181818;
-
-    --blanco: #ffffff;
-    --negro: #000000;
-
-    --gris-claro: #c7c7c7;
-    --gris: #8c8c8c;
-    --gris-oscuro: #303030;
-
-    --borde: rgba(255,255,255,0.08);
-    --borde-hover: rgba(225,6,32,0.65);
+    --blanco: #fff;
+    --gris: #999;
+    --gris-claro: #ccc;
+    --borde: rgba(255,255,255,.1);
 }
-
 
 /* =========================================================
    RESET
@@ -46,22 +36,15 @@ html {
 body {
     width: 100%;
     min-height: 100vh;
-
-    margin: 0;
-    padding: 0;
-
-    font-family: 'Manrope', sans-serif;
-
-    background: #050505;
-
+    background: var(--fondo);
     color: var(--blanco);
-
+    font-family: 'Manrope', sans-serif;
     overflow-x: hidden;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 img {
@@ -76,20 +59,10 @@ select {
     font-family: inherit;
 }
 
-
-/* =========================================================
-   CONTENEDOR
-========================================================= */
-
 #contenedor {
     width: 100%;
-    min-height: 100vh;
-
-    background: var(--fondo);
-
-    overflow: visible;
+    overflow: hidden;
 }
-
 
 /* =========================================================
    BANNER
@@ -97,116 +70,89 @@ select {
 
 .banner-portada {
     position: relative;
-
     width: 100%;
     height: 100vh;
-
     min-height: 600px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
     overflow: hidden;
-
-    color: #fff;
 }
 
 .video-container {
     position: absolute;
-
     inset: 0;
-
-    width: 100%;
-    height: 100%;
-
     z-index: 1;
 }
 
 .video-fondo {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
 .capa-oscura {
     position: absolute;
-
     inset: 0;
-
-    width: 100%;
-    height: 100%;
-
     background:
-        radial-gradient(
-            circle,
-            rgba(0,0,0,0.3) 0%,
-            rgba(0,0,0,0.85) 100%
+        linear-gradient(
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.8)
         );
-
-    z-index: 2;
 }
 
-
 /* =========================================================
-   TOP BAR
+   HEADER
 ========================================================= */
 
 .top-bar {
     position: relative;
-
-    z-index: 10;
+    z-index: 20;
 
     width: 100%;
     min-height: 90px;
 
-    padding: 0 6%;
+    padding: 0 5%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-
-    background: rgba(0,0,0,0.25);
+    background: rgba(0,0,0,.3);
+    border-bottom: 1px solid rgba(255,255,255,.1);
 
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
-
-
-/* =========================================================
-   LOGO
-========================================================= */
 
 .logo {
     flex-shrink: 0;
 
-    font-size: 1.5rem;
-
-    letter-spacing: 1px;
-
     font-family:
-        'Impact',
+        'Archivo Black',
         'Arial Black',
         sans-serif;
+
+    font-size: 1.6rem;
+    letter-spacing: 1px;
 }
 
 .logo-rojo {
     color: var(--rojo);
 }
 
-
 /* =========================================================
    NAVEGACIÓN
 ========================================================= */
 
+.navegacion {
+    display: block;
+}
+
 .navegacion ul {
     display: flex;
-
-    gap: 30px;
+    align-items: center;
+    gap: 22px;
 
     margin: 0;
     padding: 0;
@@ -214,63 +160,59 @@ select {
     list-style: none;
 }
 
-.navegacion ul li {
+.navegacion li {
     list-style: none;
 }
 
-.navegacion ul li a {
+.navegacion a {
     position: relative;
 
     display: inline-block;
 
-    color: #b3b3b3;
+    color: #ccc;
 
     font-family: 'Poppins', sans-serif;
-
-    font-size: 0.85rem;
-
+    font-size: .78rem;
     font-weight: 600;
 
-    letter-spacing: 0.7px;
+    letter-spacing: .5px;
 
-    transition:
-        color 0.3s ease;
+    white-space: nowrap;
+
+    transition: .3s ease;
 }
 
-.navegacion ul li a:hover,
-.navegacion ul li a.active {
+.navegacion a:hover {
     color: #fff;
 }
 
-.navegacion ul li a.activo::after {
+.navegacion a::after {
     content: "";
 
     position: absolute;
-
     left: 0;
-    bottom: -8px;
+    bottom: -7px;
 
-    width: 100%;
+    width: 0;
     height: 2px;
 
     background: var(--rojo);
 
-    box-shadow:
-        0 0 10px rgba(225,6,32,0.7);
+    transition: .3s ease;
 }
 
+.navegacion a:hover::after {
+    width: 100%;
+}
 
 /* =========================================================
-   ICONOS SUPERIORES
+   ICONOS
 ========================================================= */
 
 .top-icons {
     display: flex;
     align-items: center;
-
-    gap: 20px;
-
-    flex-shrink: 0;
+    gap: 18px;
 }
 
 .icon-link {
@@ -279,61 +221,74 @@ select {
     justify-content: center;
 
     color: #fff;
-
     font-size: 1.1rem;
 
-    transition:
-        color 0.3s ease,
-        transform 0.2s ease;
+    transition: .3s ease;
 }
 
 .icon-link:hover {
     color: var(--rojo);
-
     transform: scale(1.1);
 }
 
+/* =========================================================
+   MENÚ MÓVIL
+========================================================= */
+
+.menu-movil {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 100;
+}
 
 /* =========================================================
-   CONTENIDO CENTRAL
+   CONTENIDO PRINCIPAL DEL BANNER
 ========================================================= */
 
 .contenido-centro {
     position: relative;
-
     z-index: 10;
 
-    max-width: 800px;
+    width: min(900px, 90%);
 
-    padding: 0 20px;
-
-    margin-top: -50px;
+    margin: auto;
 
     text-align: center;
 }
 
 .lema-principal {
     font-family:
-        'Impact',
+        'Archivo Black',
         'Arial Black',
         sans-serif;
 
-    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-size: clamp(3rem, 7vw, 6rem);
 
-    line-height: 0.95;
-
+    line-height: .95;
     letter-spacing: 2px;
-
-    text-transform: uppercase;
 }
 
 .texto-destacado {
-    background:
-        linear-gradient(
-            90deg,
-            var(--rojo) 30%,
-            #ff4500 100%
-        );
+    background: linear-gradient(
+        90deg,
+        var(--rojo),
+        #ff4500
+    );
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -342,18 +297,17 @@ select {
 }
 
 .subtitulo {
-    margin-top: 20px;
-    margin-bottom: 35px;
+    margin: 25px auto 35px;
+
+    max-width: 750px;
 
     color: #ccc;
 
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
 
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-
-    line-height: 1.6;
+    line-height: 1.7;
 }
-
 
 /* =========================================================
    BOTONES
@@ -361,10 +315,10 @@ select {
 
 .botones-container {
     display: flex;
-
     justify-content: center;
+    align-items: center;
 
-    gap: 20px;
+    gap: 18px;
 
     flex-wrap: wrap;
 }
@@ -376,51 +330,40 @@ select {
     align-items: center;
     justify-content: center;
 
-    gap: 8px;
+    min-width: 210px;
 
-    padding: 14px 32px;
+    padding: 14px 28px;
 
     border-radius: 50px;
 
     font-family: 'Poppins', sans-serif;
-
-    font-size: 1rem;
-
+    font-size: .9rem;
     font-weight: 600;
 
-    letter-spacing: 1px;
-
-    transition: all 0.3s ease;
+    transition: .3s ease;
 }
 
 .btn-rojo {
     background: var(--rojo);
-
     color: #fff;
 }
 
 .btn-rojo:hover {
-    background: #b8051a;
-
-    transform: translateY(-2px);
+    background: var(--rojo-hover);
+    transform: translateY(-3px);
 }
 
 .btn-linea {
     border: 1px solid #fff;
-
     color: #fff;
-
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,.08);
 }
 
 .btn-linea:hover {
     background: #fff;
-
     color: #000;
-
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
-
 
 /* =========================================================
    SCROLL
@@ -428,12 +371,11 @@ select {
 
 .scroll-indicator {
     position: relative;
-
     z-index: 10;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
-    opacity: 0.6;
+    opacity: .7;
 }
 
 .mouse {
@@ -443,10 +385,9 @@ select {
     display: flex;
     justify-content: center;
 
-    padding-top: 8px;
+    padding-top: 7px;
 
     border: 2px solid #fff;
-
     border-radius: 20px;
 }
 
@@ -455,24 +396,22 @@ select {
     height: 8px;
 
     background: var(--rojo);
+    border-radius: 5px;
 
-    border-radius: 2px;
-
-    animation: encoger-rueda 1.5s infinite;
+    animation: rueda 1.5s infinite;
 }
 
-@keyframes encoger-rueda {
-    0% {
+@keyframes rueda {
+    from {
         opacity: 1;
         transform: translateY(0);
     }
 
-    100% {
+    to {
         opacity: 0;
         transform: translateY(10px);
     }
 }
-
 
 /* =========================================================
    MAIN
@@ -481,13 +420,13 @@ select {
 main {
     width: 100%;
 
-    padding: 80px 5% 20px;
+    padding: 80px 5% 30px;
 
     background:
         linear-gradient(
             180deg,
-            #080808 0%,
-            #050505 100%
+            #080808,
+            #050505
         );
 }
 
@@ -498,112 +437,94 @@ main > section > h2 {
         'Arial Black',
         sans-serif;
 
-    font-size: clamp(2rem, 4vw, 3.2rem);
-
-    line-height: 1.1;
-
-    letter-spacing: -1px;
-
-    color: #fff;
+    font-size: clamp(2rem, 4vw, 3rem);
 
     text-align: center;
+
+    margin-bottom: 25px;
 }
 
 main > p {
     width: min(850px, 100%);
 
-    margin: 25px auto 0;
+    margin: auto;
 
     color: var(--gris-claro);
 
-    font-size: 16px;
-
-    line-height: 1.8;
-
     text-align: center;
+
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 main > section {
-    width: min(1450px, 100%);
-
-    margin: 0 auto 110px;
+    width: min(1400px, 100%);
+    margin: 0 auto 100px;
 }
-
 
 /* =========================================================
    MARCAS
 ========================================================= */
 
 .marcas {
+    width: min(1200px, 100%);
+
+    margin: 45px auto 0;
+
+    padding: 15px;
+
     display: grid;
 
     grid-template-columns:
         repeat(auto-fit, minmax(130px, 1fr));
 
-    align-items: center;
-
     gap: 18px;
-
-    width: min(1200px, 100%);
-
-    margin: 55px auto 0;
-
-    padding: 25px;
 }
 
 .marcas img {
     width: 100%;
     height: 100px;
 
-    padding: 18px;
+    padding: 15px;
 
     object-fit: contain;
 
     background: #fff;
 
-    border: 1px solid transparent;
-
-    border-radius: 14px;
+    border-radius: 12px;
 
     filter: grayscale(100%);
 
-    transition: all 0.3s ease;
+    transition: .3s ease;
 }
 
 .marcas img:hover {
-    filter: grayscale(0%);
-
-    transform: translateY(-7px);
-
-    border-color: var(--rojo);
+    filter: grayscale(0);
+    transform: translateY(-6px);
 
     box-shadow:
-        0 12px 30px rgba(225,6,32,0.15);
+        0 10px 25px rgba(225,6,32,.2);
 }
-
 
 /* =========================================================
    PRODUCTOS
 ========================================================= */
 
 .productos {
+    width: 100%;
+
+    margin: 45px auto 0;
+
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(245px, 1fr));
+        repeat(auto-fit, minmax(240px, 1fr));
 
     gap: 25px;
-
-    width: min(1350px, 100%);
-
-    margin: 55px auto 0;
 }
 
 .producto {
-    position: relative;
-
-    width: 100%;
-    min-height: 435px;
+    min-width: 0;
 
     display: flex;
     flex-direction: column;
@@ -619,74 +540,63 @@ main > section {
 
     border: 1px solid var(--borde);
 
-    border-radius: 18px;
+    border-radius: 16px;
 
     text-align: center;
 
-    box-shadow:
-        0 12px 35px rgba(0,0,0,0.35);
-
-    transition: all 0.35s ease;
+    transition: .3s ease;
 }
 
 .producto:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 
-    border-color: var(--borde-hover);
+    border-color: rgba(225,6,32,.6);
 
     box-shadow:
-        0 20px 45px rgba(0,0,0,0.5),
-        0 0 25px rgba(225,6,32,0.08);
+        0 15px 35px rgba(0,0,0,.5);
 }
 
 .producto img {
     width: 100%;
-    height: 235px;
+    height: 230px;
 
     object-fit: cover;
 
-    transition: transform 0.5s ease;
+    transition: .4s ease;
 }
 
 .producto:hover img {
-    transform: scale(1.06);
+    transform: scale(1.05);
 }
 
 .producto h3 {
-    margin: 22px 18px 8px;
+    margin: 20px 12px 8px;
 
     font-family:
         'Archivo Black',
         'Arial Black',
         sans-serif;
 
-    color: #fff;
+    font-size: 17px;
 
-    font-size: 19px;
-
-    line-height: 1.25;
-
-    text-transform: uppercase;
+    line-height: 1.3;
 }
 
 .producto p {
-    margin: 0 18px 20px;
+    margin: 0 12px 18px;
 
     color: var(--gris);
 
-    font-size: 15px;
-
-    line-height: 1.5;
+    font-size: 14px;
 }
 
-.producto p strong {
+.producto strong {
     color: #fff;
 }
 
-.producto p del {
-    color: #777;
-
-    margin-right: 7px;
+.producto del {
+    margin-right: 5px;
+    color: #666;
 }
 
 .producto .btn {
@@ -695,45 +605,33 @@ main > section {
     margin-top: auto;
     margin-bottom: 22px;
 
-    padding: 11px 25px;
+    padding: 10px 22px;
 
-    background:
-        linear-gradient(
-            90deg,
-            var(--rojo),
-            #ff3b30
-        );
-
-    color: #fff;
+    background: var(--rojo);
 
     border-radius: 30px;
 
     font-family: 'Poppins', sans-serif;
 
-    font-size: 13px;
-
+    font-size: 12px;
     font-weight: 600;
 
-    transition: all 0.3s ease;
+    transition: .3s ease;
 }
 
 .producto .btn:hover {
     background: #fff;
-
     color: #000;
-
-    transform: translateY(-2px);
 }
-
 
 /* =========================================================
    CARRUSEL
 ========================================================= */
 
 .carrusel {
-    width: min(1100px, 100%);
+    width: 100%;
 
-    margin: 55px auto 0;
+    margin: 45px auto 0;
 
     display: flex;
 
@@ -745,55 +643,39 @@ main > section {
 
 .carrusel img {
     width: min(800px, 75vw);
-
     height: 470px;
 
     object-fit: cover;
 
-    border: 1px solid var(--borde);
-
     border-radius: 18px;
 
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.5);
+    border: 1px solid var(--borde);
 }
 
 .flecha {
-    flex-shrink: 0;
-
     width: 50px;
     height: 50px;
 
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
+    flex-shrink: 0;
 
     border: 1px solid var(--borde);
-
     border-radius: 50%;
 
     background: #151515;
 
     color: #fff;
 
-    font-size: 24px;
+    font-size: 22px;
 
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    transition: .3s ease;
 }
 
 .flecha:hover {
     background: var(--rojo);
-
     border-color: var(--rojo);
-
-    transform: scale(1.08);
 }
-
 
 /* =========================================================
    HR
@@ -802,13 +684,11 @@ main > section {
 hr {
     width: min(1300px, 90%);
 
-    margin: 100px auto;
+    margin: 90px auto;
 
     border: none;
-
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(255,255,255,.08);
 }
-
 
 /* =========================================================
    RESEÑAS
@@ -817,25 +697,24 @@ hr {
 .resenas-contenedor {
     width: min(1300px, 100%);
 
-    margin: 0 auto;
+    margin: auto;
 
-    display: flex;
+    display: grid;
 
-    flex-direction: column;
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(320px, .8fr);
 
     gap: 50px;
+
+    align-items: start;
 }
 
 .lista-resenas h2,
 .formulario-resena h2 {
     text-align: left;
 
-    font-size: 30px;
-}
-
-.lista-resenas h2::after,
-.formulario-resena h2::after {
-    margin-left: 0;
+    margin-bottom: 25px;
 }
 
 .reseñas {
@@ -845,12 +724,10 @@ hr {
         repeat(auto-fit, minmax(220px, 1fr));
 
     gap: 18px;
-
-    margin-top: 35px;
 }
 
 .reseña {
-    min-height: 180px;
+    min-width: 0;
 
     padding: 25px;
 
@@ -862,50 +739,30 @@ hr {
         );
 
     border: 1px solid var(--borde);
-
     border-radius: 15px;
-
-    text-align: left;
-
-    transition: all 0.3s ease;
-}
-
-.reseña:hover {
-    transform: translateY(-5px);
-
-    border-color:
-        rgba(225,6,32,0.45);
 }
 
 .reseña h3 {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 
-    color: #ffc107;
-
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .reseña p {
-    margin: 8px 0;
+    margin: 7px 0;
 
     color: var(--gris-claro);
 
     font-size: 14px;
-
     line-height: 1.6;
 }
 
-.reseña p strong {
-    color: #fff;
-}
-
-
 /* =========================================================
-   FORMULARIO
+   FORMULARIO RESEÑA
 ========================================================= */
 
 .formulario-resena {
-    padding: 35px;
+    padding: 30px;
 
     background:
         linear-gradient(
@@ -917,27 +774,20 @@ hr {
     border: 1px solid var(--borde);
 
     border-radius: 18px;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,0.35);
 }
 
 .formulario-resena form {
-    width: 100%;
-
-    margin-top: 35px;
+    margin-top: 20px;
 }
 
 .formulario-resena label {
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
     color: var(--gris-claro);
 
     font-size: 13px;
-
-    font-weight: 500;
 }
 
 .formulario-resena input,
@@ -945,34 +795,30 @@ hr {
 .formulario-resena select {
     width: 100%;
 
-    padding: 13px 15px;
+    padding: 13px;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
     background: #0b0b0b;
 
     color: #fff;
 
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,.12);
 
-    border-radius: 9px;
+    border-radius: 8px;
 
     outline: none;
+}
+
+.formulario-resena textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
 .formulario-resena input:focus,
 .formulario-resena textarea:focus,
 .formulario-resena select:focus {
     border-color: var(--rojo);
-
-    box-shadow:
-        0 0 0 3px rgba(225,6,32,0.1);
-}
-
-.formulario-resena textarea {
-    min-height: 120px;
-
-    resize: vertical;
 }
 
 .formulario-resena button {
@@ -981,95 +827,57 @@ hr {
     padding: 13px;
 
     border: none;
-
     border-radius: 30px;
 
-    background:
-        linear-gradient(
-            90deg,
-            var(--rojo),
-            #ff3b30
-        );
+    background: var(--rojo);
 
     color: #fff;
-
-    font-size: 14px;
 
     font-weight: 600;
 
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    transition: .3s ease;
 }
 
 .formulario-resena button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 25px rgba(225,6,32,0.25);
+    background: var(--rojo-hover);
+    transform: translateY(-2px);
 }
-
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer {
-    position: relative;
-
-    z-index: 20;
-
-    display: block;
-
     width: 100%;
-
-    margin: 0;
 
     padding: 70px 5% 25px;
 
     background:
         linear-gradient(
             180deg,
-            #0a0a0a 0%,
-            #030303 100%
+            #0a0a0a,
+            #030303
         );
 
-    border-top: 1px solid rgba(255,255,255,0.08);
-
-    color: #fff;
+    border-top: 1px solid rgba(255,255,255,.08);
 
     text-align: center;
-
-    font-family: 'Manrope', sans-serif;
-
-    clear: both;
 }
-
 
 /* =========================================================
-   REDES SOCIALES
+   REDES
 ========================================================= */
 
-footer .redes-sociales {
-    display: block;
-
+.redes-sociales {
     width: 100%;
 
-    margin: 0 auto 55px;
-
-    padding: 0;
-
-    text-align: center;
+    margin-bottom: 55px;
 }
 
-footer .redes-sociales h3 {
-    display: block;
-
-    margin: 0 0 25px;
-
-    padding: 0;
-
-    color: #fff;
+.redes-sociales h3 {
+    margin-bottom: 25px;
 
     font-family:
         'Archivo Black',
@@ -1078,14 +886,10 @@ footer .redes-sociales h3 {
 
     font-size: 16px;
 
-    font-weight: normal;
-
     letter-spacing: 1px;
-
-    text-align: center;
 }
 
-footer .iconos-redes {
+.iconos-redes {
     width: 100%;
 
     display: flex;
@@ -1095,116 +899,84 @@ footer .iconos-redes {
 
     gap: 15px;
 
-    margin: 0;
-    padding: 0;
+    flex-wrap: wrap;
 }
 
-footer .iconos-redes a {
-    position: relative;
+.iconos-redes a {
+    width: 48px;
+    height: 48px;
 
-    width: 48px !important;
-    height: 48px !important;
+    display: flex;
 
-    min-width: 48px;
-    min-height: 48px;
+    align-items: center;
+    justify-content: center;
 
-    display: flex !important;
+    flex-shrink: 0;
 
-    align-items: center !important;
-    justify-content: center !important;
+    background: #111;
 
-    margin: 0 !important;
-    padding: 0 !important;
+    border: 1px solid rgba(255,255,255,.15);
 
-    border: 1px solid rgba(255,255,255,0.15) !important;
-
-    border-radius: 50% !important;
-
-    background: #111 !important;
-
-    color: #fff !important;
-
-    text-decoration: none !important;
+    border-radius: 50%;
 
     overflow: hidden;
 
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: .3s ease;
 }
 
-footer .iconos-redes a:hover {
+.iconos-redes a:hover {
     transform: translateY(-5px);
 
-    border-color: var(--rojo) !important;
+    background: #181818;
 
-    background: #181818 !important;
+    border-color: var(--rojo);
 
     box-shadow:
-        0 8px 20px rgba(225,6,32,0.2);
+        0 8px 20px rgba(225,6,32,.25);
 }
 
-footer .iconos-redes a img {
-    display: block !important;
+.iconos-redes img {
+    width: 25px;
+    height: 25px;
 
-    width: 25px !important;
-    height: 25px !important;
+    object-fit: contain;
 
-    max-width: 25px !important;
-    max-height: 25px !important;
+    margin: 0;
+    padding: 0;
 
-    margin: 0 !important;
-    padding: 0 !important;
-
-    object-fit: contain !important;
-
-    border: none !important;
-
-    border-radius: 50% !important;
-
-    filter: none !important;
-
-    transform: none !important;
+    border-radius: 50%;
 }
-
 
 /* =========================================================
    INFORMACIÓN FOOTER
 ========================================================= */
 
-footer .footer-info {
+.footer-info {
     width: min(1250px, 100%);
 
-    margin: 0 auto;
+    margin: auto;
 
     padding: 45px 0;
 
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(3, 1fr);
 
-    gap: 60px;
+    gap: 50px;
 
     text-align: left;
 
-    border-top:
-        1px solid rgba(255,255,255,0.07);
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.07);
+    border-top: 1px solid rgba(255,255,255,.07);
+    border-bottom: 1px solid rgba(255,255,255,.07);
 }
 
-footer .footer-info .columna {
+.columna {
     min-width: 0;
 }
 
-footer .footer-info h4 {
-    margin: 0 0 22px;
-
-    color: #fff;
+.columna h4 {
+    margin-bottom: 20px;
 
     font-family:
         'Archivo Black',
@@ -1213,12 +985,10 @@ footer .footer-info h4 {
 
     font-size: 13px;
 
-    font-weight: normal;
-
     letter-spacing: 1.5px;
 }
 
-footer .footer-info h4::after {
+.columna h4::after {
     content: "";
 
     display: block;
@@ -1226,20 +996,17 @@ footer .footer-info h4::after {
     width: 30px;
     height: 2px;
 
-    margin-top: 10px;
+    margin-top: 9px;
 
     background: var(--rojo);
 }
 
-footer .footer-info ul {
-    margin: 0;
-    padding: 0;
-
+.columna ul {
     list-style: none;
 }
 
-footer .footer-info ul li {
-    margin: 0 0 12px;
+.columna li {
+    margin-bottom: 11px;
 
     color: #888;
 
@@ -1248,85 +1015,41 @@ footer .footer-info ul li {
     line-height: 1.6;
 }
 
-footer .footer-info ul li strong {
+.columna strong {
     color: #d5d5d5;
 }
 
-footer .footer-info ul li a {
-    display: inline;
+.columna a {
+    color: #888;
 
-    color: #888 !important;
-
-    text-decoration: none !important;
-
-    transition: color 0.3s ease;
+    transition: .3s ease;
 }
 
-footer .footer-info ul li a:hover {
-    color: var(--rojo) !important;
+.columna a:hover {
+    color: var(--rojo);
 }
-
 
 /* =========================================================
    COPYRIGHT
 ========================================================= */
 
-footer .copyright {
-    width: 100%;
-
-    margin: 0;
-    padding: 25px 0 0;
+.copyright {
+    padding-top: 25px;
 
     text-align: center;
 }
 
-footer .copyright p {
-    margin: 0;
-
+.copyright p {
     color: #555;
 
     font-size: 12px;
 }
 
-
-/* =========================================================
-   MENÚ MÓVIL
-========================================================= */
-
-.menu-movil {
-    display: none !important;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 40px;
-    height: 40px;
-
-    padding: 0;
-
-    border: none;
-
-    background: transparent;
-
-    color: #fff;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-    position: relative;
-
-    z-index: 100002;
-
-    flex-shrink: 0;
-}
-
-
 /* =========================================================
    TABLET / PORTÁTIL
 ========================================================= */
 
-@media (min-width: 801px) and (max-width: 1200px) {
+@media (min-width: 801px) and (max-width: 1250px) {
 
     .top-bar {
         padding: 0 3%;
@@ -1340,33 +1063,33 @@ footer .copyright p {
         gap: 12px;
     }
 
-    .navegacion ul li a {
-        font-size: 0.62rem;
-
-        letter-spacing: 0.2px;
-
-        white-space: nowrap;
+    .navegacion a {
+        font-size: .62rem;
+        letter-spacing: .2px;
     }
 
     .top-icons {
-        gap: 12px;
+        gap: 10px;
     }
 
     .icon-link {
-        font-size: 0.95rem;
+        font-size: .9rem;
+    }
+
+    .resenas-contenedor {
+        grid-template-columns: 1fr;
     }
 }
 
-
 /* =========================================================
-   TABLETS + CELULARES
+   TABLET + CELULAR
 ========================================================= */
 
 @media (max-width: 800px) {
 
     .top-bar {
-        min-height: 65px;
         height: 65px;
+        min-height: 65px;
 
         padding: 0 16px;
     }
@@ -1376,21 +1099,21 @@ footer .copyright p {
     }
 
     .navegacion {
-        display: none !important;
+        display: none;
     }
 
     .top-icons {
-        display: none !important;
+        display: none;
     }
 
     .menu-movil {
-        display: flex !important;
+        display: flex;
     }
 
     .navegacion.activo {
-        display: block !important;
+        position: fixed;
 
-        position: fixed !important;
+        display: block;
 
         top: 70px;
         left: 10px;
@@ -1400,81 +1123,59 @@ footer .copyright p {
 
         max-height: calc(100vh - 80px);
 
-        overflow-y: auto;
-
         padding: 8px;
 
-        background: rgba(10,10,10,0.98);
+        overflow-y: auto;
 
-        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(10,10,10,.98);
+
+        border: 1px solid rgba(255,255,255,.12);
 
         border-radius: 14px;
 
         box-shadow:
-            0 20px 50px rgba(0,0,0,0.8);
+            0 20px 50px rgba(0,0,0,.8);
 
         backdrop-filter: blur(15px);
 
-        z-index: 100001;
+        z-index: 9999;
     }
 
     .navegacion.activo ul {
-        display: flex !important;
+        display: flex;
 
         flex-direction: column;
-
-        width: 100%;
 
         gap: 0;
     }
 
-    .navegacion.activo ul li {
+    .navegacion.activo li {
         width: 100%;
     }
 
-    .navegacion.activo ul li a {
+    .navegacion.activo a {
         display: block;
 
         width: 100%;
 
-        padding: 12px 10px;
+        padding: 13px 10px;
 
-        color: #c7c7c7;
+        font-size: .75rem;
 
-        font-size: 0.75rem;
-
-        border-bottom:
-            1px solid rgba(255,255,255,0.07);
+        border-bottom: 1px solid rgba(255,255,255,.07);
     }
 
-    .navegacion.activo ul li:last-child a {
+    .navegacion.activo li:last-child a {
         border-bottom: none;
     }
 
-    .navegacion.activo ul li a:hover {
-        color: #fff;
-
-        background: rgba(255,255,255,0.05);
-    }
-
-
-    /* FOOTER TABLET */
-
-    footer {
-        padding: 55px 5% 25px;
-    }
-
-    footer .footer-info {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 40px;
+    .footer-info {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-
 /* =========================================================
-   CELULARES
+   CELULAR
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -1484,14 +1185,14 @@ footer .copyright p {
     }
 
     .top-bar {
-        min-height: 60px;
         height: 60px;
+        min-height: 60px;
 
         padding: 0 12px;
     }
 
     .logo {
-        font-size: 0.9rem;
+        font-size: .9rem;
     }
 
     .menu-movil {
@@ -1508,22 +1209,14 @@ footer .copyright p {
         right: 8px;
 
         max-height: calc(100vh - 75px);
-
-        padding: 7px;
-    }
-
-    .navegacion.activo ul li a {
-        padding: 11px 9px;
-
-        font-size: 0.72rem;
     }
 
     .lema-principal {
-        font-size: clamp(2.5rem, 13vw, 4rem);
+        font-size: clamp(2.4rem, 13vw, 4rem);
     }
 
     .subtitulo {
-        font-size: 0.85rem;
+        font-size: .82rem;
     }
 
     .subtitulo br {
@@ -1531,9 +1224,9 @@ footer .copyright p {
     }
 
     .botones-container {
-        flex-direction: column;
-
         width: 100%;
+
+        flex-direction: column;
     }
 
     .btn-rojo,
@@ -1542,119 +1235,115 @@ footer .copyright p {
     }
 
     main {
-        padding: 60px 4% 10px;
+        padding: 60px 4% 20px;
     }
 
     main > h2,
     main > section > h2 {
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
 
     .marcas {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
 
         gap: 12px;
 
-        padding: 10px;
+        padding: 5px;
     }
 
     .marcas img {
         height: 85px;
-
-        padding: 12px;
+        padding: 10px;
     }
 
     .productos {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
 
         gap: 12px;
     }
 
     .producto {
-        min-height: 360px;
-
         border-radius: 12px;
     }
 
     .producto img {
-        height: 160px;
+        height: 155px;
     }
 
     .producto h3 {
-        margin: 15px 8px 6px;
-
-        font-size: 13px;
-    }
-
-    .producto p {
-        margin: 0 8px 12px;
+        margin: 14px 7px 6px;
 
         font-size: 12px;
     }
 
-    .producto .btn {
-        margin-bottom: 15px;
-
-        padding: 9px 12px;
+    .producto p {
+        margin: 0 7px 12px;
 
         font-size: 11px;
     }
 
+    .producto .btn {
+        margin-bottom: 14px;
+
+        padding: 8px 10px;
+
+        font-size: 10px;
+    }
+
     .carrusel {
-        gap: 8px;
+        gap: 7px;
     }
 
     .carrusel img {
         width: 75vw;
-
         height: 280px;
     }
 
     .flecha {
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
 
-        font-size: 17px;
+        font-size: 16px;
     }
 
+    .resenas-contenedor {
+        grid-template-columns: 1fr;
 
-    /* FOOTER CELULAR */
+        gap: 35px;
+    }
+
+    .lista-resenas h2,
+    .formulario-resena h2 {
+        font-size: 25px;
+    }
+
+    .formulario-resena {
+        padding: 22px;
+    }
 
     footer {
         padding: 50px 18px 20px;
-
-        margin-top: 40px;
     }
 
-    footer .redes-sociales {
+    .redes-sociales {
         margin-bottom: 40px;
     }
 
-    footer .iconos-redes {
+    .iconos-redes {
         gap: 10px;
-
-        flex-wrap: wrap;
     }
 
-    footer .iconos-redes a {
-        width: 44px !important;
-        height: 44px !important;
-
-        min-width: 44px;
-        min-height: 44px;
+    .iconos-redes a {
+        width: 44px;
+        height: 44px;
     }
 
-    footer .iconos-redes a img {
-        width: 22px !important;
-        height: 22px !important;
-
-        max-width: 22px !important;
-        max-height: 22px !important;
+    .iconos-redes img {
+        width: 22px;
+        height: 22px;
     }
 
-    footer .footer-info {
+    .footer-info {
         grid-template-columns: 1fr;
 
         gap: 30px;
@@ -1664,19 +1353,14 @@ footer .copyright p {
         text-align: center;
     }
 
-    footer .footer-info h4::after {
-        margin: 10px auto 0;
+    .columna h4::after {
+        margin: 9px auto 0;
     }
 
-    footer .footer-info ul li {
+    .columna li {
         font-size: 12px;
     }
-
-    footer .copyright p {
-        font-size: 11px;
-    }
 }
-
 
 /* =========================================================
    CELULARES PEQUEÑOS
@@ -1685,14 +1369,14 @@ footer .copyright p {
 @media (max-width: 380px) {
 
     .top-bar {
-        min-height: 55px;
         height: 55px;
+        min-height: 55px;
 
         padding: 0 10px;
     }
 
     .logo {
-        font-size: 0.82rem;
+        font-size: .82rem;
     }
 
     .menu-movil {
@@ -1707,59 +1391,19 @@ footer .copyright p {
 
         left: 6px;
         right: 6px;
-
-        max-height: calc(100vh - 68px);
-
-        padding: 6px;
     }
 
-    .navegacion.activo ul li a {
+    .navegacion.activo a {
         padding: 10px 8px;
 
-        font-size: 0.68rem;
+        font-size: .68rem;
     }
 
     .productos {
         gap: 8px;
     }
 
-    .producto {
-        min-height: 330px;
-    }
-
     .producto img {
-        height: 140px;
-    }
-}
-
-
-/* =========================================================
-   PC
-========================================================= */
-
-@media (min-width: 801px) {
-
-    .menu-movil {
-        display: none !important;
-    }
-
-    .navegacion {
-        display: block !important;
-    }
-
-    .top-icons {
-        display: flex !important;
-    }
-
-    footer {
-        display: block !important;
-    }
-
-    footer .redes-sociales,
-    footer .iconos-redes,
-    footer .footer-info,
-    footer .copyright {
-        visibility: visible !important;
-        opacity: 1 !important;
+        height: 135px;
     }
 }
