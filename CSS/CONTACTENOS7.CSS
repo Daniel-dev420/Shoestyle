@@ -175,7 +175,7 @@ img {
 
     font-family: 'Poppins', sans-serif;
 
-    font-size: 0.8 5rem;
+    font-size: 0.85rem;
 
     font-weight: 600;
 
@@ -256,7 +256,6 @@ img {
 
 /* =========================================================
    BOTÓN HAMBURGUESA
-   IGUAL AL INDEX
 ========================================================= */
 
 .menu-movil {
@@ -269,6 +268,7 @@ img {
     justify-content: center;
 
     padding: 0;
+    margin: 0;
 
     border: none;
     outline: none;
@@ -281,13 +281,13 @@ img {
 
     cursor: pointer;
 
-    z-index: 100002;
+    z-index: 100003;
 
     flex-shrink: 0;
 }
 
 .menu-movil:hover {
-    color: #e50914;
+    color: #ffffff;
 }
 
 
@@ -700,6 +700,11 @@ main {
         0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
+
+/* =========================================================
+   HEADER FORMULARIO
+========================================================= */
+
 .formulario-header {
     margin-bottom: 30px;
 }
@@ -1040,7 +1045,7 @@ footer {
     }
 
     .navegacion ul li a {
-        font-size: 0.8 5rem;
+        font-size: 0.85rem;
 
         letter-spacing: 0.7px;
 
@@ -1091,14 +1096,18 @@ footer {
     }
 
 
-    /* NAV OCULTO */
+    /* =====================================================
+       OCULTAR NAVEGACIÓN NORMAL
+    ===================================================== */
 
     .navegacion {
         display: none !important;
     }
 
 
-    /* ICONOS OCULTOS */
+    /* =====================================================
+       OCULTAR ICONOS
+    ===================================================== */
 
     .top-icons {
         display: none !important;
@@ -1106,19 +1115,19 @@ footer {
 
 
     /* =====================================================
-       HAMBURGUESA — IGUAL AL INDEX
+       HAMBURGUESA
     ===================================================== */
 
     .menu-movil {
         display: flex !important;
 
-        align-items: center;
-        justify-content: center;
-
         width: 42px;
         height: 42px;
 
         margin-left: auto;
+
+        align-items: center;
+        justify-content: center;
 
         padding: 0;
 
@@ -1133,18 +1142,18 @@ footer {
 
         cursor: pointer;
 
-        z-index: 100002;
+        z-index: 100003;
 
         flex-shrink: 0;
     }
 
     .menu-movil:hover {
-        color: #e50914;
+        color: #ffffff;
     }
 
 
     /* =====================================================
-       MENÚ ABIERTO
+       MENÚ ABIERTO — ESTILO INDEX
     ===================================================== */
 
     .navegacion.activo {
@@ -1153,71 +1162,108 @@ footer {
 
         position: fixed !important;
 
-        top: 70px;
+        top: 65px;
 
-        left: 10px;
-        right: 10px;
+        left: 0;
 
-        width: auto;
+        width: 100%;
 
-        max-height: calc(100vh - 85px);
+        max-height: calc(100vh - 65px);
 
         overflow-y: auto;
 
-        padding: 8px;
+        padding: 0;
 
-        background: rgba(10, 10, 10, 0.98);
+        margin: 0;
 
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #080808;
 
-        border-radius: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+        border-left: none;
+        border-right: none;
+
+        border-radius: 0;
 
         box-shadow:
-            0 20px 50px rgba(0, 0, 0, 0.8);
+            0 15px 35px rgba(0, 0, 0, 0.65);
 
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
 
-        z-index: 100001;
+        z-index: 100002;
     }
 
     .navegacion.activo ul {
+
+        width: 100%;
 
         display: flex !important;
 
         flex-direction: column;
 
-        width: 100%;
+        align-items: stretch;
+
+        justify-content: flex-start;
 
         gap: 0;
+
+        padding: 0;
+
+        margin: 0;
 
         list-style: none;
     }
 
     .navegacion.activo ul li {
+
         width: 100%;
+
+        margin: 0;
+
+        padding: 0;
     }
 
     .navegacion.activo ul li a {
 
-        display: block;
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
 
         width: 100%;
 
-        padding: 13px 12px;
+        min-height: 50px;
 
-        color: #c7c7c7;
+        padding: 14px 20px;
 
-        font-family: 'Poppins', sans-serif;
+        color: rgba(255, 255, 255, 0.75);
 
-        font-size: 0.75rem;
+        background: transparent;
 
-        font-weight: 600;
+        border: none;
 
         border-bottom:
             1px solid rgba(255, 255, 255, 0.07);
 
-        transition: 0.2s ease;
+        font-family: 'Poppins', sans-serif;
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+        letter-spacing: 0.5px;
+
+        text-align: left;
+
+        white-space: normal;
+
+        transition:
+            background 0.2s ease,
+            color 0.2s ease;
     }
 
     .navegacion.activo ul li:last-child a {
@@ -1225,26 +1271,52 @@ footer {
     }
 
     .navegacion.activo ul li a:hover {
+
         color: #ffffff;
 
         background: rgba(255, 255, 255, 0.05);
     }
 
+    .navegacion.activo ul li a.activo {
+
+        color: #ffffff;
+
+        background: rgba(255, 255, 255, 0.03);
+    }
+
     .navegacion.activo ul li a.activo::after {
-        display: none !important;
+
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+
+        top: 0;
+
+        bottom: 0;
+
+        width: 3px;
+
+        height: 100%;
+
+        background: #e50914;
     }
 
 
     /* =====================================================
-       HERO CENTRADO
+       HERO
     ===================================================== */
 
     .contenido-centro {
+
         width: 92%;
 
         min-height: calc(100vh - 65px);
 
         display: flex;
+
+        flex-direction: column;
 
         align-items: center;
 
@@ -1254,6 +1326,7 @@ footer {
     }
 
     .etiqueta-hero {
+
         width: 100%;
 
         font-size: 11px;
@@ -1264,6 +1337,7 @@ footer {
     }
 
     .titulo-hero {
+
         width: 100%;
 
         margin-left: auto;
@@ -1275,6 +1349,7 @@ footer {
     }
 
     .subtitulo {
+
         width: 100%;
 
         max-width: 500px;
@@ -1288,13 +1363,16 @@ footer {
     }
 
 
-    /* CONTACTO */
+    /* =====================================================
+       CONTACTO
+    ===================================================== */
 
     .contacto {
         padding: 80px 5%;
     }
 
     .contacto-seccion {
+
         width: 100%;
 
         grid-template-columns: 1fr;
@@ -1303,6 +1381,7 @@ footer {
     }
 
     .datos-contacto {
+
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
@@ -1312,7 +1391,9 @@ footer {
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     .footer-info {
         gap: 35px;
@@ -1331,6 +1412,7 @@ footer {
     }
 
     .top-bar {
+
         min-height: 60px;
         height: 60px;
 
@@ -1342,31 +1424,65 @@ footer {
     }
 
 
-    /* HAMBURGUESA */
+    /* =====================================================
+       HAMBURGUESA
+    ===================================================== */
 
     .menu-movil {
+
         display: flex !important;
 
         width: 40px;
         height: 40px;
 
-        font-size: 22px;
+        margin-left: auto;
 
         align-items: center;
         justify-content: center;
+
+        padding: 0;
+
+        font-size: 22px;
     }
+
+
+    /* =====================================================
+       MENÚ ABIERTO
+    ===================================================== */
 
     .navegacion.activo {
-        top: 65px;
 
-        left: 8px;
-        right: 8px;
+        top: 60px;
+
+        left: 0;
+
+        width: 100%;
+
+        max-height: calc(100vh - 60px);
+
+        overflow-y: auto;
+
+        border-radius: 0;
+    }
+
+    .navegacion.activo ul li a {
+
+        min-height: 48px;
+
+        padding: 13px 18px;
+
+        font-size: 12px;
+
+        text-align: left;
     }
 
 
-    /* HERO */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .contenido-centro {
+
         width: 94%;
 
         min-height: calc(100vh - 60px);
@@ -1379,6 +1495,7 @@ footer {
     }
 
     .etiqueta-hero {
+
         width: 100%;
 
         font-size: 9px;
@@ -1391,6 +1508,7 @@ footer {
     }
 
     .titulo-hero {
+
         width: 100%;
 
         font-size: clamp(40px, 15vw, 60px);
@@ -1401,6 +1519,7 @@ footer {
     }
 
     .subtitulo {
+
         width: 100%;
 
         margin-top: 18px;
@@ -1419,7 +1538,9 @@ footer {
     }
 
 
-    /* CONTACTO */
+    /* =====================================================
+       CONTACTO
+    ===================================================== */
 
     .contacto {
         padding: 65px 18px;
@@ -1434,6 +1555,7 @@ footer {
     }
 
     .datos-contacto {
+
         grid-template-columns: 1fr;
 
         gap: 14px;
@@ -1446,6 +1568,7 @@ footer {
     }
 
     .dato-icono {
+
         flex-basis: 43px;
 
         width: 43px;
@@ -1453,9 +1576,12 @@ footer {
     }
 
 
-    /* FORMULARIO */
+    /* =====================================================
+       FORMULARIO
+    ===================================================== */
 
     .formulario-contacto {
+
         padding: 25px 18px;
 
         border-radius: 12px;
@@ -1482,7 +1608,9 @@ footer {
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     footer {
         padding-top: 50px;
@@ -1493,6 +1621,7 @@ footer {
     }
 
     .redes-sociales h3 {
+
         font-size: 12px;
 
         letter-spacing: 1.5px;
@@ -1503,16 +1632,19 @@ footer {
     }
 
     .iconos-redes a {
+
         width: 40px;
         height: 40px;
     }
 
     .iconos-redes img {
+
         width: 21px;
         height: 21px;
     }
 
     .footer-info {
+
         width: 88%;
 
         grid-template-columns: 1fr;
@@ -1539,6 +1671,7 @@ footer {
 @media (max-width: 380px) {
 
     .top-bar {
+
         min-height: 55px;
         height: 55px;
 
@@ -1550,6 +1683,7 @@ footer {
     }
 
     .menu-movil {
+
         width: 38px;
         height: 38px;
 
@@ -1557,21 +1691,27 @@ footer {
     }
 
     .navegacion.activo {
-        top: 60px;
 
-        left: 6px;
-        right: 6px;
+        top: 55px;
 
-        max-height: calc(100vh - 68px);
+        left: 0;
+
+        width: 100%;
+
+        max-height: calc(100vh - 55px);
     }
 
     .navegacion.activo ul li a {
-        padding: 10px 8px;
 
-        font-size: 0.68rem;
+        min-height: 44px;
+
+        padding: 10px 15px;
+
+        font-size: 11px;
     }
 
     .titulo-hero {
+
         width: 100%;
 
         font-size: 3rem;
@@ -1580,6 +1720,7 @@ footer {
     }
 
     .subtitulo {
+
         width: 100%;
 
         text-align: center;
@@ -1598,6 +1739,7 @@ footer {
     }
 
     .iconos-redes a {
+
         width: 37px;
         height: 37px;
     }
@@ -1624,7 +1766,9 @@ footer {
 
     .titulo-hero,
     .subtitulo {
+
         text-align: center;
+
         margin-left: auto;
         margin-right: auto;
     }
