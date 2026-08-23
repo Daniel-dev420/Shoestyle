@@ -175,16 +175,15 @@ select {
 
     flex-shrink: 0;
 
-    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
 
     font-family:
-        'Archivo Black',
+        'Impact',
         'Arial Black',
         sans-serif;
 
-    font-size: 1.6rem;
-
-    letter-spacing: 1px;
+    color: #fff;
 }
 
 .logo-shoe {
@@ -229,19 +228,17 @@ select {
 
     display: inline-block;
 
-    color: #c5c5c5;
+    color: #b3b3b3;
 
     font-family: 'Poppins', sans-serif;
 
-    font-size: .78rem;
+    font-size: 0.8 5rem;
 
     font-weight: 600;
 
-    letter-spacing: .5px;
+    letter-spacing: 0.7px;
 
-    white-space: nowrap;
-
-    transition: .3s ease;
+    transition: color 0.3s ease;
 }
 
 .navegacion li a:hover {
@@ -265,9 +262,7 @@ select {
     transition: width .3s ease;
 }
 
-.navegacion li a:hover::after {
-    width: 100%;
-}
+
 
 
 /* =========================================================
@@ -336,18 +331,18 @@ select {
 
 .lema-principal {
 
-    margin: 0;
-
     font-family:
-        'Archivo Black',
+        'Impact',
         'Arial Black',
         sans-serif;
 
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(3.5rem, 8vw, 6rem);
 
-    line-height: .95;
+    line-height: 0.95;
 
     letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
 .texto-destacado {
