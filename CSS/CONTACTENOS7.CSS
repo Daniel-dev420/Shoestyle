@@ -14,13 +14,14 @@
 :root {
     --negro: #080808;
     --negro-2: #111111;
-    --negro-3: #181818;
+    --negro-3: #171717;
 
     --blanco: #ffffff;
-    --gris: #aaaaaa;
+    --gris: #bdbdbd;
+    --gris-oscuro: #777777;
 
     --rojo: #e50914;
-    --rojo-hover: #ff1a26;
+    --rojo-hover: #ff1a25;
 
     --borde: rgba(255,255,255,.10);
 }
@@ -41,8 +42,8 @@ html {
 }
 
 body {
-    width: 100%;
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 
     background: var(--negro);
     color: var(--blanco);
@@ -50,11 +51,6 @@ body {
     font-family: 'Manrope', sans-serif;
 
     overflow-x: hidden;
-}
-
-img {
-    max-width: 100%;
-    display: block;
 }
 
 a {
@@ -68,6 +64,22 @@ textarea {
     font: inherit;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+#contenedor {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
 
 /* =========================================================
    BANNER
@@ -78,10 +90,17 @@ textarea {
 
     width: 100%;
     height: 100vh;
-    min-height: 650px;
+    min-height: 680px;
 
     overflow: hidden;
+
+    background: #000;
 }
+
+
+/* =========================================================
+   IMAGEN DEL BANNER
+========================================================= */
 
 .imagen-banner {
     position: absolute;
@@ -91,7 +110,7 @@ textarea {
     width: 100%;
     height: 100%;
 
-    z-index: 1;
+    z-index: 0;
 }
 
 .imagen-banner img {
@@ -99,6 +118,8 @@ textarea {
     height: 100%;
 
     object-fit: cover;
+
+    object-position: center;
 }
 
 .capa-oscura {
@@ -110,8 +131,8 @@ textarea {
         linear-gradient(
             to bottom,
             rgba(0,0,0,.70),
-            rgba(0,0,0,.35) 45%,
-            rgba(0,0,0,.85)
+            rgba(0,0,0,.40) 40%,
+            rgba(0,0,0,.82)
         );
 }
 
@@ -127,16 +148,18 @@ textarea {
     width: 100%;
     min-height: 90px;
 
-    padding: 0 4%;
+    padding: 0 5%;
 
     display: flex;
     align-items: center;
 
-    background: rgba(5,5,5,.35);
+    gap: 30px;
+
+    background: rgba(0,0,0,.30);
 
     border-bottom: 1px solid rgba(255,255,255,.08);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
 }
 
 
@@ -155,9 +178,21 @@ textarea {
     font-weight: 900;
 
     letter-spacing: -1px;
+
+    white-space: nowrap;
+
+    transition: .3s ease;
 }
 
 .logo-rojo {
+    color: var(--rojo);
+}
+
+.logo:hover {
+    color: #fff;
+}
+
+.logo:hover .logo-rojo {
     color: var(--rojo);
 }
 
@@ -167,61 +202,115 @@ textarea {
 ========================================================= */
 
 .navegacion {
-    margin-left: auto;
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 10px;
 }
 
 .navegacion ul {
     display: flex;
-    align-items: center;
 
-    gap: 16px;
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
 
     list-style: none;
+}
+
+.navegacion li {
+    position: relative;
 }
 
 .navegacion a {
     position: relative;
 
-    display: block;
+    display: inline-block;
 
-    padding: 10px 2px;
+    padding: 10px 0;
 
-    color: rgba(255,255,255,.85);
+    color: #fff;
 
     font-family: 'Poppins', sans-serif;
 
-    font-size: .62rem;
-    font-weight: 700;
+    font-size: .68rem;
+    font-weight: 600;
 
-    letter-spacing: .4px;
+    letter-spacing: .5px;
+
+    white-space: nowrap;
 
     transition: color .3s ease;
 }
 
-/* IMPORTANTE:
-   SIN LÍNEA ROJA DEBAJO */
 
-.navegacion a::after {
-    display: none !important;
+/* =========================================================
+   IMPORTANTE:
+   EL TEXTO NO CAMBIA A ROJO
+========================================================= */
+
+.navegacion a:hover {
+    color: #fff;
 }
 
-.navegacion a:hover,
 .navegacion a.activo {
-    color: var(--rojo);
+    color: #fff;
 }
 
 
 /* =========================================================
-   ICONOS TOP
+   LÍNEA ROJA
+   SOLO APARECE EN LA PÁGINA ACTIVA
+========================================================= */
+
+.navegacion a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--rojo);
+
+    transition: width .3s ease;
+}
+
+
+/* NO línea al pasar el mouse */
+
+.navegacion a:hover::after {
+    width: 0;
+}
+
+
+/* SOLO ACTIVO */
+
+.navegacion a.activo::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   ICONOS DEL TOP BAR
 ========================================================= */
 
 .top-icons {
+    flex: 0 0 auto;
+
     display: flex;
     align-items: center;
 
     gap: 10px;
 
-    margin-left: 18px;
+    margin-left: auto;
 }
 
 .icon-link {
@@ -245,6 +334,7 @@ textarea {
     color: #fff;
 
     background: var(--rojo);
+
     border-color: var(--rojo);
 
     transform: translateY(-2px);
@@ -252,11 +342,13 @@ textarea {
 
 
 /* =========================================================
-   MENÚ MÓVIL
+   BOTÓN HAMBURGUESA
 ========================================================= */
 
 .menu-movil {
     display: none;
+
+    flex: 0 0 auto;
 
     width: 42px;
     height: 42px;
@@ -264,9 +356,10 @@ textarea {
     align-items: center;
     justify-content: center;
 
-    margin-left: 10px;
+    margin-left: 5px;
 
     color: #fff;
+
     background: rgba(0,0,0,.75);
 
     border: 1px solid rgba(255,255,255,.25);
@@ -291,10 +384,15 @@ textarea {
 
     margin: 0 auto;
 
-    padding-top: 145px;
+    padding-top: 190px;
 
     text-align: center;
 }
+
+
+/* =========================================================
+   ETIQUETA
+========================================================= */
 
 .etiqueta-hero {
     margin-bottom: 15px;
@@ -309,6 +407,11 @@ textarea {
     letter-spacing: 4px;
 }
 
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
 .titulo-hero {
     color: #fff;
 
@@ -316,10 +419,17 @@ textarea {
 
     font-size: clamp(4rem, 9vw, 8rem);
 
+    font-weight: 400;
+
     line-height: .9;
 
     letter-spacing: 3px;
 }
+
+
+/* =========================================================
+   SUBTÍTULO
+========================================================= */
 
 .subtitulo {
     margin-top: 25px;
@@ -329,37 +439,17 @@ textarea {
     font-family: 'Poppins', sans-serif;
 
     font-size: 1rem;
+
+    line-height: 1.6;
 }
 
 
 /* =========================================================
-   LEMA
+   LEMA OCULTO
 ========================================================= */
 
 .lema-centro {
-    position: absolute;
-    z-index: 5;
-
-    left: 50%;
-    bottom: 70px;
-
-    width: 100%;
-
-    padding: 0 20px;
-
-    transform: translateX(-50%);
-
-    text-align: center;
-}
-
-.lema-centro p {
-    color: rgba(255,255,255,.85);
-
-    font-family: 'Bebas Neue', sans-serif;
-
-    font-size: clamp(1.1rem, 2vw, 1.7rem);
-
-    letter-spacing: 5px;
+    display: none !important;
 }
 
 
@@ -373,7 +463,7 @@ textarea {
     z-index: 5;
 
     left: 50%;
-    bottom: 20px;
+    bottom: 25px;
 
     transform: translateX(-50%);
 }
@@ -414,6 +504,7 @@ textarea {
         transform: translateY(12px);
         opacity: 0;
     }
+
 }
 
 
@@ -453,7 +544,7 @@ textarea {
 
 
 /* =========================================================
-   INFORMACIÓN
+   INFORMACIÓN DE CONTACTO
 ========================================================= */
 
 .contacto-info {
@@ -486,6 +577,8 @@ textarea {
 
     font-size: clamp(3.5rem, 6vw, 5.5rem);
 
+    font-weight: 400;
+
     line-height: .9;
 
     letter-spacing: 2px;
@@ -505,7 +598,7 @@ textarea {
 
 
 /* =========================================================
-   DATOS
+   DATOS DE CONTACTO
 ========================================================= */
 
 .datos-contacto {
@@ -515,7 +608,8 @@ textarea {
 
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     gap: 35px 30px;
 }
@@ -568,6 +662,8 @@ textarea {
 .dato p {
     color: #aaa;
 
+    font-family: 'Manrope', sans-serif;
+
     font-size: .82rem;
 
     line-height: 1.6;
@@ -577,14 +673,11 @@ textarea {
 
 
 /* =========================================================
-   FORMULARIO — BLOQUE PRINCIPAL
+   FORMULARIO
 ========================================================= */
 
 .formulario-contacto {
-    position: relative;
-
     width: 100%;
-    min-width: 0;
 
     padding: 45px;
 
@@ -594,9 +687,10 @@ textarea {
 
     border-top: 3px solid var(--rojo);
 
-    border-radius: 3px;
+    border-radius: 8px;
 
-    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.4);
 }
 
 
@@ -605,14 +699,10 @@ textarea {
 ========================================================= */
 
 .formulario-header {
-    width: 100%;
-
     margin-bottom: 30px;
 }
 
 .formulario-etiqueta {
-    display: block;
-
     color: var(--rojo);
 
     font-family: 'Poppins', sans-serif;
@@ -632,20 +722,9 @@ textarea {
 
     font-size: 3rem;
 
-    line-height: 1;
+    font-weight: 400;
 
     letter-spacing: 1px;
-}
-
-
-/* =========================================================
-   FORM
-========================================================= */
-
-.formulario-contacto form {
-    width: 100%;
-
-    display: block;
 }
 
 
@@ -661,8 +740,6 @@ textarea {
 
 .campo label {
     display: block;
-
-    width: 100%;
 
     margin-bottom: 8px;
 
@@ -681,7 +758,6 @@ textarea {
     display: block;
 
     width: 100%;
-    max-width: 100%;
 
     color: #fff;
 
@@ -689,7 +765,7 @@ textarea {
 
     border: 1px solid #303030;
 
-    border-radius: 4px;
+    border-radius: 6px;
 
     outline: none;
 
@@ -699,8 +775,7 @@ textarea {
 
     transition:
         border-color .3s ease,
-        box-shadow .3s ease,
-        background .3s ease;
+        box-shadow .3s ease;
 }
 
 .campo input {
@@ -724,8 +799,6 @@ textarea {
 
 .campo input:focus,
 .campo textarea:focus {
-    background: #1b1b1b;
-
     border-color: var(--rojo);
 
     box-shadow:
@@ -739,9 +812,11 @@ textarea {
 
 .formulario-contacto form button {
     width: 100%;
-    min-height: 52px;
+
+    min-height: 54px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -749,14 +824,17 @@ textarea {
 
     margin-top: 8px;
 
-    padding: 14px 20px;
+    padding: 0 20px;
 
     color: #fff;
 
     background: var(--rojo);
 
-    border: 0;
-    border-radius: 4px;
+    border: none;
+
+    /* MÁS REDONDEADO */
+
+    border-radius: 12px;
 
     font-family: 'Poppins', sans-serif;
 
@@ -767,7 +845,10 @@ textarea {
 
     cursor: pointer;
 
-    transition: .3s ease;
+    transition:
+        background .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .formulario-contacto form button:hover {
@@ -777,6 +858,10 @@ textarea {
 
     box-shadow:
         0 10px 25px rgba(229,9,20,.25);
+}
+
+.formulario-contacto form button i {
+    font-size: .85rem;
 }
 
 
@@ -794,7 +879,7 @@ footer {
 
 
 /* =========================================================
-   REDES
+   REDES SOCIALES
 ========================================================= */
 
 .redes-sociales {
@@ -816,6 +901,8 @@ footer {
 
     font-size: .8rem;
 
+    font-weight: 700;
+
     letter-spacing: 2px;
 }
 
@@ -833,6 +920,7 @@ footer {
     height: 45px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -840,7 +928,9 @@ footer {
 
     overflow: hidden;
 
-    transition: .3s ease;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .iconos-redes img {
@@ -852,6 +942,9 @@ footer {
 
 .iconos-redes a:hover {
     transform: translateY(-5px) scale(1.08);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.35);
 }
 
 
@@ -862,13 +955,14 @@ footer {
 .footer-info {
     width: min(1200px, 90%);
 
-    margin: auto;
+    margin: 0 auto;
 
     padding: 55px 0;
 
     display: grid;
 
-    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
     gap: 60px;
 }
@@ -881,6 +975,7 @@ footer {
     font-family: 'Bebas Neue', sans-serif;
 
     font-size: 1.5rem;
+    font-weight: 400;
 
     letter-spacing: 1px;
 }
@@ -894,6 +989,8 @@ footer {
 
     color: #888;
 
+    font-family: 'Manrope', sans-serif;
+
     font-size: .8rem;
 
     line-height: 1.6;
@@ -902,7 +999,7 @@ footer {
 .columna a {
     color: #888;
 
-    transition: .3s ease;
+    transition: color .3s ease;
 }
 
 .columna a:hover {
@@ -911,6 +1008,8 @@ footer {
 
 .columna strong {
     color: #ccc;
+
+    font-weight: 700;
 }
 
 
@@ -931,32 +1030,40 @@ footer {
 .copyright p {
     color: #666;
 
+    font-family: 'Manrope', sans-serif;
+
     font-size: .72rem;
 }
 
 
 /* =========================================================
-   LAPTOP
+   LAPTOPS
 ========================================================= */
 
 @media (max-width: 1250px) {
 
     .top-bar {
         padding: 0 25px;
+
+        gap: 20px;
+    }
+
+    .navegacion {
+        margin-left: 5px;
     }
 
     .navegacion ul {
-        gap: 10px;
+        gap: 14px;
     }
 
     .navegacion a {
-        font-size: .58rem;
+        font-size: .62rem;
     }
 
     .top-icons {
-        gap: 6px;
+        gap: 7px;
 
-        margin-left: 10px;
+        margin-left: 5px;
     }
 
     .icon-link {
@@ -971,7 +1078,7 @@ footer {
 
 
 /* =========================================================
-   TABLET
+   TABLETS
 ========================================================= */
 
 @media (max-width: 950px) {
@@ -981,6 +1088,8 @@ footer {
 
         padding: 0 22px;
     }
+
+    /* NAV DESKTOP OCULTO */
 
     .navegacion {
         position: absolute;
@@ -1034,8 +1143,11 @@ footer {
     }
 
     .navegacion a::after {
-        display: none !important;
+        display: none;
     }
+
+
+    /* ICONOS */
 
     .top-icons {
         margin-left: auto;
@@ -1043,9 +1155,15 @@ footer {
         margin-right: 5px;
     }
 
+
+    /* HAMBURGUESA */
+
     .menu-movil {
         display: flex;
     }
+
+
+    /* CONTACTO */
 
     .contacto-seccion {
         grid-template-columns: 1fr;
@@ -1061,6 +1179,9 @@ footer {
         width: 100%;
     }
 
+
+    /* FOOTER */
+
     .footer-info {
         gap: 35px;
     }
@@ -1068,7 +1189,7 @@ footer {
 
 
 /* =========================================================
-   MÓVIL
+   MÓVILES
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -1079,10 +1200,15 @@ footer {
         min-height: 600px;
     }
 
+
+    /* TOP BAR */
+
     .top-bar {
         min-height: 70px;
 
         padding: 0 15px;
+
+        gap: 10px;
     }
 
     .logo {
@@ -1109,6 +1235,9 @@ footer {
         margin-left: 6px;
     }
 
+
+    /* NAV */
+
     .navegacion {
         top: 70px;
 
@@ -1123,10 +1252,13 @@ footer {
         font-size: .78rem;
     }
 
+
+    /* HERO */
+
     .contenido-centro {
         width: 94%;
 
-        padding-top: 125px;
+        padding-top: 145px;
     }
 
     .etiqueta-hero {
@@ -1151,19 +1283,15 @@ footer {
         line-height: 1.6;
     }
 
-    .lema-centro {
-        bottom: 65px;
 
-        padding: 0 15px;
+    /* SCROLL */
+
+    .scroll-indicator {
+        bottom: 20px;
     }
 
-    .lema-centro p {
-        font-size: .95rem;
 
-        letter-spacing: 2px;
-
-        line-height: 1.3;
-    }
+    /* CONTACTO */
 
     .contacto {
         padding: 65px 18px;
@@ -1202,14 +1330,13 @@ footer {
         height: 44px;
     }
 
-    /* FORMULARIO MÓVIL */
+
+    /* FORMULARIO */
 
     .formulario-contacto {
-        width: 100%;
-
         padding: 25px 18px;
 
-        margin: 0;
+        border-radius: 8px;
     }
 
     .formulario-header {
@@ -1224,13 +1351,14 @@ footer {
         margin-bottom: 18px;
     }
 
-    .campo input {
-        height: 46px;
+    .formulario-contacto form button {
+        min-height: 52px;
+
+        border-radius: 12px;
     }
 
-    .campo textarea {
-        min-height: 130px;
-    }
+
+    /* FOOTER */
 
     .redes-sociales {
         padding: 40px 15px;
@@ -1272,7 +1400,7 @@ footer {
 
 
 /* =========================================================
-   MÓVIL PEQUEÑO
+   MÓVILES MUY PEQUEÑOS
 ========================================================= */
 
 @media (max-width: 400px) {
@@ -1300,7 +1428,7 @@ footer {
     }
 
     .contenido-centro {
-        padding-top: 115px;
+        padding-top: 130px;
     }
 
     .titulo-hero {
