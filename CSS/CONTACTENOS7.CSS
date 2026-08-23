@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 
-/* =========================================================
+/* =====================================================
    VARIABLES
-========================================================= */
+===================================================== */
 
 :root {
 
@@ -21,16 +21,14 @@
     --blanco: #ffffff;
     --gris-claro: #c7c7c7;
     --gris: #8c8c8c;
-    --gris-oscuro: #303030;
 
-    --borde: rgba(255, 255, 255, 0.08);
-    --borde-hover: rgba(225, 6, 32, 0.65);
+    --borde: rgba(255,255,255,.08);
 }
 
 
-/* =========================================================
+/* =====================================================
    RESET
-========================================================= */
+===================================================== */
 
 * {
     margin: 0;
@@ -45,19 +43,12 @@ html {
 body {
 
     margin: 0;
-    padding: 0;
 
-    font-family: 'Manrope', sans-serif;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #151515 0%,
-            #050505 45%,
-            #030303 100%
-        );
+    background: #050505;
 
     color: var(--blanco);
+
+    font-family: 'Manrope', sans-serif;
 
     overflow-x: hidden;
 }
@@ -73,31 +64,27 @@ img {
 
 button,
 input,
-textarea,
-select {
+textarea {
     font-family: inherit;
 }
 
 
-/* =========================================================
+/* =====================================================
    CONTENEDOR
-========================================================= */
+===================================================== */
 
 #contenedor {
 
     width: 100%;
     min-height: 100vh;
 
-    background: var(--fondo);
-
-    box-shadow:
-        0 0 30px rgba(0, 0, 0, 0.7);
+    background: #050505;
 }
 
 
-/* =========================================================
+/* =====================================================
    BANNER
-========================================================= */
+===================================================== */
 
 .banner-portada {
 
@@ -116,14 +103,12 @@ select {
     align-items: center;
 
     overflow: hidden;
-
-    color: #ffffff;
 }
 
 
-/* =========================================================
-   IMAGEN DEL BANNER
-========================================================= */
+/* =====================================================
+   IMAGEN
+===================================================== */
 
 .imagen-banner {
 
@@ -135,8 +120,6 @@ select {
     height: 100%;
 
     z-index: 1;
-
-    overflow: hidden;
 }
 
 .imagen-banner img {
@@ -153,34 +136,32 @@ select {
 
     inset: 0;
 
-    width: 100%;
-    height: 100%;
-
     background:
         linear-gradient(
             180deg,
-            rgba(0, 0, 0, 0.55),
-            rgba(0, 0, 0, 0.82)
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.85)
         );
 
     z-index: 2;
 }
 
 
-/* =========================================================
+/* =====================================================
    TOP BAR
-========================================================= */
+===================================================== */
 
 .top-bar {
 
     position: relative;
 
-    z-index: 10;
+    z-index: 20;
 
     width: 100%;
+
     min-height: 90px;
 
-    padding: 0 6%;
+    padding: 0 5%;
 
     display: flex;
 
@@ -188,34 +169,35 @@ select {
 
     justify-content: space-between;
 
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.12);
+    gap: 25px;
 
-    background:
-        rgba(0, 0, 0, 0.25);
+    background: rgba(0,0,0,.28);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.12);
 
     backdrop-filter: blur(10px);
 }
 
 
-/* =========================================================
+/* =====================================================
    LOGO
-========================================================= */
+===================================================== */
 
 .logo {
 
-    font-size: 1.5rem;
+    flex-shrink: 0;
 
-    letter-spacing: 1px;
+    color: #fff;
 
     font-family:
         'Impact',
         'Arial Black',
         sans-serif;
 
-    flex-shrink: 0;
+    font-size: 1.45rem;
 
-    color: #ffffff;
+    letter-spacing: 1px;
 }
 
 .logo-rojo {
@@ -223,69 +205,81 @@ select {
 }
 
 
-/* =========================================================
+/* =====================================================
    NAVEGACIÓN
-========================================================= */
+===================================================== */
+
+.navegacion {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+}
 
 .navegacion ul {
-
-    list-style: none;
 
     display: flex;
 
     align-items: center;
 
-    gap: 30px;
+    justify-content: center;
+
+    gap: 25px;
+
+    list-style: none;
 }
 
-.navegacion ul li a {
+.navegacion a {
 
     position: relative;
 
-    color: #b3b3b3;
+    color: #bdbdbd;
 
     font-family: 'Poppins', sans-serif;
 
-    font-size: 0.85rem;
+    font-size: .78rem;
 
     font-weight: 600;
 
-    letter-spacing: 0.7px;
+    letter-spacing: .4px;
 
     white-space: nowrap;
 
-    transition:
-        color 0.3s ease;
+    transition: .3s;
 }
 
-.navegacion ul li a:hover,
-.navegacion ul li a.activo {
+.navegacion a:hover,
+.navegacion a.activo {
 
-    color: #ffffff;
+    color: #fff;
 }
 
-.navegacion ul li a.activo::after {
+.navegacion a.activo::after {
 
     content: "";
 
     position: absolute;
 
     left: 0;
-    bottom: -8px;
+
+    bottom: -9px;
 
     width: 100%;
+
     height: 2px;
 
     background: var(--rojo);
 
     box-shadow:
-        0 0 10px rgba(225, 6, 32, 0.7);
+        0 0 10px rgba(225,6,32,.7);
 }
 
 
-/* =========================================================
-   ICONOS TOP
-========================================================= */
+/* =====================================================
+   ICONOS
+===================================================== */
 
 .top-icons {
 
@@ -293,22 +287,18 @@ select {
 
     align-items: center;
 
-    gap: 20px;
-
-    font-size: 1.2rem;
+    gap: 18px;
 
     flex-shrink: 0;
 }
 
 .icon-link {
 
-    color: #ffffff;
+    color: #fff;
 
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 
-    transition:
-        color 0.3s ease,
-        transform 0.2s ease;
+    transition: .3s;
 }
 
 .icon-link:hover {
@@ -319,9 +309,37 @@ select {
 }
 
 
-/* =========================================================
-   CONTENIDO HERO
-========================================================= */
+/* =====================================================
+   MENU MOVIL
+===================================================== */
+
+.menu-movil {
+
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .contenido-centro {
 
@@ -329,13 +347,13 @@ select {
 
     z-index: 10;
 
-    width: min(900px, 90%);
+    width: min(900px,90%);
+
+    padding: 20px;
 
     text-align: center;
 
     margin-top: -30px;
-
-    padding: 20px;
 }
 
 .etiqueta-hero {
@@ -344,7 +362,7 @@ select {
 
     color: var(--rojo);
 
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Bebas Neue',sans-serif;
 
     font-size: 1.2rem;
 
@@ -353,19 +371,19 @@ select {
 
 .titulo-hero {
 
+    color: #fff;
+
     font-family:
         'Archivo Black',
         'Arial Black',
         sans-serif;
 
     font-size:
-        clamp(3rem, 7vw, 6rem);
+        clamp(3rem,7vw,6rem);
 
-    line-height: 0.95;
+    line-height: .95;
 
     letter-spacing: -2px;
-
-    color: #ffffff;
 }
 
 .subtitulo {
@@ -374,18 +392,16 @@ select {
 
     color: #d0d0d0;
 
-    font-family: 'Manrope', sans-serif;
-
     font-size:
-        clamp(0.9rem, 2vw, 1.1rem);
+        clamp(.9rem,2vw,1.1rem);
 
     line-height: 1.6;
 }
 
 
-/* =========================================================
+/* =====================================================
    LEMA
-========================================================= */
+===================================================== */
 
 .lema-centro {
 
@@ -395,26 +411,27 @@ select {
 
     width: 100%;
 
-    text-align: center;
-
     margin-bottom: 25px;
+
+    text-align: center;
 }
 
 .lema-centro p {
 
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255,255,255,.75);
 
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Bebas Neue',sans-serif;
 
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-size:
+        clamp(1rem,2vw,1.4rem);
 
     letter-spacing: 4px;
 }
 
 
-/* =========================================================
+/* =====================================================
    SCROLL
-========================================================= */
+===================================================== */
 
 .scroll-indicator {
 
@@ -428,7 +445,7 @@ select {
 
     z-index: 10;
 
-    opacity: 0.6;
+    opacity: .6;
 }
 
 .mouse {
@@ -436,15 +453,15 @@ select {
     width: 24px;
     height: 40px;
 
-    border: 2px solid #ffffff;
-
-    border-radius: 20px;
-
     display: flex;
 
     justify-content: center;
 
     padding-top: 8px;
+
+    border: 2px solid #fff;
+
+    border-radius: 20px;
 }
 
 .rueda {
@@ -452,37 +469,31 @@ select {
     width: 4px;
     height: 8px;
 
-    background-color: var(--rojo);
+    background: var(--rojo);
 
     border-radius: 2px;
 
     animation:
-        encoger-rueda 1.5s infinite;
+        rueda 1.5s infinite;
 }
 
-@keyframes encoger-rueda {
+@keyframes rueda {
 
     0% {
-
         opacity: 1;
-
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 
     100% {
-
         opacity: 0;
-
-        transform:
-            translateY(10px);
+        transform: translateY(10px);
     }
 }
 
 
-/* =========================================================
-   MAIN CONTACTO
-========================================================= */
+/* =====================================================
+   CONTACTO
+===================================================== */
 
 main.contacto {
 
@@ -495,22 +506,27 @@ main.contacto {
     background:
         linear-gradient(
             180deg,
-            #050505 0%,
-            #080808 100%
+            #050505,
+            #080808
         );
 }
 
 .contacto-seccion {
 
-    width: min(1250px, 100%);
+    width: min(1250px,100%);
 
     margin: 0 auto;
 
     display: grid;
 
+    /*
+       IZQUIERDA        DERECHA
+       INFORMACIÓN      FORMULARIO
+    */
+
     grid-template-columns:
         minmax(0, 1fr)
-        minmax(500px, 1.1fr);
+        minmax(0, 1fr);
 
     gap: 70px;
 
@@ -518,15 +534,15 @@ main.contacto {
 }
 
 
-/* =========================================================
-   INFORMACIÓN CONTACTO
-========================================================= */
+/* =====================================================
+   INFORMACIÓN IZQUIERDA
+===================================================== */
 
 .contacto-info {
 
     width: 100%;
 
-    padding: 20px 0;
+    min-width: 0;
 }
 
 .seccion-etiqueta {
@@ -537,7 +553,9 @@ main.contacto {
 
     color: var(--rojo);
 
-    font-family: 'Bebas Neue', sans-serif;
+    font-family:
+        'Bebas Neue',
+        sans-serif;
 
     font-size: 1.25rem;
 
@@ -552,17 +570,17 @@ main.contacto {
 
     margin-bottom: 28px;
 
+    color: #fff;
+
     font-family:
         'Archivo Black',
         'Arial Black',
         sans-serif;
 
     font-size:
-        clamp(2.8rem, 5vw, 4rem);
+        clamp(2.8rem,5vw,4rem);
 
     line-height: 1;
-
-    color: var(--blanco);
 }
 
 .contacto-info h2::after {
@@ -576,7 +594,6 @@ main.contacto {
     bottom: -18px;
 
     width: 54px;
-
     height: 3px;
 
     background: var(--rojo);
@@ -590,17 +607,15 @@ main.contacto {
 
     color: #c5c5c5;
 
-    font-family: 'Manrope', sans-serif;
-
     font-size: 15px;
 
     line-height: 1.8;
 }
 
 
-/* =========================================================
-   DATOS CONTACTO
-========================================================= */
+/* =====================================================
+   DATOS
+===================================================== */
 
 .datos-contacto {
 
@@ -611,12 +626,14 @@ main.contacto {
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(2,minmax(0,1fr));
 
     gap: 18px;
 }
 
 .dato {
+
+    min-width: 0;
 
     min-height: 98px;
 
@@ -636,14 +653,11 @@ main.contacto {
         );
 
     border:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid rgba(255,255,255,.08);
 
     border-radius: 12px;
 
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease;
+    transition: .3s;
 }
 
 .dato:hover {
@@ -651,14 +665,7 @@ main.contacto {
     transform: translateY(-4px);
 
     border-color:
-        rgba(225, 6, 32, 0.45);
-
-    background:
-        linear-gradient(
-            145deg,
-            #1c1c1c,
-            #111111
-        );
+        rgba(225,6,32,.5);
 }
 
 .dato-icono {
@@ -676,7 +683,7 @@ main.contacto {
     border-radius: 50%;
 
     background:
-        rgba(225, 6, 32, 0.15);
+        rgba(225,6,32,.15);
 
     color: var(--rojo);
 
@@ -687,36 +694,36 @@ main.contacto {
 
     margin-bottom: 5px;
 
-    color: #ffffff;
+    color: #fff;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins',sans-serif;
 
     font-size: 12px;
 
     font-weight: 700;
-
-    letter-spacing: 0.5px;
 }
 
 .dato p {
 
-    color: #888888;
-
-    font-family: 'Manrope', sans-serif;
+    color: #888;
 
     font-size: 11px;
 
     line-height: 1.6;
+
+    word-break: break-word;
 }
 
 
-/* =========================================================
-   FORMULARIO
-========================================================= */
+/* =====================================================
+   FORMULARIO DERECHA
+===================================================== */
 
 .formulario-contacto {
 
     width: 100%;
+
+    min-width: 0;
 
     padding: 42px;
 
@@ -730,12 +737,12 @@ main.contacto {
         );
 
     border:
-        1px solid rgba(255, 255, 255, 0.1);
+        1px solid rgba(255,255,255,.1);
 
     border-radius: 18px;
 
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.45);
+        0 20px 60px rgba(0,0,0,.45);
 
     overflow: hidden;
 }
@@ -773,7 +780,9 @@ main.contacto {
 
     color: var(--rojo);
 
-    font-family: 'Bebas Neue', sans-serif;
+    font-family:
+        'Bebas Neue',
+        sans-serif;
 
     font-size: 1.1rem;
 
@@ -782,15 +791,15 @@ main.contacto {
 
 .formulario-header h2 {
 
+    color: #fff;
+
     font-family:
         'Archivo Black',
         'Arial Black',
         sans-serif;
 
     font-size:
-        clamp(1.8rem, 3vw, 2.5rem);
-
-    color: #ffffff;
+        clamp(1.8rem,3vw,2.5rem);
 
     line-height: 1.1;
 }
@@ -810,14 +819,9 @@ main.contacto {
 }
 
 
-/* =========================================================
+/* =====================================================
    CAMPOS
-========================================================= */
-
-.formulario-contacto form {
-
-    width: 100%;
-}
+===================================================== */
 
 .campo {
 
@@ -834,13 +838,11 @@ main.contacto {
 
     color: #d7d7d7;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins',sans-serif;
 
     font-size: 11px;
 
     font-weight: 700;
-
-    letter-spacing: 0.4px;
 }
 
 .campo input,
@@ -848,37 +850,36 @@ main.contacto {
 
     width: 100%;
 
-    padding: 14px 15px;
-
-    background: #080808;
-
-    color: #ffffff;
-
     border:
-        1px solid rgba(255, 255, 255, 0.12);
+        1px solid rgba(255,255,255,.12);
 
     border-radius: 9px;
 
     outline: none;
 
-    font-family: 'Manrope', sans-serif;
+    background: #080808;
+
+    color: #fff;
+
+    font-family: 'Manrope',sans-serif;
 
     font-size: 13px;
 
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+    transition: .3s;
 }
 
 .campo input {
 
     height: 48px;
+
+    padding: 14px 15px;
 }
 
 .campo textarea {
 
     min-height: 140px;
+
+    padding: 14px 15px;
 
     resize: vertical;
 }
@@ -886,7 +887,7 @@ main.contacto {
 .campo input::placeholder,
 .campo textarea::placeholder {
 
-    color: #555555;
+    color: #555;
 }
 
 .campo input:focus,
@@ -894,16 +895,14 @@ main.contacto {
 
     border-color: var(--rojo);
 
-    background: #0b0b0b;
-
     box-shadow:
-        0 0 0 3px rgba(225, 6, 32, 0.08);
+        0 0 0 3px rgba(225,6,32,.08);
 }
 
 
-/* =========================================================
-   BOTÓN FORMULARIO
-========================================================= */
+/* =====================================================
+   BOTÓN
+===================================================== */
 
 .formulario-contacto button {
 
@@ -924,22 +923,17 @@ main.contacto {
             #ff3838
         );
 
-    color: #ffffff;
+    color: #fff;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins',sans-serif;
 
     font-size: 12px;
 
     font-weight: 700;
 
-    letter-spacing: 0.3px;
-
     cursor: pointer;
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        filter 0.3s ease;
+    transition: .3s;
 }
 
 .formulario-contacto button i {
@@ -951,27 +945,18 @@ main.contacto {
 
     transform: translateY(-2px);
 
-    filter: brightness(1.08);
-
     box-shadow:
-        0 10px 25px rgba(225, 6, 32, 0.25);
-}
-
-.formulario-contacto button:active {
-
-    transform: scale(0.98);
+        0 10px 25px rgba(225,6,32,.25);
 }
 
 
-/* =========================================================
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
 footer {
 
     width: 100%;
-
-    margin-top: 0;
 
     padding:
         70px 5%
@@ -985,19 +970,10 @@ footer {
         );
 
     border-top:
-        1px solid rgba(255, 255, 255, 0.08);
-
-    color: var(--blanco);
+        1px solid rgba(255,255,255,.08);
 
     text-align: center;
-
-    font-family: 'Manrope', sans-serif;
 }
-
-
-/* =========================================================
-   REDES
-========================================================= */
 
 .redes-sociales {
 
@@ -1008,13 +984,13 @@ footer {
 
     margin-bottom: 25px;
 
-    font-family: 'Archivo Black', sans-serif;
+    color: #fff;
+
+    font-family:
+        'Archivo Black',
+        sans-serif;
 
     font-size: 16px;
-
-    letter-spacing: 1px;
-
-    color: var(--blanco);
 }
 
 .iconos-redes {
@@ -1022,6 +998,7 @@ footer {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     gap: 15px;
@@ -1038,16 +1015,13 @@ footer {
     justify-content: center;
 
     border:
-        1px solid rgba(255, 255, 255, 0.15);
+        1px solid rgba(255,255,255,.15);
 
     border-radius: 50%;
 
-    background: #111111;
+    background: #111;
 
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease;
+    transition: .3s;
 }
 
 .iconos-redes a:hover {
@@ -1055,11 +1029,9 @@ footer {
     transform: translateY(-5px);
 
     border-color: var(--rojo);
-
-    background: #181818;
 }
 
-.iconos-redes a img {
+.iconos-redes img {
 
     width: 25px;
     height: 25px;
@@ -1070,13 +1042,13 @@ footer {
 }
 
 
-/* =========================================================
+/* =====================================================
    FOOTER INFO
-========================================================= */
+===================================================== */
 
 .footer-info {
 
-    width: min(1250px, 100%);
+    width: min(1250px,100%);
 
     margin: 0 auto;
 
@@ -1085,35 +1057,30 @@ footer {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
     gap: 60px;
 
     text-align: left;
 
     border-top:
-        1px solid rgba(255, 255, 255, 0.07);
+        1px solid rgba(255,255,255,.07);
 
     border-bottom:
-        1px solid rgba(255, 255, 255, 0.07);
-}
-
-.footer-info .columna {
-
-    min-width: 0;
+        1px solid rgba(255,255,255,.07);
 }
 
 .footer-info h4 {
 
     margin-bottom: 22px;
 
-    color: var(--blanco);
+    color: #fff;
 
-    font-family: 'Archivo Black', sans-serif;
+    font-family:
+        'Archivo Black',
+        sans-serif;
 
     font-size: 13px;
-
-    letter-spacing: 1.5px;
 }
 
 .footer-info h4::after {
@@ -1133,172 +1100,101 @@ footer {
 .footer-info ul {
 
     list-style: none;
-
-    padding: 0;
 }
 
-.footer-info ul li {
+.footer-info li {
 
     margin-bottom: 12px;
 
     color: #888;
-
-    font-family: 'Manrope', sans-serif;
 
     font-size: 13px;
 
     line-height: 1.6;
 }
 
-.footer-info ul li strong {
-
-    color: #d5d5d5;
-}
-
-.footer-info ul li a {
+.footer-info a {
 
     color: #888;
 
-    transition:
-        color 0.3s ease;
+    transition: .3s;
 }
 
-.footer-info ul li a:hover {
+.footer-info a:hover {
 
     color: var(--rojo);
 }
 
+.footer-info strong {
 
-/* =========================================================
+    color: #d5d5d5;
+}
+
+
+/* =====================================================
    COPYRIGHT
-========================================================= */
+===================================================== */
 
 .copyright {
 
     padding-top: 25px;
-
-    text-align: center;
 }
 
 .copyright p {
 
     color: #555;
 
-    font-family: 'Manrope', sans-serif;
-
     font-size: 12px;
 }
 
 
-/* =========================================================
-   MENÚ MÓVIL
-========================================================= */
-
-.menu-movil {
-
-    display: none !important;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 40px;
-    height: 40px;
-
-    margin: 0;
-    padding: 0;
-
-    border: none;
-    outline: none;
-
-    background: transparent;
-
-    color: #ffffff;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-    position: relative;
-
-    z-index: 100002;
-
-    flex-shrink: 0;
-}
-
-
-/* =========================================================
-   PORTÁTILES
-========================================================= */
+/* =====================================================
+   LAPTOP
+===================================================== */
 
 @media (min-width: 801px) and (max-width: 1250px) {
 
     .top-bar {
-
         padding: 0 3%;
+        gap: 15px;
     }
 
     .logo {
-
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
 
     .navegacion ul {
-
-        gap: 13px;
+        gap: 12px;
     }
 
-    .navegacion ul li a {
-
-        font-size: 0.63rem;
-
-        letter-spacing: 0.2px;
+    .navegacion a {
+        font-size: .62rem;
     }
 
     .top-icons {
-
-        gap: 12px;
-    }
-
-    .icon-link {
-
-        font-size: 0.95rem;
+        gap: 10px;
     }
 
     .contacto-seccion {
-
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(420px, 1fr);
-
-        gap: 45px;
+        gap: 40px;
     }
 
     .formulario-contacto {
-
         padding: 32px;
     }
 
-    .datos-contacto {
-
-        gap: 12px;
-    }
-
     .dato {
-
         padding: 14px;
-
         gap: 10px;
     }
 }
 
 
-/* =========================================================
-   TABLETS
-========================================================= */
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media (max-width: 800px) {
-
-    /* TOP BAR */
 
     .top-bar {
 
@@ -1306,55 +1202,36 @@ footer {
         height: 65px;
 
         padding: 0 16px;
-
-        z-index: 100000;
     }
 
     .logo {
-
         font-size: 1rem;
     }
 
-
-    /* MENÚ NORMAL */
-
     .navegacion {
-
-        display: none !important;
+        display: none;
     }
-
-
-    /* ICONOS */
 
     .top-icons {
-
-        display: none !important;
+        display: none;
     }
-
-
-    /* HAMBURGUESA */
 
     .menu-movil {
 
-        display: flex !important;
+        display: flex;
 
-        appearance: none;
-        -webkit-appearance: none;
+        position: relative;
 
-        user-select: none;
-        -webkit-user-select: none;
+        z-index: 100;
     }
-
-
-    /* MENÚ ABIERTO */
 
     .navegacion.activo {
 
-        display: block !important;
+        display: block;
 
-        position: fixed !important;
+        position: fixed;
 
-        top: 70px;
+        top: 75px;
 
         left: 10px;
         right: 10px;
@@ -1362,32 +1239,29 @@ footer {
         width: auto;
 
         max-height:
-            calc(100vh - 80px);
+            calc(100vh - 85px);
 
         overflow-y: auto;
 
         padding: 8px;
 
         background:
-            rgba(10, 10, 10, 0.98);
+            rgba(10,10,10,.98);
 
         border:
-            1px solid rgba(255, 255, 255, 0.12);
+            1px solid rgba(255,255,255,.12);
 
         border-radius: 14px;
 
         box-shadow:
-            0 20px 50px rgba(0, 0, 0, 0.8);
+            0 20px 50px rgba(0,0,0,.8);
 
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-
-        z-index: 100001;
+        z-index: 9999;
     }
 
     .navegacion.activo ul {
 
-        display: flex !important;
+        display: flex;
 
         flex-direction: column;
 
@@ -1396,40 +1270,22 @@ footer {
         gap: 0;
     }
 
-    .navegacion.activo ul li {
-
+    .navegacion.activo li {
         width: 100%;
     }
 
-    .navegacion.activo ul li a {
+    .navegacion.activo a {
 
         display: block;
 
         width: 100%;
 
-        padding: 12px 10px;
-
-        color: #c7c7c7;
-
-        font-size: 0.75rem;
+        padding: 13px;
 
         border-bottom:
-            1px solid rgba(255, 255, 255, 0.07);
-    }
+            1px solid rgba(255,255,255,.07);
 
-
-    /* HERO */
-
-    .banner-portada {
-
-        min-height: 600px;
-    }
-
-    .contenido-centro {
-
-        width: 95%;
-
-        margin-top: 0;
+        font-size: .75rem;
     }
 
 
@@ -1438,7 +1294,7 @@ footer {
     main.contacto {
 
         padding:
-            70px 5%
+            75px 5%
             80px;
     }
 
@@ -1455,13 +1311,7 @@ footer {
     }
 
     .seccion-etiqueta {
-
         text-align: center;
-    }
-
-    .contacto-info h2 {
-
-        font-size: clamp(2.5rem, 8vw, 4rem);
     }
 
     .contacto-info h2::after {
@@ -1482,7 +1332,7 @@ footer {
 
     .datos-contacto {
 
-        width: min(650px, 100%);
+        width: min(650px,100%);
 
         margin-left: auto;
         margin-right: auto;
@@ -1495,38 +1345,32 @@ footer {
         padding: 35px;
     }
 
-
-    /* FOOTER */
-
     .footer-info {
 
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(2,1fr);
 
         gap: 40px;
     }
 }
 
 
-/* =========================================================
-   CELULARES
-========================================================= */
+/* =====================================================
+   CELULAR
+===================================================== */
 
 @media (max-width: 600px) {
 
-    /* TOP BAR */
-
     .top-bar {
 
-        min-height: 60px;
         height: 60px;
+        min-height: 60px;
 
         padding: 0 12px;
     }
 
     .logo {
-
-        font-size: 0.9rem;
+        font-size: .9rem;
     }
 
     .menu-movil {
@@ -1537,27 +1381,15 @@ footer {
         font-size: 21px;
     }
 
-
-    /* MENÚ */
-
     .navegacion.activo {
 
-        top: 65px;
+        top: 68px;
 
         left: 8px;
         right: 8px;
 
         max-height:
-            calc(100vh - 75px);
-
-        padding: 7px;
-    }
-
-    .navegacion.activo ul li a {
-
-        padding: 11px 9px;
-
-        font-size: 0.72rem;
+            calc(100vh - 78px);
     }
 
 
@@ -1566,6 +1398,13 @@ footer {
     .banner-portada {
 
         min-height: 540px;
+    }
+
+    .contenido-centro {
+
+        width: 95%;
+
+        margin-top: 0;
     }
 
     .etiqueta-hero {
@@ -1578,25 +1417,23 @@ footer {
     .titulo-hero {
 
         font-size:
-            clamp(2.6rem, 13vw, 4rem);
-
-        letter-spacing: -1px;
+            clamp(2.6rem,13vw,4rem);
     }
 
     .subtitulo {
 
-        font-size: 0.85rem;
+        font-size: .85rem;
 
         margin-top: 15px;
     }
 
     .lema-centro p {
 
-        font-size: 0.9rem;
+        padding: 0 15px;
+
+        font-size: .9rem;
 
         letter-spacing: 2px;
-
-        padding: 0 15px;
     }
 
 
@@ -1616,22 +1453,10 @@ footer {
         gap: 45px;
     }
 
-    .contacto-info {
-
-        padding: 0;
-    }
-
-    .seccion-etiqueta {
-
-        font-size: 1.05rem;
-
-        letter-spacing: 3px;
-    }
-
     .contacto-info h2 {
 
         font-size:
-            clamp(2.3rem, 12vw, 3.3rem);
+            clamp(2.3rem,12vw,3.3rem);
     }
 
     .texto-contacto {
@@ -1658,14 +1483,6 @@ footer {
         min-height: 85px;
 
         padding: 15px;
-
-        text-align: left;
-    }
-
-    .dato-icono {
-
-        width: 40px;
-        height: 40px;
     }
 
 
@@ -1681,13 +1498,6 @@ footer {
     .formulario-header {
 
         margin-bottom: 27px;
-    }
-
-    .formulario-etiqueta {
-
-        font-size: 1rem;
-
-        letter-spacing: 2.5px;
     }
 
     .formulario-header h2 {
@@ -1716,13 +1526,6 @@ footer {
     .campo textarea {
 
         min-height: 120px;
-    }
-
-    .formulario-contacto button {
-
-        min-height: 48px;
-
-        font-size: 11px;
     }
 
 
@@ -1756,74 +1559,38 @@ footer {
         margin-left: auto;
         margin-right: auto;
     }
-
-    .footer-info ul li {
-
-        font-size: 12px;
-    }
 }
 
 
-/* =========================================================
+/* =====================================================
    CELULARES PEQUEÑOS
-========================================================= */
+===================================================== */
 
 @media (max-width: 380px) {
 
     .top-bar {
 
-        min-height: 55px;
         height: 55px;
+        min-height: 55px;
 
         padding: 0 10px;
     }
 
     .logo {
-
-        font-size: 0.82rem;
-    }
-
-    .menu-movil {
-
-        width: 36px;
-        height: 36px;
-
-        font-size: 20px;
-    }
-
-    .navegacion.activo {
-
-        top: 60px;
-
-        left: 6px;
-        right: 6px;
-
-        max-height:
-            calc(100vh - 68px);
-
-        padding: 6px;
-    }
-
-    .navegacion.activo ul li a {
-
-        padding: 10px 8px;
-
-        font-size: 0.68rem;
+        font-size: .82rem;
     }
 
     .banner-portada {
-
         min-height: 500px;
     }
 
     .titulo-hero {
-
         font-size: 2.4rem;
     }
 
     .lema-centro p {
 
-        font-size: 0.78rem;
+        font-size: .78rem;
 
         letter-spacing: 1.5px;
     }
@@ -1840,40 +1607,26 @@ footer {
     }
 
     .formulario-header h2 {
-
         font-size: 1.7rem;
-    }
-
-    .dato {
-
-        padding: 13px;
-    }
-
-    .dato p {
-
-        font-size: 10px;
     }
 }
 
 
-/* =========================================================
+/* =====================================================
    PC
-========================================================= */
+===================================================== */
 
 @media (min-width: 801px) {
 
     .menu-movil {
-
         display: none !important;
     }
 
     .navegacion {
-
-        display: block !important;
+        display: flex !important;
     }
 
     .top-icons {
-
         display: flex !important;
     }
 }
