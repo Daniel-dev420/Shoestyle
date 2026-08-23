@@ -18,30 +18,31 @@ body {
     width: 100%;
     min-height: 100vh;
     background: #080808;
-    color: #ffffff;
+    color: #fff;
     font-family: 'Manrope', sans-serif;
     overflow-x: hidden;
 }
 
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 button,
 input,
 textarea {
-    font-family: inherit;
+    font: inherit;
 }
 
 img {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
 
 #contenedor {
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 
@@ -51,13 +52,13 @@ img {
 
 :root {
     --negro: #080808;
-    --negro-2: #111111;
+    --negro-2: #111;
     --negro-3: #181818;
     --rojo: #e50914;
     --rojo-hover: #ff1b26;
-    --blanco: #ffffff;
+    --blanco: #fff;
     --gris: #a7a7a7;
-    --borde: rgba(255, 255, 255, 0.10);
+    --borde: rgba(255, 255, 255, .10);
 }
 
 
@@ -90,18 +91,19 @@ img {
 .capa-oscura {
     position: absolute;
     inset: 0;
+    z-index: 1;
 
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, .90),
-            rgba(0, 0, 0, .45),
-            rgba(0, 0, 0, .80)
+            rgba(0,0,0,.92) 0%,
+            rgba(0,0,0,.48) 50%,
+            rgba(0,0,0,.82) 100%
         ),
         linear-gradient(
             0deg,
-            rgba(0, 0, 0, .90),
-            transparent 60%
+            rgba(0,0,0,.92) 0%,
+            transparent 65%
         );
 }
 
@@ -112,28 +114,36 @@ img {
 
 .top-bar {
     position: relative;
-    z-index: 20;
+    z-index: 100;
 
     width: 100%;
     min-height: 85px;
 
-    padding: 0 5%;
+    padding: 0 4%;
 
     display: flex;
     align-items: center;
 
-    background: rgba(0, 0, 0, .40);
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    background: rgba(0,0,0,.45);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
 
     backdrop-filter: blur(12px);
 }
 
+
+/* =========================================================
+   LOGO
+========================================================= */
+
 .logo {
-    flex-shrink: 0;
+    flex: 0 0 auto;
 
     font-family: 'Archivo Black', sans-serif;
-    font-size: 1.55rem;
+    font-size: 1.5rem;
+
     letter-spacing: -1px;
+    white-space: nowrap;
 }
 
 .logo-rojo {
@@ -142,17 +152,24 @@ img {
 
 
 /* =========================================================
-   NAVEGACIÓN
+   NAVEGACIÓN DESKTOP
 ========================================================= */
 
 .navegacion {
-    margin-left: auto;
+    flex: 1 1 auto;
+
+    display: flex;
+    justify-content: center;
+
+    margin-left: 20px;
 }
 
 .navegacion ul {
     display: flex;
     align-items: center;
-    gap: 17px;
+    justify-content: center;
+
+    gap: 15px;
 
     list-style: none;
 }
@@ -166,30 +183,32 @@ img {
 
     display: inline-block;
 
+    padding: 8px 0;
+
     color: #fff;
 
     font-family: 'Poppins', sans-serif;
-    font-size: .70rem;
+    font-size: .68rem;
     font-weight: 600;
 
     white-space: nowrap;
 
-    transition: .3s ease;
+    transition: color .3s ease;
 }
 
 .navegacion a::after {
-    content: "";
+    content: '';
 
     position: absolute;
     left: 0;
-    bottom: -7px;
+    bottom: 0;
 
     width: 0;
     height: 2px;
 
     background: var(--rojo);
 
-    transition: .3s ease;
+    transition: width .3s ease;
 }
 
 .navegacion a:hover,
@@ -208,16 +227,19 @@ img {
 ========================================================= */
 
 .top-icons {
+    flex: 0 0 auto;
+
     display: flex;
     align-items: center;
-    gap: 12px;
 
-    margin-left: 25px;
+    gap: 10px;
+
+    margin-left: 15px;
 }
 
 .icon-link {
-    width: 38px;
-    height: 38px;
+    width: 37px;
+    height: 37px;
 
     display: flex;
     align-items: center;
@@ -232,18 +254,23 @@ img {
 }
 
 .icon-link:hover {
+    color: #fff;
+
     background: var(--rojo);
     border-color: var(--rojo);
+
     transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   BOTÓN MÓVIL
+   BOTÓN HAMBURGUESA
 ========================================================= */
 
 .menu-movil {
     display: none;
+
+    flex: 0 0 auto;
 
     width: 42px;
     height: 42px;
@@ -251,10 +278,10 @@ img {
     align-items: center;
     justify-content: center;
 
-    margin-left: 12px;
+    margin-left: 10px;
 
     color: #fff;
-    background: rgba(0,0,0,.7);
+    background: rgba(0,0,0,.75);
 
     border: 1px solid rgba(255,255,255,.25);
     border-radius: 6px;
@@ -271,11 +298,12 @@ img {
 
 .contenido-centro {
     position: relative;
-    z-index: 3;
+    z-index: 5;
 
     width: min(900px, 90%);
 
     margin: 0 auto;
+
     padding-top: 145px;
 
     text-align: center;
@@ -297,9 +325,11 @@ img {
     color: #fff;
 
     font-family: 'Bebas Neue', sans-serif;
+
     font-size: clamp(4rem, 9vw, 8rem);
 
     line-height: .9;
+
     letter-spacing: 3px;
 }
 
@@ -319,12 +349,14 @@ img {
 
 .lema-centro {
     position: absolute;
-    z-index: 4;
+    z-index: 5;
 
     left: 50%;
     bottom: 70px;
 
     width: 100%;
+
+    padding: 0 20px;
 
     transform: translateX(-50%);
 
@@ -335,6 +367,7 @@ img {
     color: rgba(255,255,255,.85);
 
     font-family: 'Bebas Neue', sans-serif;
+
     font-size: clamp(1.1rem, 2vw, 1.7rem);
 
     letter-spacing: 5px;
@@ -347,7 +380,7 @@ img {
 
 .scroll-indicator {
     position: absolute;
-    z-index: 4;
+    z-index: 5;
 
     left: 50%;
     bottom: 20px;
@@ -373,6 +406,7 @@ img {
     height: 7px;
 
     background: #fff;
+
     border-radius: 5px;
 
     animation: scroll 1.5s infinite;
@@ -392,7 +426,7 @@ img {
 
 
 /* =========================================================
-   MAIN CONTACTO
+   CONTACTO
 ========================================================= */
 
 .contacto {
@@ -403,33 +437,31 @@ img {
     background:
         radial-gradient(
             circle at 10% 20%,
-            rgba(229, 9, 20, .08),
+            rgba(229,9,20,.08),
             transparent 30%
         ),
-        #080808;
+        var(--negro);
 }
 
 .contacto-seccion {
     width: min(1250px, 100%);
 
-    margin: 0 auto;
+    margin: auto;
 
     display: grid;
 
-    /*
-       IZQUIERDA = INFORMACIÓN
-       DERECHA = FORMULARIO
-    */
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
-    gap: 80px;
+    gap: 70px;
 
     align-items: start;
 }
 
 
 /* =========================================================
-   INFORMACIÓN IZQUIERDA
+   INFORMACIÓN
 ========================================================= */
 
 .contacto-info {
@@ -445,6 +477,7 @@ img {
     color: var(--rojo);
 
     font-family: 'Poppins', sans-serif;
+
     font-size: .8rem;
     font-weight: 800;
 
@@ -457,9 +490,11 @@ img {
     color: #fff;
 
     font-family: 'Bebas Neue', sans-serif;
+
     font-size: clamp(3.5rem, 6vw, 5.5rem);
 
     line-height: .9;
+
     letter-spacing: 2px;
 }
 
@@ -469,6 +504,7 @@ img {
     color: #bcbcbc;
 
     font-family: 'Poppins', sans-serif;
+
     font-size: .95rem;
 
     line-height: 1.8;
@@ -476,7 +512,7 @@ img {
 
 
 /* =========================================================
-   DATOS DE CONTACTO
+   DATOS
 ========================================================= */
 
 .datos-contacto {
@@ -485,7 +521,9 @@ img {
     margin-top: 45px;
 
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     gap: 35px 30px;
 }
@@ -496,7 +534,7 @@ img {
     display: flex;
     align-items: flex-start;
 
-    gap: 16px;
+    gap: 15px;
 }
 
 .dato-icono {
@@ -527,6 +565,7 @@ img {
     color: #fff;
 
     font-family: 'Poppins', sans-serif;
+
     font-size: .78rem;
     font-weight: 700;
 
@@ -536,17 +575,16 @@ img {
 .dato p {
     color: #aaa;
 
-    font-family: 'Manrope', sans-serif;
     font-size: .82rem;
 
     line-height: 1.6;
 
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
 }
 
 
 /* =========================================================
-   FORMULARIO DERECHA
+   FORMULARIO
 ========================================================= */
 
 .formulario-contacto {
@@ -554,9 +592,10 @@ img {
 
     padding: 45px;
 
-    background: #111;
+    background: var(--negro-2);
 
-    border: 1px solid rgba(255,255,255,.10);
+    border: 1px solid var(--borde);
+
     border-top: 3px solid var(--rojo);
 
     box-shadow: 0 20px 60px rgba(0,0,0,.4);
@@ -570,6 +609,7 @@ img {
     color: var(--rojo);
 
     font-family: 'Poppins', sans-serif;
+
     font-size: .75rem;
     font-weight: 800;
 
@@ -582,6 +622,7 @@ img {
     color: #fff;
 
     font-family: 'Bebas Neue', sans-serif;
+
     font-size: 3rem;
 
     letter-spacing: 1px;
@@ -589,12 +630,8 @@ img {
 
 
 /* =========================================================
-   FORM
+   CAMPOS
 ========================================================= */
-
-.formulario-contacto form {
-    width: 100%;
-}
 
 .campo {
     width: 100%;
@@ -609,6 +646,7 @@ img {
     color: #ddd;
 
     font-family: 'Poppins', sans-serif;
+
     font-size: .72rem;
     font-weight: 700;
 
@@ -622,14 +660,16 @@ img {
     width: 100%;
 
     color: #fff;
-    background: #181818;
+    background: var(--negro-3);
 
     border: 1px solid #303030;
+
     border-radius: 4px;
 
     outline: none;
 
     font-family: 'Manrope', sans-serif;
+
     font-size: .88rem;
 
     transition: .3s ease;
@@ -663,7 +703,7 @@ img {
 
 
 /* =========================================================
-   BOTÓN FORMULARIO
+   BOTÓN
 ========================================================= */
 
 .formulario-contacto form button {
@@ -671,6 +711,7 @@ img {
     min-height: 52px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -681,10 +722,11 @@ img {
     color: #fff;
     background: var(--rojo);
 
-    border: none;
+    border: 0;
     border-radius: 4px;
 
     font-family: 'Poppins', sans-serif;
+
     font-size: .8rem;
     font-weight: 800;
 
@@ -738,6 +780,7 @@ footer {
     color: #fff;
 
     font-family: 'Poppins', sans-serif;
+
     font-size: .8rem;
 
     letter-spacing: 2px;
@@ -757,12 +800,13 @@ footer {
     height: 45px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    overflow: hidden;
-
     border-radius: 50%;
+
+    overflow: hidden;
 
     transition: .3s ease;
 }
@@ -786,12 +830,14 @@ footer {
 .footer-info {
     width: min(1200px, 90%);
 
-    margin: 0 auto;
+    margin: auto;
 
     padding: 55px 0;
 
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
     gap: 60px;
 }
@@ -802,6 +848,7 @@ footer {
     color: #fff;
 
     font-family: 'Bebas Neue', sans-serif;
+
     font-size: 1.5rem;
 
     letter-spacing: 1px;
@@ -816,7 +863,6 @@ footer {
 
     color: #888;
 
-    font-family: 'Manrope', sans-serif;
     font-size: .8rem;
 
     line-height: 1.6;
@@ -859,48 +905,56 @@ footer {
 
 
 /* =========================================================
-   LAPTOP
+   LAPTOPS
 ========================================================= */
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
 
     .top-bar {
-        padding: 0 3%;
+        padding: 0 25px;
     }
 
     .navegacion ul {
-        gap: 11px;
+        gap: 10px;
     }
 
     .navegacion a {
-        font-size: .60rem;
+        font-size: .58rem;
     }
 
     .top-icons {
-        margin-left: 15px;
-        gap: 7px;
+        gap: 6px;
+        margin-left: 10px;
+    }
+
+    .icon-link {
+        width: 35px;
+        height: 35px;
     }
 
     .contacto-seccion {
-        gap: 45px;
-    }
-
-    .formulario-contacto {
-        padding: 35px;
+        gap: 40px;
     }
 }
 
 
 /* =========================================================
-   TABLET
+   TABLETS
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
+
+    .top-bar {
+        min-height: 80px;
+        padding: 0 22px;
+    }
+
+    /* OCULTAR NAV DESKTOP */
 
     .navegacion {
         position: absolute;
 
-        top: 85px;
+        top: 100%;
         left: 0;
 
         width: 100%;
@@ -909,12 +963,16 @@ footer {
 
         margin: 0;
 
-        padding: 15px 5%;
+        padding: 15px 20px;
 
         background: rgba(5,5,5,.98);
 
         border-bottom: 1px solid rgba(255,255,255,.10);
+
+        backdrop-filter: blur(15px);
     }
+
+    /* MOSTRAR CUANDO JS AGREGA ACTIVO */
 
     .navegacion.activo {
         display: block;
@@ -924,7 +982,9 @@ footer {
         width: 100%;
 
         display: flex;
+
         flex-direction: column;
+
         align-items: stretch;
 
         gap: 0;
@@ -939,33 +999,34 @@ footer {
 
         display: block;
 
-        padding: 15px 10px;
+        padding: 14px 10px;
 
-        font-size: .8rem;
+        font-size: .82rem;
     }
 
     .navegacion a::after {
         display: none;
     }
 
+    /* ICONOS */
+
     .top-icons {
         margin-left: auto;
         margin-right: 5px;
     }
 
+    /* HAMBURGUESA */
+
     .menu-movil {
         display: flex;
     }
 
-    /*
-       AQUÍ SE CONSERVA:
-       IZQUIERDA ARRIBA
-       FORMULARIO ABAJO
-    */
+    /* CONTACTO */
 
     .contacto-seccion {
         grid-template-columns: 1fr;
-        gap: 60px;
+
+        gap: 55px;
     }
 
     .contacto-info {
@@ -983,7 +1044,7 @@ footer {
 
 
 /* =========================================================
-   MÓVIL
+   MÓVILES
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -994,80 +1055,113 @@ footer {
     }
 
     .top-bar {
-        min-height: 72px;
-        padding: 0 18px;
+        min-height: 70px;
+
+        padding: 0 15px;
     }
 
     .logo {
-        font-size: 1.25rem;
-    }
-
-    .navegacion {
-        top: 72px;
-        max-height: calc(100vh - 72px);
-
-        overflow-y: auto;
+        font-size: 1.15rem;
     }
 
     .top-icons {
-        gap: 7px;
-        margin-right: 5px;
+        gap: 6px;
+
+        margin-right: 3px;
     }
 
     .icon-link {
-        width: 34px;
-        height: 34px;
+        width: 33px;
+        height: 33px;
 
-        font-size: .85rem;
+        font-size: .8rem;
     }
 
     .menu-movil {
         width: 38px;
         height: 38px;
 
-        flex-shrink: 0;
+        margin-left: 6px;
     }
 
+    .navegacion {
+        top: 70px;
+
+        max-height: calc(100vh - 70px);
+
+        overflow-y: auto;
+    }
+
+    .navegacion a {
+        padding: 16px 10px;
+
+        font-size: .78rem;
+    }
+
+    /* HERO */
+
     .contenido-centro {
+        width: 94%;
+
         padding-top: 125px;
     }
 
     .etiqueta-hero {
-        font-size: .65rem;
+        font-size: .62rem;
+
         letter-spacing: 2px;
     }
 
     .titulo-hero {
-        font-size: clamp(3.5rem, 18vw, 5rem);
+        font-size: clamp(3.2rem, 17vw, 5rem);
+
+        letter-spacing: 2px;
     }
 
     .subtitulo {
-        padding: 0 15px;
+        margin-top: 20px;
 
-        font-size: .8rem;
+        padding: 0 12px;
+
+        font-size: .78rem;
+
         line-height: 1.6;
     }
 
+    /* LEMA */
+
     .lema-centro {
-        bottom: 60px;
+        bottom: 65px;
+
         padding: 0 15px;
     }
 
     .lema-centro p {
-        font-size: 1rem;
+        font-size: .95rem;
+
         letter-spacing: 2px;
+
+        line-height: 1.3;
     }
 
+    /* CONTACTO */
+
     .contacto {
-        padding: 65px 20px;
+        padding: 65px 18px;
+    }
+
+    .contacto-seccion {
+        gap: 50px;
     }
 
     .contacto-info h2 {
-        font-size: 4rem;
+        font-size: 3.8rem;
     }
 
     .texto-contacto {
-        font-size: .85rem;
+        font-size: .84rem;
+
+        line-height: 1.75;
     }
 
     .datos-contacto {
@@ -1078,16 +1172,58 @@ footer {
         margin-top: 35px;
     }
 
+    .dato {
+        gap: 13px;
+    }
+
+    .dato-icono {
+        flex-basis: 44px;
+
+        width: 44px;
+        height: 44px;
+    }
+
+    /* FORMULARIO */
+
     .formulario-contacto {
-        padding: 25px 20px;
+        padding: 25px 18px;
+    }
+
+    .formulario-header {
+        margin-bottom: 25px;
     }
 
     .formulario-header h2 {
-        font-size: 2.6rem;
+        font-size: 2.5rem;
+    }
+
+    .campo {
+        margin-bottom: 18px;
+    }
+
+    /* FOOTER */
+
+    .redes-sociales {
+        padding: 40px 15px;
+    }
+
+    .redes-sociales h3 {
+        font-size: .72rem;
+
+        letter-spacing: 1.5px;
+    }
+
+    .iconos-redes {
+        gap: 10px;
+    }
+
+    .iconos-redes a {
+        width: 40px;
+        height: 40px;
     }
 
     .footer-info {
-        width: 90%;
+        width: 88%;
 
         grid-template-columns: 1fr;
 
@@ -1096,33 +1232,42 @@ footer {
         padding: 40px 0;
     }
 
-    .redes-sociales {
-        padding: 40px 20px;
+    .columna h4 {
+        font-size: 1.4rem;
     }
 
-    .iconos-redes {
-        gap: 12px;
-    }
-
-    .iconos-redes a {
-        width: 40px;
-        height: 40px;
+    .columna li {
+        font-size: .78rem;
     }
 }
 
 
 /* =========================================================
-   MÓVILES PEQUEÑOS
+   MÓVILES MUY PEQUEÑOS
 ========================================================= */
 
 @media (max-width: 400px) {
 
-    .top-icons {
-        display: none;
+    .top-bar {
+        padding: 0 12px;
     }
 
     .logo {
-        font-size: 1.15rem;
+        font-size: 1.05rem;
+    }
+
+    .top-icons {
+        gap: 4px;
+    }
+
+    .icon-link {
+        width: 31px;
+        height: 31px;
+    }
+
+    .menu-movil {
+        width: 36px;
+        height: 36px;
     }
 
     .contenido-centro {
@@ -1130,14 +1275,23 @@ footer {
     }
 
     .titulo-hero {
-        font-size: 3.3rem;
+        font-size: 3.1rem;
     }
 
     .contacto-info h2 {
-        font-size: 3.4rem;
+        font-size: 3.3rem;
     }
 
     .formulario-contacto {
-        padding: 22px 16px;
+        padding: 22px 15px;
+    }
+
+    .iconos-redes {
+        gap: 7px;
+    }
+
+    .iconos-redes a {
+        width: 37px;
+        height: 37px;
     }
 }
