@@ -39,6 +39,11 @@ img {
     display: block;
 }
 
+#contenedor {
+    width: 100%;
+    min-height: 100vh;
+}
+
 
 /* =========================================================
    VARIABLES
@@ -49,19 +54,10 @@ img {
     --negro-2: #111111;
     --negro-3: #181818;
     --rojo: #e50914;
-    --rojo-hover: #ff202a;
+    --rojo-hover: #ff1b26;
     --blanco: #ffffff;
     --gris: #a7a7a7;
-}
-
-
-/* =========================================================
-   CONTENEDOR
-========================================================= */
-
-#contenedor {
-    width: 100%;
-    min-height: 100vh;
+    --borde: rgba(255, 255, 255, 0.10);
 }
 
 
@@ -75,7 +71,7 @@ img {
     height: 90vh;
     min-height: 650px;
     overflow: hidden;
-    background: #000000;
+    background: #000;
 }
 
 .imagen-banner {
@@ -99,7 +95,7 @@ img {
         linear-gradient(
             90deg,
             rgba(0, 0, 0, .90),
-            rgba(0, 0, 0, .50),
+            rgba(0, 0, 0, .45),
             rgba(0, 0, 0, .80)
         ),
         linear-gradient(
@@ -129,7 +125,7 @@ img {
     background: rgba(0, 0, 0, .40);
     border-bottom: 1px solid rgba(255, 255, 255, .08);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 }
 
 .logo {
@@ -137,7 +133,6 @@ img {
 
     font-family: 'Archivo Black', sans-serif;
     font-size: 1.55rem;
-
     letter-spacing: -1px;
 }
 
@@ -171,7 +166,7 @@ img {
 
     display: inline-block;
 
-    color: #ffffff;
+    color: #fff;
 
     font-family: 'Poppins', sans-serif;
     font-size: .70rem;
@@ -194,7 +189,7 @@ img {
 
     background: var(--rojo);
 
-    transition: width .3s ease;
+    transition: .3s ease;
 }
 
 .navegacion a:hover,
@@ -217,7 +212,7 @@ img {
     align-items: center;
     gap: 12px;
 
-    margin-left: 22px;
+    margin-left: 25px;
 }
 
 .icon-link {
@@ -228,10 +223,10 @@ img {
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(255,255,255,.20);
-    border-radius: 50%;
+    color: #fff;
 
-    color: #ffffff;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 50%;
 
     transition: .3s ease;
 }
@@ -239,13 +234,12 @@ img {
 .icon-link:hover {
     background: var(--rojo);
     border-color: var(--rojo);
-
     transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   MENU MOVIL
+   BOTÓN MÓVIL
 ========================================================= */
 
 .menu-movil {
@@ -259,11 +253,11 @@ img {
 
     margin-left: 12px;
 
+    color: #fff;
+    background: rgba(0,0,0,.7);
+
     border: 1px solid rgba(255,255,255,.25);
     border-radius: 6px;
-
-    background: rgba(0,0,0,.5);
-    color: #ffffff;
 
     font-size: 1.15rem;
 
@@ -277,12 +271,12 @@ img {
 
 .contenido-centro {
     position: relative;
-    z-index: 5;
+    z-index: 3;
 
     width: min(900px, 90%);
 
     margin: 0 auto;
-    padding-top: 150px;
+    padding-top: 145px;
 
     text-align: center;
 }
@@ -300,14 +294,13 @@ img {
 }
 
 .titulo-hero {
+    color: #fff;
+
     font-family: 'Bebas Neue', sans-serif;
-
     font-size: clamp(4rem, 9vw, 8rem);
+
     line-height: .9;
-
     letter-spacing: 3px;
-
-    color: #ffffff;
 }
 
 .subtitulo {
@@ -315,6 +308,7 @@ img {
 
     color: #d0d0d0;
 
+    font-family: 'Poppins', sans-serif;
     font-size: 1rem;
 }
 
@@ -325,7 +319,7 @@ img {
 
 .lema-centro {
     position: absolute;
-    z-index: 5;
+    z-index: 4;
 
     left: 50%;
     bottom: 70px;
@@ -338,7 +332,7 @@ img {
 }
 
 .lema-centro p {
-    color: rgba(255,255,255,.82);
+    color: rgba(255,255,255,.85);
 
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(1.1rem, 2vw, 1.7rem);
@@ -353,7 +347,7 @@ img {
 
 .scroll-indicator {
     position: absolute;
-    z-index: 5;
+    z-index: 4;
 
     left: 50%;
     bottom: 20px;
@@ -378,14 +372,13 @@ img {
     width: 4px;
     height: 7px;
 
-    background: #ffffff;
+    background: #fff;
     border-radius: 5px;
 
     animation: scroll 1.5s infinite;
 }
 
 @keyframes scroll {
-
     0% {
         transform: translateY(0);
         opacity: 1;
@@ -410,16 +403,11 @@ img {
     background:
         radial-gradient(
             circle at 10% 20%,
-            rgba(229, 9, 20, .09),
+            rgba(229, 9, 20, .08),
             transparent 30%
         ),
         #080808;
 }
-
-
-/* =========================================================
-   CONTENEDOR PRINCIPAL
-========================================================= */
 
 .contacto-seccion {
     width: min(1250px, 100%);
@@ -428,9 +416,13 @@ img {
 
     display: grid;
 
+    /*
+       IZQUIERDA = INFORMACIÓN
+       DERECHA = FORMULARIO
+    */
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
-    gap: 70px;
+    gap: 80px;
 
     align-items: start;
 }
@@ -452,6 +444,7 @@ img {
 
     color: var(--rojo);
 
+    font-family: 'Poppins', sans-serif;
     font-size: .8rem;
     font-weight: 800;
 
@@ -459,28 +452,25 @@ img {
 }
 
 .contacto-info h2 {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 
-    color: #ffffff;
+    color: #fff;
 
     font-family: 'Bebas Neue', sans-serif;
-
     font-size: clamp(3.5rem, 6vw, 5.5rem);
 
     line-height: .9;
-
     letter-spacing: 2px;
 }
 
 .texto-contacto {
-    width: 100%;
     max-width: 520px;
 
     color: #bcbcbc;
 
     font-family: 'Poppins', sans-serif;
-
     font-size: .95rem;
+
     line-height: 1.8;
 }
 
@@ -495,23 +485,22 @@ img {
     margin-top: 45px;
 
     display: grid;
-
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 35px 30px;
 }
 
 .dato {
+    min-width: 0;
+
     display: flex;
     align-items: flex-start;
 
-    gap: 15px;
-
-    min-width: 0;
+    gap: 16px;
 }
 
 .dato-icono {
-    flex-shrink: 0;
+    flex: 0 0 48px;
 
     width: 48px;
     height: 48px;
@@ -520,22 +509,24 @@ img {
     align-items: center;
     justify-content: center;
 
+    color: #fff;
     background: var(--rojo);
 
     border-radius: 50%;
 
-    color: #ffffff;
-
     font-size: 1rem;
+}
+
+.dato-contenido {
+    min-width: 0;
 }
 
 .dato h3 {
     margin-bottom: 7px;
 
-    color: #ffffff;
+    color: #fff;
 
     font-family: 'Poppins', sans-serif;
-
     font-size: .78rem;
     font-weight: 700;
 
@@ -543,10 +534,14 @@ img {
 }
 
 .dato p {
-    color: #aaaaaa;
+    color: #aaa;
 
+    font-family: 'Manrope', sans-serif;
     font-size: .82rem;
+
     line-height: 1.6;
+
+    overflow-wrap: break-word;
 }
 
 
@@ -559,12 +554,12 @@ img {
 
     padding: 45px;
 
-    background: #111111;
+    background: #111;
 
     border: 1px solid rgba(255,255,255,.10);
     border-top: 3px solid var(--rojo);
 
-    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
 }
 
 .formulario-header {
@@ -574,6 +569,7 @@ img {
 .formulario-etiqueta {
     color: var(--rojo);
 
+    font-family: 'Poppins', sans-serif;
     font-size: .75rem;
     font-weight: 800;
 
@@ -583,10 +579,9 @@ img {
 .formulario-header h2 {
     margin-top: 8px;
 
-    color: #ffffff;
+    color: #fff;
 
     font-family: 'Bebas Neue', sans-serif;
-
     font-size: 3rem;
 
     letter-spacing: 1px;
@@ -603,7 +598,6 @@ img {
 
 .campo {
     width: 100%;
-
     margin-bottom: 22px;
 }
 
@@ -612,8 +606,9 @@ img {
 
     margin-bottom: 8px;
 
-    color: #dddddd;
+    color: #ddd;
 
+    font-family: 'Poppins', sans-serif;
     font-size: .72rem;
     font-weight: 700;
 
@@ -626,14 +621,15 @@ img {
 
     width: 100%;
 
+    color: #fff;
+    background: #181818;
+
     border: 1px solid #303030;
     border-radius: 4px;
 
     outline: none;
 
-    background: #181818;
-    color: #ffffff;
-
+    font-family: 'Manrope', sans-serif;
     font-size: .88rem;
 
     transition: .3s ease;
@@ -641,7 +637,6 @@ img {
 
 .campo input {
     height: 48px;
-
     padding: 0 16px;
 }
 
@@ -655,7 +650,7 @@ img {
 
 .campo input::placeholder,
 .campo textarea::placeholder {
-    color: #666666;
+    color: #666;
 }
 
 .campo input:focus,
@@ -668,14 +663,12 @@ img {
 
 
 /* =========================================================
-   BOTON FORMULARIO
+   BOTÓN FORMULARIO
 ========================================================= */
 
 .formulario-contacto form button {
     width: 100%;
     min-height: 52px;
-
-    margin-top: 8px;
 
     display: flex;
     align-items: center;
@@ -683,14 +676,15 @@ img {
 
     gap: 12px;
 
+    margin-top: 8px;
+
+    color: #fff;
+    background: var(--rojo);
+
     border: none;
     border-radius: 4px;
 
-    background: var(--rojo);
-    color: #ffffff;
-
     font-family: 'Poppins', sans-serif;
-
     font-size: .8rem;
     font-weight: 800;
 
@@ -725,7 +719,7 @@ footer {
 
 
 /* =========================================================
-   REDES SOCIALES
+   REDES
 ========================================================= */
 
 .redes-sociales {
@@ -741,11 +735,11 @@ footer {
 .redes-sociales h3 {
     margin-bottom: 25px;
 
-    color: #ffffff;
+    color: #fff;
 
     font-family: 'Poppins', sans-serif;
-
     font-size: .8rem;
+
     letter-spacing: 2px;
 }
 
@@ -797,8 +791,7 @@ footer {
     padding: 55px 0;
 
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     gap: 60px;
 }
@@ -806,33 +799,31 @@ footer {
 .columna h4 {
     margin-bottom: 20px;
 
-    color: #ffffff;
+    color: #fff;
 
     font-family: 'Bebas Neue', sans-serif;
-
     font-size: 1.5rem;
 
     letter-spacing: 1px;
 }
 
 .columna ul {
-    padding: 0;
-
     list-style: none;
 }
 
 .columna li {
     margin-bottom: 12px;
 
-    color: #888888;
+    color: #888;
 
+    font-family: 'Manrope', sans-serif;
     font-size: .8rem;
 
     line-height: 1.6;
 }
 
 .columna a {
-    color: #888888;
+    color: #888;
 
     transition: .3s ease;
 }
@@ -842,7 +833,7 @@ footer {
 }
 
 .columna strong {
-    color: #cccccc;
+    color: #ccc;
 }
 
 
@@ -861,14 +852,14 @@ footer {
 }
 
 .copyright p {
-    color: #666666;
+    color: #666;
 
     font-size: .72rem;
 }
 
 
 /* =========================================================
-   LAPTOPS
+   LAPTOP
 ========================================================= */
 
 @media (max-width: 1200px) {
@@ -878,7 +869,7 @@ footer {
     }
 
     .navegacion ul {
-        gap: 10px;
+        gap: 11px;
     }
 
     .navegacion a {
@@ -886,12 +877,12 @@ footer {
     }
 
     .top-icons {
-        margin-left: 12px;
+        margin-left: 15px;
         gap: 7px;
     }
 
     .contacto-seccion {
-        gap: 40px;
+        gap: 45px;
     }
 
     .formulario-contacto {
@@ -901,7 +892,7 @@ footer {
 
 
 /* =========================================================
-   TABLETS
+   TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -918,7 +909,7 @@ footer {
 
         margin: 0;
 
-        padding: 15px 20px;
+        padding: 15px 5%;
 
         background: rgba(5,5,5,.98);
 
@@ -932,6 +923,7 @@ footer {
     .navegacion ul {
         width: 100%;
 
+        display: flex;
         flex-direction: column;
         align-items: stretch;
 
@@ -947,7 +939,7 @@ footer {
 
         display: block;
 
-        padding: 14px 10px;
+        padding: 15px 10px;
 
         font-size: .8rem;
     }
@@ -958,26 +950,26 @@ footer {
 
     .top-icons {
         margin-left: auto;
+        margin-right: 5px;
     }
 
     .menu-movil {
         display: flex;
     }
 
-    /* CONTACTO */
+    /*
+       AQUÍ SE CONSERVA:
+       IZQUIERDA ARRIBA
+       FORMULARIO ABAJO
+    */
 
     .contacto-seccion {
         grid-template-columns: 1fr;
-
         gap: 60px;
     }
 
     .contacto-info {
         padding-top: 0;
-    }
-
-    .texto-contacto {
-        max-width: 700px;
     }
 
     .formulario-contacto {
@@ -991,7 +983,7 @@ footer {
 
 
 /* =========================================================
-   MOVILES
+   MÓVIL
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -1003,12 +995,18 @@ footer {
 
     .top-bar {
         min-height: 72px;
-
         padding: 0 18px;
     }
 
     .logo {
         font-size: 1.25rem;
+    }
+
+    .navegacion {
+        top: 72px;
+        max-height: calc(100vh - 72px);
+
+        overflow-y: auto;
     }
 
     .top-icons {
@@ -1027,19 +1025,11 @@ footer {
         width: 38px;
         height: 38px;
 
-        margin-left: 5px;
-    }
-
-    .navegacion {
-        top: 72px;
-
-        max-height: calc(100vh - 72px);
-
-        overflow-y: auto;
+        flex-shrink: 0;
     }
 
     .contenido-centro {
-        padding-top: 130px;
+        padding-top: 125px;
     }
 
     .etiqueta-hero {
@@ -1060,7 +1050,6 @@ footer {
 
     .lema-centro {
         bottom: 60px;
-
         padding: 0 15px;
     }
 
@@ -1069,14 +1058,8 @@ footer {
         letter-spacing: 2px;
     }
 
-    /* MAIN */
-
     .contacto {
         padding: 65px 20px;
-    }
-
-    .contacto-seccion {
-        gap: 50px;
     }
 
     .contacto-info h2 {
@@ -1095,8 +1078,6 @@ footer {
         margin-top: 35px;
     }
 
-    /* FORMULARIO */
-
     .formulario-contacto {
         padding: 25px 20px;
     }
@@ -1105,7 +1086,15 @@ footer {
         font-size: 2.6rem;
     }
 
-    /* FOOTER */
+    .footer-info {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 40px 0;
+    }
 
     .redes-sociales {
         padding: 40px 20px;
@@ -1119,21 +1108,11 @@ footer {
         width: 40px;
         height: 40px;
     }
-
-    .footer-info {
-        width: 90%;
-
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
-        padding: 40px 0;
-    }
 }
 
 
 /* =========================================================
-   MOVILES PEQUEÑOS
+   MÓVILES PEQUEÑOS
 ========================================================= */
 
 @media (max-width: 400px) {
@@ -1147,7 +1126,7 @@ footer {
     }
 
     .contenido-centro {
-        padding-top: 120px;
+        padding-top: 115px;
     }
 
     .titulo-hero {
