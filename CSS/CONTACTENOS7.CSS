@@ -245,7 +245,7 @@ select {
 
     font-family: 'Poppins', sans-serif;
 
-    font-size: .8rem;
+    font-size: 0.8 5rem;
 
     font-weight: 600;
 
@@ -322,7 +322,6 @@ select {
 
 /* =========================================================
    MENÚ HAMBURGUESA
-   EXACTAMENTE COMO EL INDEX
 ========================================================= */
 
 .menu-movil {
@@ -1303,7 +1302,6 @@ main {
 
     /* =====================================================
        MENÚ ABIERTO
-       MISMO DEL INDEX
     ===================================================== */
 
     .navegacion.activo {
