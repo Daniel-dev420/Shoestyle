@@ -68,42 +68,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>SHOESTYLE</title>
 
-    <link
-        rel="stylesheet"
-        href="./CSS/INDEX7.CSS"
-    >
+    <link rel="stylesheet" href="./CSS/INDEX7.CSS?v=999">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
+        rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Matangi:wght@300..900&family=Michroma&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
 
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -118,176 +104,78 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <div class="video-container">
 
-        <video
-            autoplay
-            muted
-            loop
-            playsinline
-            class="video-fondo"
-        >
-
-            <source
-                src="./Videos/BannerVideo.mp4"
-                type="video/mp4"
-            >
-
+        <video autoplay muted loop playsinline class="video-fondo">
+            <source src="./Videos/BannerVideo.mp4" type="video/mp4">
         </video>
 
         <div class="capa-oscura"></div>
 
     </div>
 
-
-    <!-- =================================================
-         HEADER / NAVEGACIÓN
-    ================================================== -->
+    <!-- ================= TOP BAR ================= -->
 
     <div class="top-bar">
 
         <h1 class="logo">
-            <span class="logo-blanco">SHOE</span><span class="logo-rojo">STYLE</span>
+            <span class="logo-shoe">SHOE</span><span class="logo-style">STYLE</span>
         </h1>
 
-
-        <nav class="navegacion" id="navegacion">
+        <nav class="navegacion">
 
             <ul>
-
-                <li>
-                    <a href="./index.php">
-                        INICIO
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./paginas/nuestra empresa.html">
-                        NUESTRA EMPRESA
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./paginas/productos.php">
-                        PRODUCTOS
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./paginas/contactenos.html">
-                        CONTACTENOS
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./paginas/inicio de sesion.html">
-                        INICIO DE SESIÓN
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./paginas/servicios.html">
-                        SERVICIOS
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./paginas/galeria fotografica.html">
-                        GALERÍA FOTOGRÁFICA
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./paginas/registrarse.html">
-                        REGISTRARSE
-                    </a>
-                </li>
-
+                <li><a href="./index.php">INICIO</a></li>
+                <li><a href="./paginas/nuestra empresa.html">NUESTRA EMPRESA</a></li>
+                <li><a href="./paginas/productos.php">PRODUCTOS</a></li>
+                <li><a href="./paginas/contactenos.html">CONTACTENOS</a></li>
+                <li><a href="./paginas/inicio de sesion.html">INICIO DE SESIÓN</a></li>
+                <li><a href="./paginas/servicios.html">SERVICIOS</a></li>
+                <li><a href="./paginas/galeria fotografica.html">GALERÍA FOTOGRÁFICA</a></li>
+                <li><a href="./paginas/registrarse.html">REGISTRARSE</a></li>
             </ul>
 
         </nav>
 
-
-        <!-- ICONOS ESCRITORIO -->
-
         <div class="top-icons">
 
-            <a
-                href="#"
-                class="icon-link"
-                aria-label="Carrito"
-            >
+            <a href="#" class="icon-link">
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
 
-            <a
-                href="#"
-                class="icon-link"
-                aria-label="Visitas"
-            >
+            <a href="#" class="icon-link">
                 <i class="fa-regular fa-eye"></i>
             </a>
 
         </div>
 
-
-        <!-- BOTÓN MÓVIL -->
-
-        <button
-            class="menu-movil"
-            id="menuMovil"
-            type="button"
-            aria-label="Abrir menú"
-            aria-expanded="false"
-        >
-
+        <button class="menu-movil" id="menuMovil" aria-label="Abrir menú">
             <i class="fa-solid fa-bars"></i>
-
         </button>
 
     </div>
 
 
-    <!-- =================================================
-         CONTENIDO CENTRAL
-    ================================================== -->
+    <!-- ================= HERO ================= -->
 
     <div class="contenido-centro">
 
         <h2 class="lema-principal">
-
-            TU ESTILO EMPIEZA
-            <br>
-
-            <span class="texto-destacado">
-                POR LOS PIES
-            </span>
-
+            TU ESTILO EMPIEZA <br>
+            <span class="texto-destacado">POR LOS PIES</span>
         </h2>
 
-
         <p class="subtitulo">
-
-            Descubre la mejor colección de calzado urbano,
-            deportivo y casual.
+            Descubre la mejor colección de calzado urbano, deportivo y casual.
             <br>
-
             Diseñados para los que marcan tendencia.
-
         </p>
-
 
         <div class="botones-container">
 
-            <a
-                href="./paginas/productos.php"
-                class="btn-rojo"
-            >
+            <a href="./paginas/productos.php" class="btn-rojo">
                 EXPLORAR COLECCIÓN
             </a>
 
-            <a
-                href="./paginas/galeria fotografica.html"
-                class="btn-linea"
-            >
+            <a href="./paginas/galeria fotografica.html" class="btn-linea">
                 VER GALERÍA
             </a>
 
@@ -296,14 +184,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
 
-    <!-- SCROLL -->
-
     <div class="scroll-indicator">
 
         <div class="mouse">
-
             <div class="rueda"></div>
-
         </div>
 
     </div>
@@ -312,41 +196,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 <!-- =====================================================
-     MAIN
+     CONTENIDO
 ===================================================== -->
 
 <main>
 
-    <!-- =================================================
-         BIENVENIDA
-    ================================================== -->
+    <h2>Bienvenido a Shoestyle</h2>
 
-    <section class="bienvenida">
-
-        <h2>
-            Bienvenido a Shoestyle
-        </h2>
-
-        <p>
-            En SHOESTYLE te ofrecemos lo mejor en calzado
-            para toda ocasión. Encuentra zapatillas, botas,
-            tacones y más, con la mejor calidad y al mejor
-            precio. Navega por nuestras secciones y encuentra
-            tu estilo.
-        </p>
-
-    </section>
+    <p>
+        En SHOESTYLE te ofrecemos lo mejor en calzado para toda ocasión.
+        Encuentra zapatillas, botas, tacones y más, con la mejor calidad
+        y al mejor precio. Navega por nuestras secciones y encuentra tu estilo.
+    </p>
 
 
-    <!-- =================================================
-         MARCAS
-    ================================================== -->
+    <!-- MARCAS -->
 
-    <section class="seccion-marcas">
+    <section>
 
-        <h2>
-            Marcas que ofrecemos
-        </h2>
+        <h2>Marcas que ofrecemos</h2>
 
         <article class="marcas">
 
@@ -370,146 +238,47 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </section>
 
 
-    <!-- =================================================
-         OFERTAS
-    ================================================== -->
+    <!-- OFERTAS -->
 
     <section>
 
-        <h2>
-            Ofertas Especiales
-        </h2>
-
+        <h2>Ofertas Especiales</h2>
 
         <article class="productos">
 
             <div class="producto">
-
-                <img
-                    src="./PHP/uploads/freshfoam.jpg"
-                    alt="Zapatilla Urbana"
-                >
-
-                <h3>
-                    Zapatilla Urbana
-                </h3>
-
-                <p>
-                    <del>$120.000</del>
-                    <strong>$95.000</strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Compra Ahora!
-                </a>
-
+                <img src="./PHP/uploads/freshfoam.jpg" alt="Zapatilla Urbana">
+                <h3>Zapatilla Urbana</h3>
+                <p><del>$120.000</del> <strong>$95.000</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Compra Ahora!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./PHP/uploads/stan_smith.jpg"
-                    alt="Zapatilla adidas blanca"
-                >
-
-                <h3>
-                    Zapatilla adidas blanca
-                </h3>
-
-                <p>
-                    <del>$135.000</del>
-                    <strong>$110.000</strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Compra Ahora!
-                </a>
-
+                <img src="./PHP/uploads/stan_smith.jpg" alt="Zapatilla adidas blanca">
+                <h3>Zapatilla adidas blanca</h3>
+                <p><del>$135.000</del> <strong>$110.000</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Compra Ahora!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./PHP/uploads/ADIDA FORUM.png"
-                    alt="Adidas Forum"
-                >
-
-                <h3>
-                    Adidas Forum
-                </h3>
-
-                <p>
-                    <del>$150.000</del>
-                    <strong>$120.000</strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Compra Ahora!
-                </a>
-
+                <img src="./PHP/uploads/ADIDA FORUM.png" alt="Adidas Forum">
+                <h3>Adidas Forum</h3>
+                <p><del>$150.000</del> <strong>$120.000</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Compra Ahora!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./imagenes/slide-azure3.jpg"
-                    alt="Sandalia Azul"
-                >
-
-                <h3>
-                    Sandalia Azul
-                </h3>
-
-                <p>
-                    <del>$110.000</del>
-                    <strong>$89.000</strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Compra Ahora!
-                </a>
-
+                <img src="./imagenes/slide-azure3.jpg" alt="Sandalia Azul">
+                <h3>Sandalia Azul</h3>
+                <p><del>$110.000</del> <strong>$89.000</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Compra Ahora!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./PHP/uploads/chuck_rojo.jpg"
-                    alt="Converse color rojo"
-                >
-
-                <h3>
-                    Converse color rojo
-                </h3>
-
-                <p>
-                    <del>$80.000</del>
-                    <strong>$59.000</strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Compra Ahora!
-                </a>
-
+                <img src="./PHP/uploads/chuck_rojo.jpg" alt="Converse color rojo">
+                <h3>Converse color rojo</h3>
+                <p><del>$80.000</del> <strong>$59.000</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Compra Ahora!</a>
             </div>
 
         </article>
@@ -520,40 +289,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <hr>
 
 
-    <!-- =================================================
-         CARRUSEL
-    ================================================== -->
+    <!-- CARRUSEL -->
 
     <section>
 
-        <h2>
-            Catálogo de Zapatos
-        </h2>
+        <h2>Catálogo de Zapatos</h2>
 
-        <article
-            class="carrusel"
-            id="carrusel-zapatos"
-        >
+        <article class="carrusel" id="carrusel-zapatos">
 
-            <button
-                class="flecha izq"
-                type="button"
-                onclick="moverCarrusel('zapatos', -1)"
-            >
+            <button class="flecha izq"
+                onclick="moverCarrusel('zapatos', -1)">
                 &#10094;
             </button>
 
-            <img
-                id="zapato-imagen"
+            <img id="zapato-imagen"
                 src="./imagenes/negras.webp"
-                alt="Zapato catálogo"
-            >
+                alt="Zapato catálogo">
 
-            <button
-                class="flecha der"
-                type="button"
-                onclick="moverCarrusel('zapatos', 1)"
-            >
+            <button class="flecha der"
+                onclick="moverCarrusel('zapatos', 1)">
                 &#10095;
             </button>
 
@@ -565,151 +319,47 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <hr>
 
 
-    <!-- =================================================
-         PROMOCIONES
-    ================================================== -->
+    <!-- PROMOCIONES -->
 
     <section>
 
-        <h2>
-            Promociones Exclusivas
-        </h2>
-
+        <h2>Promociones Exclusivas</h2>
 
         <article class="productos">
 
             <div class="producto">
-
-                <img
-                    src="./imagenes/NewBalance.webp"
-                    alt="Zapatillas modernas Mujer"
-                >
-
-                <h3>
-                    Zapatillas modernas Mujer
-                </h3>
-
-                <p>
-                    <strong>
-                        Compra uno y lleva 2
-                    </strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Ver Detalles!
-                </a>
-
+                <img src="./imagenes/NewBalance.webp" alt="Zapatillas modernas Mujer">
+                <h3>Zapatillas modernas Mujer</h3>
+                <p><strong>Compra uno y lleva 2</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Ver Detalles!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./imagenes/zapato5.jpg"
-                    alt="Sandalia de Verano"
-                >
-
-                <h3>
-                    Sandalia de Verano
-                </h3>
-
-                <p>
-                    <strong>
-                        Envío gratis
-                    </strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Ver Detalles!
-                </a>
-
+                <img src="./imagenes/zapato5.jpg" alt="Sandalia de Verano">
+                <h3>Sandalia de Verano</h3>
+                <p><strong>Envío gratis</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Ver Detalles!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./imagenes/AMIRI-Classic-Low-White-Grey.avif"
-                    alt="Amiri Blancos"
-                >
-
-                <h3>
-                    Amiri Blancos
-                </h3>
-
-                <p>
-                    <strong>
-                        10% de descuento
-                    </strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Ver Detalles!
-                </a>
-
+                <img src="./imagenes/AMIRI-Classic-Low-White-Grey.avif" alt="Amiri Blancos">
+                <h3>Amiri Blancos</h3>
+                <p><strong>10% de descuento</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Ver Detalles!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./imagenes/Shoe_for_women.jpg"
-                    alt="Tenis negro mujer"
-                >
-
-                <h3>
-                    Tenis negro mujer
-                </h3>
-
-                <p>
-                    <strong>
-                        2x1 por tiempo limitado
-                    </strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Ver Detalles!
-                </a>
-
+                <img src="./imagenes/Shoe_for_women.jpg" alt="Tenis negro mujer">
+                <h3>Tenis negro mujer</h3>
+                <p><strong>2x1 por tiempo limitado</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Ver Detalles!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./imagenes/Amiri-Brown.jpg"
-                    alt="Amiri blanco con café"
-                >
-
-                <h3>
-                    Amiri blanco con café
-                </h3>
-
-                <p>
-                    <strong>
-                        Hasta 25% de descuento
-                    </strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Ver Detalles!
-                </a>
-
+                <img src="./imagenes/Amiri-Brown.jpg" alt="Amiri blanco con café">
+                <h3>Amiri blanco con café</h3>
+                <p><strong>Hasta 25% de descuento</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Ver Detalles!</a>
             </div>
 
         </article>
@@ -717,151 +367,48 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </section>
 
 
-    <!-- =================================================
-         DESTACADOS
-    ================================================== -->
+    <!-- DESTACADOS -->
 
     <section>
 
-        <h2>
-            Productos Destacados
-        </h2>
-
+        <h2>Productos Destacados</h2>
 
         <article class="productos">
 
             <div class="producto">
-
-                <img
-                    src="./imagenes/Nike-for-men.jpg"
-                    alt="Zapatillas deportivas hombre"
-                >
-
-                <h3>
-                    Zapatillas deportivas hombre
-                </h3>
-
-                <p>
-                    <strong>
-                        Ideal para correr
-                    </strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Compra Ahora!
-                </a>
-
+                <img src="./imagenes/Nike-for-men.jpg" alt="Zapatillas deportivas hombre">
+                <h3>Zapatillas deportivas hombre</h3>
+                <p><strong>Ideal para correr</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Compra Ahora!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./imagenes/jordan-orange.webp"
-                    alt="Air Jordan 1 Retro High"
-                >
-
-                <h3>
-                    Air Jordan 1 Retro High
-                </h3>
-
-                <p>
-                    <strong>
-                        Estilo y comodidad en uno
-                    </strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Compra Ahora!
-                </a>
-
+                <img src="./imagenes/jordan-orange.webp" alt="Air Jordan 1 Retro High">
+                <h3>Air Jordan 1 Retro High</h3>
+                <p><strong>Estilo y comodidad en uno!</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Compra Ahora!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./imagenes/Nike-dunk.jpg"
-                    alt="Nike dunk low Next Nature"
-                >
-
-                <h3>
-                    Nike dunk low Next Nature
-                </h3>
-
-                <p>
-                    <strong>
-                        Comodidad y estilo para el día a día
-                    </strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Compra Ahora!
-                </a>
-
+                <img src="./imagenes/Nike-dunk.jpg" alt="Nike dunk low Next Nature">
+                <h3>Nike dunk low Next Nature</h3>
+                <p><strong>Comodidad y estilo para el día a día</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Compra Ahora!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./imagenes/Converse.jpg"
-                    alt="Converse Star Player 76"
-                >
-
-                <h3>
-                    Converse Star Player 76
-                </h3>
-
-                <p>
-                    <strong>
-                        Perfectos para tu look casual
-                    </strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Compra Ahora!
-                </a>
-
+                <img src="./imagenes/Converse.jpg" alt="Converse Star Player 76">
+                <h3>Converse Star Player 76</h3>
+                <p><strong>Perfectos para tu look casual</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Compra Ahora!</a>
             </div>
 
-
             <div class="producto">
-
-                <img
-                    src="./PHP/uploads/Captura de pantalla 2025-04-30 144904.png"
-                    alt="Zapato Clásico Mujer"
-                >
-
-                <h3>
-                    Zapato Clásico Mujer
-                </h3>
-
-                <p>
-                    <strong>
-                        Diseño atemporal y sofisticado
-                    </strong>
-                </p>
-
-                <a
-                    href="./paginas/registrarse.html"
-                    class="btn"
-                >
-                    ¡Compra Ahora!
-                </a>
-
+                <img src="./PHP/uploads/Captura de pantalla 2025-04-30 144904.png"
+                    alt="Zapato Clásico Mujer">
+                <h3>Zapato Clásico Mujer</h3>
+                <p><strong>Diseño atemporal y sofisticado</strong></p>
+                <a href="./paginas/registrarse.html" class="btn">¡Compra Ahora!</a>
             </div>
 
         </article>
@@ -872,78 +419,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <hr>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          RESEÑAS
-    ================================================== -->
+    ===================================================== -->
 
     <section class="resenas-contenedor">
 
-        <!-- RESEÑAS -->
-
         <div class="lista-resenas">
 
-            <h2>
-                Reseñas
-            </h2>
+            <h2>Reseñas</h2>
 
             <article class="reseñas">
 
                 <?php
 
-                $sql = "
-                    SELECT *
-                    FROM resenas
-                    ORDER BY id DESC
-                ";
-
+                $sql = "SELECT * FROM resenas ORDER BY id DESC";
                 $resultado = $conexion->query($sql);
 
-                if (
-                    $resultado &&
-                    $resultado->num_rows > 0
-                ) {
+                if ($resultado && $resultado->num_rows > 0) {
 
-                    while (
-                        $row = $resultado->fetch_assoc()
-                    ) {
+                    while ($row = $resultado->fetch_assoc()) {
 
-                        echo '<div class="reseña">';
+                        echo "<div class='reseña'>";
+                        echo "<h3>" . str_repeat("⭐", $row['estrellas']) . "</h3>";
+                        echo "<p>\"" . htmlspecialchars($row['comentario']) . "\"</p>";
+                        echo "<p><strong>- " . htmlspecialchars($row['nombre']) . "</strong></p>";
+                        echo "</div>";
 
-                        echo '<h3>';
-                        echo str_repeat(
-                            "⭐",
-                            (int)$row['estrellas']
-                        );
-                        echo '</h3>';
-
-                        echo '<p>';
-                        echo '"';
-                        echo htmlspecialchars(
-                            $row['comentario'],
-                            ENT_QUOTES,
-                            'UTF-8'
-                        );
-                        echo '"';
-                        echo '</p>';
-
-                        echo '<p>';
-                        echo '<strong>- ';
-                        echo htmlspecialchars(
-                            $row['nombre'],
-                            ENT_QUOTES,
-                            'UTF-8'
-                        );
-                        echo '</strong>';
-                        echo '</p>';
-
-                        echo '</div>';
                     }
 
                 } else {
 
-                    echo '<p class="sin-resenas">';
-                    echo 'No hay reseñas todavía.';
-                    echo '</p>';
+                    echo "<p>No hay reseñas todavía.</p>";
 
                 }
 
@@ -954,71 +461,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
 
 
-        <!-- FORMULARIO -->
-
         <div class="formulario-resena">
 
-            <h2>
-                Deja tu reseña
-            </h2>
+            <h2>Deja tu reseña</h2>
 
-            <form
-                method="POST"
-                action=""
-            >
+            <form method="POST" action="">
 
-                <label for="nombre">
-                    Tu nombre:
-                </label>
+                <label for="nombre">Tu nombre:</label>
 
-                <input
-                    type="text"
+                <input type="text"
                     name="nombre"
                     id="nombre"
-                    required
-                >
+                    required>
 
 
-                <label for="comentario">
-                    Comentario:
-                </label>
+                <label for="comentario">Comentario:</label>
 
-                <textarea
-                    name="comentario"
+                <textarea name="comentario"
                     id="comentario"
-                    required
-                ></textarea>
+                    required></textarea>
 
 
-                <label for="estrellas">
-                    Puntuación:
-                </label>
+                <label for="estrellas">Puntuación:</label>
 
-                <select
-                    name="estrellas"
+                <select name="estrellas"
                     id="estrellas"
-                    required
-                >
+                    required>
 
-                    <option value="5">
-                        ⭐⭐⭐⭐⭐
-                    </option>
-
-                    <option value="4">
-                        ⭐⭐⭐⭐
-                    </option>
-
-                    <option value="3">
-                        ⭐⭐⭐
-                    </option>
-
-                    <option value="2">
-                        ⭐⭐
-                    </option>
-
-                    <option value="1">
-                        ⭐
-                    </option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="1">⭐</option>
 
                 </select>
 
@@ -1040,100 +514,73 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
      FOOTER
 ===================================================== -->
 
-<footer>
+<footer id="footer-shoestyle">
 
-    <!-- REDES -->
+    <div class="footer-redes">
 
-    <section class="redes-sociales">
+        <h3>ENCUÉNTRANOS TAMBIÉN EN</h3>
 
-        <h3>
-            Encuéntranos también en:
-        </h3>
+        <div class="footer-iconos">
 
-        <div class="iconos-redes">
-
-            <a
-                href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
+            <a href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
-            >
-                <img
-                    src="./imagenes/facebook.png"
-                    alt="Facebook"
-                >
+                aria-label="Facebook">
+
+                <img src="./imagenes/facebook.png" alt="Facebook">
+
             </a>
 
 
-            <a
-                href="#"
-                aria-label="Instagram"
-            >
-                <img
-                    src="./imagenes/instagram.jpg"
-                    alt="Instagram"
-                >
+            <a href="#"
+                aria-label="Instagram">
+
+                <img src="./imagenes/instagram.jpg" alt="Instagram">
+
             </a>
 
 
-            <a
-                href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
+            <a href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="TikTok"
-            >
-                <img
-                    src="./imagenes/tiktok.png"
-                    alt="TikTok"
-                >
+                aria-label="TikTok">
+
+                <img src="./imagenes/tiktok.png" alt="TikTok">
+
             </a>
 
 
-            <a
-                href="https://x.com/shoestyle397157"
+            <a href="https://x.com/shoestyle397157"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="X"
-            >
-                <img
-                    src="./imagenes/twitter.png"
-                    alt="Twitter"
-                >
+                aria-label="X">
+
+                <img src="./imagenes/twitter.png" alt="X">
+
             </a>
 
 
-            <a
-                href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
+            <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="WhatsApp"
-            >
-                <img
-                    src="./imagenes/whatsapp.png"
-                    alt="WhatsApp"
-                >
+                aria-label="WhatsApp">
+
+                <img src="./imagenes/whatsapp.png" alt="WhatsApp">
+
             </a>
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- INFORMACIÓN -->
+    <div class="footer-columnas">
 
-    <section class="footer-info">
+        <div class="footer-columna">
 
-
-        <!-- AYUDA -->
-
-        <div class="columna">
-
-            <h4>
-                AYUDA
-            </h4>
+            <h4>AYUDA</h4>
 
             <ul>
-
                 <li>
                     <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
                         Asistencia
@@ -1157,26 +604,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         Devoluciones
                     </a>
                 </li>
-
             </ul>
 
         </div>
 
 
-        <!-- SHOESTYLE -->
+        <div class="footer-columna">
 
-        <div class="columna">
-
-            <h4>
-                SHOESTYLE
-            </h4>
+            <h4>SHOESTYLE</h4>
 
             <ul>
 
                 <li>
                     <strong>Teléfonos:</strong>
-                    +57 310 700 1125 /
-                    +57 302 2001695
+                    +57 310 700 1125 / +57 302 2001695
                 </li>
 
                 <li>
@@ -1199,21 +640,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
 
 
-        <!-- LEGAL -->
+        <div class="footer-columna">
 
-        <div class="columna">
-
-            <h4>
-                INFORMACIÓN LEGAL
-            </h4>
+            <h4>INFORMACIÓN LEGAL</h4>
 
             <ul>
 
                 <li>
-                    <a
-                        href="./paginas/terminos.pdf"
-                        target="_blank"
-                    >
+                    <a href="./paginas/terminos.pdf" target="_blank">
                         Términos y Condiciones
                     </a>
                 </li>
@@ -1234,16 +668,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- COPYRIGHT -->
-
-    <div class="copyright">
+    <div class="footer-copyright">
 
         <p>
-            &copy; 2025 SHOESTYLE.
-            Todos los derechos reservados.
+            © 2025 SHOESTYLE. Todos los derechos reservados.
         </p>
 
     </div>
@@ -1268,113 +699,48 @@ const zapatos = [
 
 let indexZapato = 0;
 
-
 function moverCarrusel(tipo, direccion) {
 
-    if (tipo !== "zapatos") {
-        return;
+    if (tipo === "zapatos") {
+
+        indexZapato =
+            (indexZapato + direccion + zapatos.length)
+            % zapatos.length;
+
+        document.getElementById("zapato-imagen").src =
+            zapatos[indexZapato];
     }
-
-    indexZapato =
-        (
-            indexZapato +
-            direccion +
-            zapatos.length
-        ) % zapatos.length;
-
-    document.getElementById(
-        "zapato-imagen"
-    ).src = zapatos[indexZapato];
 }
 
 
-/* =====================================================
-   MENÚ MÓVIL
-===================================================== */
+/* MENÚ MÓVIL */
 
-const menuMovil =
-    document.getElementById("menuMovil");
+const menuMovil = document.getElementById("menuMovil");
+const navegacion = document.querySelector(".navegacion");
 
-const navegacion =
-    document.getElementById("navegacion");
+if (menuMovil && navegacion) {
 
-
-menuMovil.addEventListener(
-    "click",
-    function () {
+    menuMovil.addEventListener("click", function () {
 
         navegacion.classList.toggle("activo");
 
-        const abierto =
-            navegacion.classList.contains("activo");
+        const icono = menuMovil.querySelector("i");
 
-        menuMovil.setAttribute(
-            "aria-expanded",
-            abierto
-        );
+        if (navegacion.classList.contains("activo")) {
 
-        const icono =
-            menuMovil.querySelector("i");
-
-        if (abierto) {
-
-            icono.classList.remove(
-                "fa-bars"
-            );
-
-            icono.classList.add(
-                "fa-xmark"
-            );
+            icono.classList.remove("fa-bars");
+            icono.classList.add("fa-xmark");
 
         } else {
 
-            icono.classList.remove(
-                "fa-xmark"
-            );
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
 
-            icono.classList.add(
-                "fa-bars"
-            );
         }
 
-    }
-);
-
-
-/* CERRAR MENÚ AL TOCAR UN ENLACE */
-
-document
-    .querySelectorAll(".navegacion a")
-    .forEach(function(enlace) {
-
-        enlace.addEventListener(
-            "click",
-            function() {
-
-                navegacion.classList.remove(
-                    "activo"
-                );
-
-                menuMovil.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                const icono =
-                    menuMovil.querySelector("i");
-
-                icono.classList.remove(
-                    "fa-xmark"
-                );
-
-                icono.classList.add(
-                    "fa-bars"
-                );
-
-            }
-        );
-
     });
+
+}
 
 </script>
 
