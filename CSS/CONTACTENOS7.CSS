@@ -1,8 +1,10 @@
 /* =========================================================
-   CONTACTENOS — SHOESTYLE
+   FUENTES
 ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 
 /* =========================================================
@@ -82,11 +84,10 @@ select {
 
 
 /* =========================================================
-   BANNER / HERO
+   HERO / BANNER
 ========================================================= */
 
 .banner-portada {
-
     position: relative;
 
     width: 100%;
@@ -105,7 +106,6 @@ select {
 ========================================================= */
 
 .video-container {
-
     position: absolute;
 
     inset: 0;
@@ -117,7 +117,6 @@ select {
 }
 
 .video-fondo {
-
     width: 100%;
     height: 100%;
 
@@ -125,7 +124,6 @@ select {
 }
 
 .capa-oscura {
-
     position: absolute;
 
     inset: 0;
@@ -145,7 +143,6 @@ select {
 ========================================================= */
 
 .top-bar {
-
     position: relative;
 
     z-index: 50;
@@ -155,16 +152,23 @@ select {
 
     padding: 0 5%;
 
-    display: flex;
+    display: grid;
+
+    /*
+       3 columnas:
+       logo | navegación | iconos
+    */
+
+    grid-template-columns: 1fr auto 1fr;
+
     align-items: center;
-    justify-content: space-between;
 
     background: rgba(0,0,0,.35);
 
-    border-bottom: 1px solid rgba(255,255,255,.12);
+    border-bottom:
+        1px solid rgba(255,255,255,.12);
 
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 
@@ -173,23 +177,20 @@ select {
 ========================================================= */
 
 .logo {
+    justify-self: start;
 
     flex-shrink: 0;
+
+    font-size: 1.5rem;
+
+    letter-spacing: 1px;
 
     font-family:
         'Impact',
         'Arial Black',
         sans-serif;
 
-    font-size: 1.5rem;
-
-    font-weight: normal;
-
-    letter-spacing: 1px;
-
     color: #ffffff;
-
-    white-space: nowrap;
 }
 
 .logo-shoe {
@@ -207,14 +208,14 @@ select {
 
 .navegacion {
     display: block;
+
+    justify-self: center;
 }
 
 .navegacion ul {
-
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 25px;
@@ -230,29 +231,32 @@ select {
 }
 
 .navegacion li a {
-
     position: relative;
 
     display: inline-block;
 
-    color: rgba(255,255,255,.62);
+    color: #b3b3b3;
 
     font-family: 'Poppins', sans-serif;
 
-    /* SÍ, DEJAMOS EL VALOR QUE PEDISTE */
+    /* SÍ, EXACTAMENTE COMO LO PEDISTE */
     font-size: 0.8 5rem;
 
     font-weight: 600;
 
     letter-spacing: .7px;
 
-    white-space: nowrap;
+    padding: 8px 0;
 
-    transition: color .3s ease;
+    transition:
+        color .3s ease;
 }
 
 
-/* HOVER SIN ROJO */
+/* =========================================================
+   HOVER NAV
+   NO ROJO
+========================================================= */
 
 .navegacion li a:hover {
     color: #ffffff;
@@ -260,30 +264,35 @@ select {
 
 
 /* =========================================================
-   LÍNEA ROJA SOLO EN LA PÁGINA ACTIVA
+   LÍNEA DEL NAV
 ========================================================= */
 
 .navegacion li a::after {
-
     content: "";
 
     position: absolute;
 
     left: 0;
-
-    bottom: -8px;
+    bottom: -7px;
 
     width: 0;
-
     height: 2px;
 
     background: var(--rojo);
 
-    transition: width .3s ease;
+    transition:
+        width .3s ease;
 }
 
 
-/* SOLO ACTIVO */
+/* HOVER: LÍNEA */
+
+.navegacion li a:hover::after {
+    width: 0;
+}
+
+
+/* PÁGINA ACTIVA */
 
 .navegacion li a.activo {
     color: #ffffff;
@@ -299,6 +308,7 @@ select {
 ========================================================= */
 
 .top-icons {
+    justify-self: end;
 
     display: flex;
 
@@ -307,12 +317,9 @@ select {
     gap: 18px;
 
     flex-shrink: 0;
-
-    margin-left: 45px;
 }
 
 .icon-link {
-
     width: 38px;
     height: 38px;
 
@@ -325,20 +332,15 @@ select {
 
     font-size: 1rem;
 
-    background: transparent;
-
-    border: none;
-
-    border-radius: 0;
+    border-radius: 50%;
 
     transition: .3s ease;
 }
 
 .icon-link:hover {
-
     color: var(--rojo);
 
-    background: transparent;
+    background: rgba(255,255,255,.08);
 
     transform: translateY(-2px);
 }
@@ -349,7 +351,6 @@ select {
 ========================================================= */
 
 .menu-movil {
-
     display: none;
 
     width: 42px;
@@ -362,8 +363,6 @@ select {
 
     border: none;
 
-    outline: none;
-
     background: transparent;
 
     color: #ffffff;
@@ -372,25 +371,7 @@ select {
 
     cursor: pointer;
 
-    z-index: 10000;
-
-    flex-shrink: 0;
-
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-.menu-movil:hover {
-    color: #ffffff;
-    background: transparent;
-}
-
-.menu-movil:focus {
-    outline: none;
-}
-
-.menu-movil:active {
-    transform: scale(.95);
+    z-index: 1000;
 }
 
 
@@ -399,18 +380,18 @@ select {
 ========================================================= */
 
 .contenido-centro {
-
     position: relative;
 
     z-index: 10;
 
     width: 100%;
-
     max-width: 950px;
 
     margin: auto;
 
     padding: 30px 20px;
+
+    text-align: center;
 
     display: flex;
 
@@ -419,8 +400,6 @@ select {
     align-items: center;
 
     justify-content: center;
-
-    text-align: center;
 }
 
 
@@ -428,7 +407,8 @@ select {
    TÍTULO
 ========================================================= */
 
-.contenido-centro h1 {
+.titulo-hero {
+    margin: 0;
 
     font-family:
         'Impact',
@@ -451,7 +431,7 @@ select {
     text-align: center;
 }
 
-.contenido-centro h1 span {
+.titulo-hero span {
     color: var(--rojo);
 }
 
@@ -461,12 +441,11 @@ select {
 ========================================================= */
 
 .subtitulo {
+    max-width: 700px;
 
     margin: 25px auto 0;
 
-    max-width: 700px;
-
-    color: rgba(255,255,255,.72);
+    color: #d0d0d0;
 
     font-family: 'Manrope', sans-serif;
 
@@ -479,22 +458,13 @@ select {
 
 
 /* =========================================================
-   OCULTAR LEMA ANTIGUO
-========================================================= */
-
-.lema-principal,
-.etiqueta-hero {
-    display: none !important;
-}
-
-
-/* =========================================================
    MAIN
 ========================================================= */
 
 main {
-
     width: 100%;
+
+    padding: 100px 5%;
 
     background:
         linear-gradient(
@@ -502,46 +472,42 @@ main {
             #080808,
             #050505
         );
-
-    padding: 110px 5%;
 }
 
 
 /* =========================================================
-   SECCIÓN CONTACTO
+   CONTACTO
 ========================================================= */
 
 .seccion-contacto {
-
-    width: min(1250px, 100%);
+    width: min(1200px, 100%);
 
     margin: 0 auto;
 
     display: grid;
 
     grid-template-columns:
-        minmax(0, .85fr)
-        minmax(0, 1.15fr);
+        minmax(0, .9fr)
+        minmax(0, 1.1fr);
 
-    gap: 80px;
+    gap: 70px;
 
-    align-items: center;
+    align-items: start;
 }
 
 
 /* =========================================================
-   INFORMACIÓN
+   INFORMACIÓN CONTACTO
 ========================================================= */
 
 .contacto-info {
     width: 100%;
+
+    padding-top: 10px;
 }
 
 .seccion-etiqueta {
-
     display: block;
-
-    margin-bottom: 18px;
 
     color: var(--rojo);
 
@@ -552,31 +518,36 @@ main {
     font-weight: 600;
 
     letter-spacing: 4px;
+
+    margin-bottom: 18px;
 }
 
 .contacto-info h2 {
-
     font-family:
         'Impact',
         'Arial Black',
         sans-serif;
 
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            4rem
+        );
 
-    font-weight: normal;
+    letter-spacing: 1px;
 
     line-height: 1;
-
-    letter-spacing: 2px;
 
     margin-bottom: 25px;
 }
 
 .texto-contacto {
-
     max-width: 550px;
 
-    color: rgba(255,255,255,.62);
+    color: rgba(255,255,255,.65);
+
+    font-family: 'Manrope', sans-serif;
 
     font-size: 15px;
 
@@ -589,24 +560,22 @@ main {
 ========================================================= */
 
 .datos-contacto {
-
-    margin-top: 45px;
-
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0,1fr));
+        repeat(2, minmax(0, 1fr));
 
     gap: 18px;
+
+    margin-top: 45px;
 }
 
 
 /* =========================================================
-   TARJETAS
+   TARJETA DATO
 ========================================================= */
 
 .dato {
-
     min-height: 145px;
 
     padding: 25px;
@@ -620,13 +589,14 @@ main {
     background:
         linear-gradient(
             145deg,
-            #181818,
+            #171717,
             #101010
         );
 
-    border: 1px solid rgba(255,255,255,.08);
+    border:
+        1px solid rgba(255,255,255,.09);
 
-    border-radius: 18px;
+    border-radius: 16px;
 
     transition:
         transform .3s ease,
@@ -634,56 +604,59 @@ main {
         box-shadow .3s ease;
 }
 
-.dato:hover {
 
-    transform: translateY(-6px);
+/* HOVER */
+
+.dato:hover {
+    transform: translateY(-5px);
 
     border-color:
         rgba(225,6,32,.55);
 
     box-shadow:
-        0 18px 40px rgba(0,0,0,.35);
+        0 15px 35px rgba(0,0,0,.35);
 }
 
 
 /* =========================================================
-   ICONOS — SIN FONDO ROJO
+   ICONO DEL DATO
 ========================================================= */
 
 .dato-icono {
+    width: 45px;
+    height: 45px;
 
-    width: 48px;
-    height: 48px;
-
-    min-width: 48px;
+    min-width: 45px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    background: rgba(255,255,255,.06);
+    background: #202020;
 
-    border: 1px solid rgba(255,255,255,.12);
+    border:
+        1px solid rgba(255,255,255,.12);
 
-    border-radius: 14px;
+    border-radius: 12px;
 
     color: #ffffff;
 
-    font-size: 18px;
+    font-size: 17px;
 
-    transition: .3s ease;
+    transition:
+        color .3s ease,
+        border-color .3s ease,
+        background .3s ease;
 }
 
 .dato:hover .dato-icono {
-
-    background: rgba(255,255,255,.10);
-
-    border-color: rgba(255,255,255,.25);
-
     color: #ffffff;
 
-    transform: scale(1.05);
+    background: #252525;
+
+    border-color:
+        rgba(255,255,255,.22);
 }
 
 
@@ -696,8 +669,7 @@ main {
 }
 
 .dato-contenido h3 {
-
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 
     color: #ffffff;
 
@@ -711,10 +683,9 @@ main {
 }
 
 .dato-contenido p {
+    margin-bottom: 4px;
 
-    margin-bottom: 5px;
-
-    color: rgba(255,255,255,.52);
+    color: rgba(255,255,255,.55);
 
     font-family: 'Manrope', sans-serif;
 
@@ -722,7 +693,7 @@ main {
 
     line-height: 1.5;
 
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
 }
 
 
@@ -730,8 +701,7 @@ main {
    FORMULARIO
 ========================================================= */
 
-.contacto-formulario {
-
+.formulario-contacto {
     width: 100%;
 
     padding: 45px;
@@ -739,29 +709,33 @@ main {
     background:
         linear-gradient(
             145deg,
-            #181818,
+            #171717,
             #101010
         );
 
-    border: 1px solid rgba(255,255,255,.08);
+    border:
+        1px solid rgba(255,255,255,.09);
 
-    border-radius: 22px;
+    border-radius: 20px;
 
     box-shadow:
         0 25px 60px rgba(0,0,0,.35);
 }
 
-.contacto-formulario h2 {
-
+.formulario-contacto h2 {
     margin-bottom: 10px;
 
-    font-family: 'Poppins', sans-serif;
+    font-family:
+        'Impact',
+        'Arial Black',
+        sans-serif;
 
-    font-size: 27px;
+    font-size: 32px;
+
+    letter-spacing: 1px;
 }
 
-.contacto-formulario > p {
-
+.formulario-contacto > p {
     margin-bottom: 30px;
 
     color: rgba(255,255,255,.55);
@@ -776,12 +750,7 @@ main {
    CAMPOS
 ========================================================= */
 
-.form-grupo {
-    margin-bottom: 20px;
-}
-
-.form-grupo label {
-
+.formulario-contacto label {
     display: block;
 
     margin-bottom: 8px;
@@ -795,44 +764,46 @@ main {
     font-weight: 600;
 }
 
-.form-grupo input,
-.form-grupo textarea,
-.form-grupo select {
-
+.formulario-contacto input,
+.formulario-contacto textarea,
+.formulario-contacto select {
     width: 100%;
 
     padding: 14px 16px;
 
+    margin-bottom: 20px;
+
     background: #090909;
 
-    border: 1px solid rgba(255,255,255,.10);
+    border:
+        1px solid rgba(255,255,255,.12);
 
     border-radius: 10px;
 
-    outline: none;
-
     color: #ffffff;
+
+    outline: none;
 
     font-size: 13px;
 
-    transition: .3s ease;
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease;
 }
 
-.form-grupo textarea {
-
+.formulario-contacto textarea {
     min-height: 150px;
 
     resize: vertical;
 }
 
-.form-grupo input:focus,
-.form-grupo textarea:focus,
-.form-grupo select:focus {
-
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus,
+.formulario-contacto select:focus {
     border-color: var(--rojo);
 
     box-shadow:
-        0 0 0 3px rgba(225,6,32,.10);
+        0 0 0 3px rgba(225,6,32,.08);
 }
 
 
@@ -840,15 +811,12 @@ main {
    BOTÓN FORMULARIO
 ========================================================= */
 
-.contacto-formulario button {
-
+.formulario-contacto button {
     width: 100%;
 
-    min-height: 52px;
+    min-height: 50px;
 
-    margin-top: 10px;
-
-    padding: 14px 25px;
+    padding: 13px 25px;
 
     border: none;
 
@@ -868,11 +836,13 @@ main {
 
     cursor: pointer;
 
-    transition: .3s ease;
+    transition:
+        background .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
-.contacto-formulario button:hover {
-
+.formulario-contacto button:hover {
     background: var(--rojo-hover);
 
     transform: translateY(-3px);
@@ -887,7 +857,6 @@ main {
 ========================================================= */
 
 #footer-shoestyle {
-
     position: relative;
 
     width: 100%;
@@ -907,7 +876,8 @@ main {
             #030303 100%
         );
 
-    border-top: 1px solid rgba(255,255,255,.12);
+    border-top:
+        1px solid rgba(255,255,255,.12);
 
     color: #ffffff;
 
@@ -922,7 +892,6 @@ main {
 ========================================================= */
 
 #footer-shoestyle .footer-redes {
-
     width: 100%;
 
     display: flex;
@@ -939,7 +908,6 @@ main {
 }
 
 #footer-shoestyle .footer-redes h3 {
-
     display: block;
 
     margin: 0 0 25px;
@@ -957,13 +925,7 @@ main {
     letter-spacing: 1.5px;
 }
 
-
-/* =========================================================
-   ICONOS REDES
-========================================================= */
-
 #footer-shoestyle .footer-iconos {
-
     width: 100%;
 
     display: flex;
@@ -978,7 +940,6 @@ main {
 }
 
 #footer-shoestyle .footer-iconos a {
-
     width: 52px;
     height: 52px;
 
@@ -995,7 +956,8 @@ main {
 
     background: #171717;
 
-    border: 1px solid rgba(255,255,255,.18);
+    border:
+        1px solid rgba(255,255,255,.18);
 
     border-radius: 50%;
 
@@ -1009,7 +971,6 @@ main {
 }
 
 #footer-shoestyle .footer-iconos a img {
-
     display: block;
 
     width: 27px;
@@ -1033,7 +994,6 @@ main {
 }
 
 #footer-shoestyle .footer-iconos a:hover {
-
     transform: translateY(-6px);
 
     background: var(--rojo);
@@ -1050,7 +1010,6 @@ main {
 ========================================================= */
 
 #footer-shoestyle .footer-columnas {
-
     width: min(1250px, 100%);
 
     margin: 0 auto;
@@ -1060,13 +1019,15 @@ main {
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0,1fr));
+        repeat(3, minmax(0, 1fr));
 
     gap: 60px;
 
-    border-top: 1px solid rgba(255,255,255,.08);
+    border-top:
+        1px solid rgba(255,255,255,.08);
 
-    border-bottom: 1px solid rgba(255,255,255,.08);
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
 }
 
 #footer-shoestyle .footer-columna {
@@ -1074,7 +1035,6 @@ main {
 }
 
 #footer-shoestyle .footer-columna h4 {
-
     position: relative;
 
     margin: 0 0 25px;
@@ -1093,7 +1053,6 @@ main {
 }
 
 #footer-shoestyle .footer-columna h4::after {
-
     content: "";
 
     display: block;
@@ -1107,7 +1066,6 @@ main {
 }
 
 #footer-shoestyle .footer-columna ul {
-
     margin: 0;
     padding: 0;
 
@@ -1115,7 +1073,6 @@ main {
 }
 
 #footer-shoestyle .footer-columna li {
-
     margin-bottom: 13px;
 
     color: #888;
@@ -1130,8 +1087,11 @@ main {
 }
 
 #footer-shoestyle .footer-columna li a {
+    display: inline;
 
     color: #888;
+
+    text-decoration: none;
 
     transition: color .3s ease;
 }
@@ -1146,7 +1106,6 @@ main {
 ========================================================= */
 
 #footer-shoestyle .footer-copyright {
-
     width: 100%;
 
     padding-top: 25px;
@@ -1155,7 +1114,6 @@ main {
 }
 
 #footer-shoestyle .footer-copyright p {
-
     margin: 0;
 
     color: #555;
@@ -1165,55 +1123,100 @@ main {
 
 
 /* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) and (min-width: 801px) {
+
+    .top-bar {
+        padding: 0 3%;
+    }
+
+    .navegacion ul {
+        gap: 14px;
+    }
+
+    .navegacion li a {
+        font-size: 0.8 5rem;
+    }
+
+    .top-icons {
+        gap: 10px;
+    }
+
+    .seccion-contacto {
+        gap: 40px;
+    }
+
+    .formulario-contacto {
+        padding: 35px;
+    }
+}
+
+
+/* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 800px) {
 
-    .top-bar {
+    .banner-portada {
+        min-height: 650px;
+    }
 
+
+    /* TOP */
+
+    .top-bar {
         min-height: 65px;
         height: 65px;
 
         padding: 0 18px;
+
+        display: flex;
+
+        justify-content: space-between;
     }
+
+
+    /* LOGO */
 
     .logo {
         font-size: 1.15rem;
     }
 
+
+    /* NAV */
+
     .navegacion {
-        display: none !important;
+        display: none;
     }
 
     .top-icons {
-        display: none !important;
+        display: none;
     }
 
 
     /* HAMBURGUESA */
 
     .menu-movil {
-
-        display: flex !important;
+        display: flex;
 
         width: 42px;
         height: 42px;
 
-        align-items: center;
-        justify-content: center;
-
         font-size: 22px;
+
+        flex-shrink: 0;
     }
 
 
     /* MENÚ ABIERTO */
 
     .navegacion.activo {
-
         position: fixed;
 
-        display: block !important;
+        display: block;
 
         top: 72px;
 
@@ -1222,16 +1225,18 @@ main {
 
         width: auto;
 
-        max-height: calc(100vh - 85px);
+        max-height:
+            calc(100vh - 85px);
 
         padding: 8px;
 
         overflow-y: auto;
-        overflow-x: hidden;
 
-        background: rgba(10,10,10,.98);
+        background:
+            rgba(10,10,10,.98);
 
-        border: 1px solid rgba(255,255,255,.15);
+        border:
+            1px solid rgba(255,255,255,.15);
 
         border-radius: 14px;
 
@@ -1239,23 +1244,16 @@ main {
             0 20px 50px rgba(0,0,0,.8);
 
         z-index: 9999;
-
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
     }
 
     .navegacion.activo ul {
-
-        display: flex !important;
+        display: flex;
 
         flex-direction: column;
 
         gap: 0;
 
         width: 100%;
-
-        margin: 0;
-        padding: 0;
     }
 
     .navegacion.activo li {
@@ -1263,14 +1261,11 @@ main {
     }
 
     .navegacion.activo li a {
-
         display: block;
 
         width: 100%;
 
         padding: 13px;
-
-        color: #b3b3b3;
 
         border-bottom:
             1px solid rgba(255,255,255,.08);
@@ -1278,53 +1273,48 @@ main {
         font-size: .75rem;
     }
 
-    .navegacion.activo li:last-child a {
-        border-bottom: none;
-    }
-
-    .navegacion.activo li a:hover {
-        color: #ffffff;
-        background: rgba(255,255,255,.05);
-    }
-
     .navegacion.activo li a::after {
-        display: none !important;
-        content: none !important;
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .contenido-centro {
+        padding: 30px 20px;
+    }
+
+    .titulo-hero {
+        font-size:
+            clamp(
+                3rem,
+                10vw,
+                5rem
+            );
     }
 
 
     /* CONTACTO */
 
     .seccion-contacto {
-
         grid-template-columns: 1fr;
 
-        gap: 55px;
-    }
-
-    .contacto-info {
-        text-align: center;
-    }
-
-    .texto-contacto {
-        margin-left: auto;
-        margin-right: auto;
+        gap: 60px;
     }
 
     .datos-contacto {
-        text-align: left;
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
     }
 
 
     /* FOOTER */
 
     #footer-shoestyle {
-
         padding: 55px 5% 25px;
     }
 
     #footer-shoestyle .footer-columnas {
-
         grid-template-columns:
             repeat(2, minmax(0,1fr));
 
@@ -1344,10 +1334,9 @@ main {
     }
 
 
-    /* HEADER */
+    /* TOP BAR */
 
     .top-bar {
-
         min-height: 60px;
         height: 60px;
 
@@ -1358,19 +1347,20 @@ main {
         font-size: .95rem;
     }
 
+
+    /* HAMBURGUESA */
+
     .menu-movil {
+        width: 42px;
+        height: 42px;
 
-        width: 38px;
-        height: 38px;
-
-        font-size: 21px;
+        font-size: 22px;
     }
 
 
     /* MENÚ */
 
     .navegacion.activo {
-
         top: 67px;
 
         left: 8px;
@@ -1380,90 +1370,39 @@ main {
 
     /* HERO */
 
-    .contenido-centro {
-
-        width: 100%;
-
-        padding:
-            25px 18px;
-    }
-
-    .contenido-centro h1 {
-
+    .titulo-hero {
         font-size:
             clamp(
-                2.7rem,
+                2.4rem,
                 12vw,
                 4rem
             );
-
-        line-height: .95;
-
-        text-align: center;
     }
 
     .subtitulo {
-
-        margin-top: 20px;
-
         font-size: .82rem;
 
         line-height: 1.6;
-
-        text-align: center;
-    }
-
-    .subtitulo br {
-        display: none;
     }
 
 
     /* MAIN */
 
     main {
-        padding: 70px 4%;
-    }
-
-
-    /* CONTACTO */
-
-    .seccion-contacto {
-        gap: 45px;
-    }
-
-    .contacto-info h2 {
-
-        font-size: 3rem;
-
-        text-align: center;
-    }
-
-    .seccion-etiqueta {
-        text-align: center;
-    }
-
-    .texto-contacto {
-
-        font-size: 13px;
-
-        text-align: center;
+        padding: 70px 5%;
     }
 
 
     /* DATOS */
 
     .datos-contacto {
-
         grid-template-columns: 1fr;
 
-        gap: 12px;
-
-        margin-top: 30px;
+        gap: 14px;
     }
 
     .dato {
-
-        min-height: 120px;
+        min-height: 125px;
 
         padding: 20px;
     }
@@ -1471,22 +1410,20 @@ main {
 
     /* FORMULARIO */
 
-    .contacto-formulario {
-
-        padding: 28px 20px;
+    .formulario-contacto {
+        padding: 25px 20px;
 
         border-radius: 18px;
     }
 
-    .contacto-formulario h2 {
-        font-size: 22px;
+    .formulario-contacto h2 {
+        font-size: 27px;
     }
 
 
     /* FOOTER */
 
     #footer-shoestyle {
-
         padding: 50px 18px 20px;
     }
 
@@ -1495,7 +1432,6 @@ main {
     }
 
     #footer-shoestyle .footer-redes h3 {
-
         font-size: 14px;
 
         margin-bottom: 20px;
@@ -1506,7 +1442,6 @@ main {
     }
 
     #footer-shoestyle .footer-iconos a {
-
         width: 45px;
         height: 45px;
 
@@ -1515,7 +1450,6 @@ main {
     }
 
     #footer-shoestyle .footer-iconos a img {
-
         width: 23px;
         height: 23px;
 
@@ -1524,7 +1458,6 @@ main {
     }
 
     #footer-shoestyle .footer-columnas {
-
         grid-template-columns: 1fr;
 
         gap: 30px;
@@ -1554,46 +1487,33 @@ main {
 
 @media (max-width: 380px) {
 
-    .top-bar {
-        padding: 0 10px;
-    }
-
     .logo {
         font-size: .82rem;
     }
 
-    .menu-movil {
-
-        width: 38px;
-        height: 38px;
-
-        font-size: 21px;
+    .top-bar {
+        padding: 0 10px;
     }
 
-    .datos-contacto {
-        gap: 10px;
+    .menu-movil {
+        width: 42px;
+        height: 42px;
+
+        font-size: 22px;
+    }
+
+    .titulo-hero {
+        font-size: 2.3rem;
     }
 
     .dato {
-        padding: 17px;
-    }
-
-    .dato-icono {
-
-        width: 43px;
-        height: 43px;
-
-        min-width: 43px;
-    }
-
-    .contacto-formulario {
-        padding: 24px 16px;
+        padding: 18px;
     }
 }
 
 
 /* =========================================================
-   PC — ASEGURAR HAMBURGUESA OCULTA
+   PC
 ========================================================= */
 
 @media (min-width: 801px) {
