@@ -1,1213 +1,543 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Manrope:wght@200..800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
-:root {
-    --rojo: #e10620;
-    --rojo-oscuro: #a20000;
-    --fondo: #050505;
-    --fondo-2: #0d0d0d;
-    --fondo-3: #151515;
-    --tarjeta: #181818;
-    --blanco: #ffffff;
-    --gris-claro: #c7c7c7;
-    --gris: #8c8c8c;
-}
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    background: #050505;
-    color: #fff;
-    font-family: 'Manrope', sans-serif;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-button,
-input,
-textarea,
-select {
-    font-family: inherit;
-}
-
-/* =========================================================
-   CONTENEDOR
-========================================================= */
-
-#contenedor {
-    width: 100%;
-    min-height: 100vh;
-    background: #050505;
-}
-
-/* =========================================================
-   BANNER
-========================================================= */
-
-.banner-portada {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    min-height: 650px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    overflow: hidden;
-    color: #fff;
-}
-
-/* =========================================================
-   IMAGEN
-========================================================= */
-
-.imagen-banner {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.imagen-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+<!DOCTYPE html>
+<html lang="es">
 
-.capa-oscura {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.82)
-    );
-    z-index: 2;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* =========================================================
-   TOP BAR
-========================================================= */
+    <title>Contáctenos | SHOESTYLE</title>
 
-.top-bar {
-    position: relative;
-    z-index: 10;
+    <link rel="stylesheet" href="../CSS/CONTACTENOS7.CSS">
 
-    width: 100%;
-    min-height: 90px;
-    padding: 0 6%;
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
+        rel="stylesheet">
 
-    background: rgba(0,0,0,.25);
-    border-bottom: 1px solid rgba(255,255,255,.12);
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    backdrop-filter: blur(10px);
-}
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
 
-.logo {
-    flex-shrink: 0;
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 
-    color: #fff;
+<body>
 
-    font-family: Impact, 'Arial Black', sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-}
+<div id="contenedor">
 
-.logo-rojo {
-    color: var(--rojo);
-}
+    <!-- =========================
+         BANNER
+    ========================== -->
 
-/* =========================================================
-   NAVEGACIÓN
-========================================================= */
+    <header class="banner-portada">
 
-.navegacion ul {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+        <div class="imagen-banner">
+            <img src="../imagenes/descarga (1).jpg" alt="Banner de SHOESTYLE">
+            <div class="capa-oscura"></div>
+        </div>
 
-    list-style: none;
-}
+        <!-- =========================
+             NAVBAR
+        ========================== -->
 
-.navegacion ul li a {
-    position: relative;
+        <div class="top-bar">
 
-    color: #b3b3b3;
+            <a href="../index.php" class="logo">
+                SHOE<span class="logo-rojo">STYLE</span>
+            </a>
 
-    font-family: Poppins, sans-serif;
-    font-size: .85rem;
-    font-weight: 600;
-    letter-spacing: .7px;
+            <nav class="navegacion">
 
-    white-space: nowrap;
+                <ul>
 
-    transition: .3s;
-}
+                    <li>
+                        <a href="../index.php">INICIO</a>
+                    </li>
 
-.navegacion ul li a:hover,
-.navegacion ul li a.activo {
-    color: #fff;
-}
+                    <li>
+                        <a href="../paginas/nuestra empresa.html">
+                            NUESTRA EMPRESA
+                        </a>
+                    </li>
 
-.navegacion ul li a.activo::after {
-    content: "";
+                    <li>
+                        <a href="../paginas/productos.php">
+                            PRODUCTOS
+                        </a>
+                    </li>
 
-    position: absolute;
-    left: 0;
-    bottom: -8px;
+                    <li>
+                        <a href="#" class="activo">
+                            CONTACTENOS
+                        </a>
+                    </li>
 
-    width: 100%;
-    height: 2px;
+                    <li>
+                        <a href="../paginas/inicio de sesion.html">
+                            INICIO DE SESIÓN
+                        </a>
+                    </li>
 
-    background: var(--rojo);
-}
+                    <li>
+                        <a href="../paginas/servicios.html">
+                            SERVICIOS
+                        </a>
+                    </li>
 
-/* =========================================================
-   ICONOS
-========================================================= */
+                    <li>
+                        <a href="../paginas/galeria fotografica.html">
+                            GALERIA FOTOGRAFICA
+                        </a>
+                    </li>
 
-.top-icons {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+                    <li>
+                        <a href="../paginas/registrarse.html">
+                            REGISTRARSE
+                        </a>
+                    </li>
 
-.icon-link {
-    color: #fff;
-    font-size: 1.1rem;
+                </ul>
 
-    transition: .3s;
-}
+            </nav>
 
-.icon-link:hover {
-    color: var(--rojo);
-    transform: scale(1.1);
-}
+            <div class="top-icons">
 
-/* =========================================================
-   HERO
-========================================================= */
+                <a href="#" class="icon-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
 
-.contenido-centro {
-    position: relative;
-    z-index: 10;
+                <a href="#" class="icon-link">
+                    <i class="fa-regular fa-eye"></i>
+                </a>
 
-    width: min(900px, 90%);
+            </div>
 
-    padding: 20px;
+            <button class="menu-movil"
+                type="button"
+                aria-label="Abrir menú">
 
-    text-align: center;
-}
+                <i class="fa-solid fa-bars"></i>
 
-.etiqueta-hero {
-    margin-bottom: 12px;
+            </button>
 
-    color: var(--rojo);
+        </div>
 
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 4px;
-}
+        <!-- =========================
+             HERO
+        ========================== -->
 
-.titulo-hero {
-    color: #fff;
+        <div class="contenido-centro">
 
-    font-family: 'Archivo Black', 'Arial Black', sans-serif;
-    font-size: clamp(3rem, 7vw, 6rem);
+            <p class="etiqueta-hero">
+                ESTAMOS PARA AYUDARTE
+            </p>
 
-    line-height: .95;
-    letter-spacing: -2px;
-}
+            <h1 class="titulo-hero">
+                CONTÁCTANOS
+            </h1>
 
-.subtitulo {
-    margin-top: 20px;
+            <p class="subtitulo">
+                Ponte en contacto con el equipo de SHOESTYLE.
+            </p>
 
-    color: #d0d0d0;
+        </div>
 
-    font-size: clamp(.9rem, 2vw, 1.1rem);
-    line-height: 1.6;
-}
+        <div class="lema-centro">
 
-/* =========================================================
-   LEMA
-========================================================= */
+            <p>
+                TU ESTILO EMPIEZA POR LOS PIES
+            </p>
 
-.lema-centro {
-    position: relative;
-    z-index: 10;
+        </div>
 
-    width: 100%;
-    margin-bottom: 25px;
+        <div class="scroll-indicator">
 
-    text-align: center;
-}
+            <div class="mouse">
+                <div class="rueda"></div>
+            </div>
 
-.lema-centro p {
-    color: rgba(255,255,255,.75);
+        </div>
 
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    </header>
 
-    letter-spacing: 4px;
-}
 
-/* =========================================================
-   SCROLL
-========================================================= */
+    <!-- =========================
+         CONTACTO
+    ========================== -->
 
-.scroll-indicator {
-    position: absolute;
+    <main class="contacto">
 
-    bottom: 20px;
-    left: 50%;
+        <section class="contacto-seccion">
 
-    transform: translateX(-50%);
+            <!-- IZQUIERDA -->
 
-    z-index: 10;
+            <div class="contacto-info">
 
-    opacity: .6;
-}
+                <span class="seccion-etiqueta">
+                    SHOESTYLE
+                </span>
 
-.mouse {
-    width: 24px;
-    height: 40px;
+                <h2>
+                    HABLEMOS
+                </h2>
 
-    display: flex;
-    justify-content: center;
+                <p class="texto-contacto">
 
-    padding-top: 8px;
+                    ¿Tienes alguna pregunta, sugerencia o necesitas
+                    información sobre nuestros productos?
 
-    border: 2px solid #fff;
-    border-radius: 20px;
-}
+                    <br><br>
 
-.rueda {
-    width: 4px;
-    height: 8px;
+                    Escríbenos y nuestro equipo estará encantado
+                    de ayudarte.
 
-    background: var(--rojo);
-    border-radius: 2px;
+                </p>
 
-    animation: rueda 1.5s infinite;
-}
+                <div class="datos-contacto">
 
-@keyframes rueda {
+                    <div class="dato">
 
-    0% {
-        opacity: 1;
-        transform: translateY(0);
+                        <div class="dato-icono">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div>
+                            <h3>TELÉFONOS</h3>
+
+                            <p>+57 310 700 1125</p>
+                            <p>+57 302 200 1695</p>
+                        </div>
+
+                    </div>
+
+                    <div class="dato">
+
+                        <div class="dato-icono">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div>
+                            <h3>CORREO</h3>
+                            <p>shoestyle@gmail.com</p>
+                        </div>
+
+                    </div>
+
+                    <div class="dato">
+
+                        <div class="dato-icono">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div>
+                            <h3>HORARIO</h3>
+                            <p>8:00 a.m - 7:00 p.m</p>
+                        </div>
+
+                    </div>
+
+                    <div class="dato">
+
+                        <div class="dato-icono">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <h3>DIRECCIÓN</h3>
+                            <p>Por confirmar</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DERECHA -->
+
+            <div class="formulario-contacto">
+
+                <div class="formulario-header">
+
+                    <span class="formulario-etiqueta">
+                        ESCRÍBENOS
+                    </span>
+
+                    <h2>
+                        CONTÁCTANOS
+                    </h2>
+
+                </div>
+
+                <form action="../PHP/guardar_contacto.php" method="post">
+
+                    <div class="campo">
+
+                        <label for="nombre">
+                            NOMBRE COMPLETO
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Nombre completo"
+                            required>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="email">
+                            CORREO ELECTRÓNICO
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Correo electrónico"
+                            required>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="telefono">
+                            TELÉFONO
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefono"
+                            name="telefono"
+                            placeholder="Teléfono (opcional)">
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="mensaje">
+                            MENSAJE
+                        </label>
+
+                        <textarea
+                            id="mensaje"
+                            name="mensaje"
+                            rows="6"
+                            placeholder="Escribe tu mensaje..."
+                            required></textarea>
+
+                    </div>
+
+                    <button type="submit">
+
+                        ENVIAR MENSAJE
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="redes-sociales">
+
+            <h3>
+                ENCUÉNTRANOS TAMBIÉN EN:
+            </h3>
+
+            <div class="iconos-redes">
+
+                <a href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
+                    target="_blank">
+                    <img src="../imagenes/facebook.png" alt="Facebook">
+                </a>
+
+                <a href="#">
+                    <img src="../imagenes/instagram.jpg" alt="Instagram">
+                </a>
+
+                <a href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
+                    target="_blank">
+                    <img src="../imagenes/tiktok.png" alt="TikTok">
+                </a>
+
+                <a href="https://x.com/shoestyle397157"
+                    target="_blank">
+                    <img src="../imagenes/twitter.png" alt="Twitter">
+                </a>
+
+                <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
+                    target="_blank">
+                    <img src="../imagenes/whatsapp.png" alt="WhatsApp">
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-info">
+
+            <div class="columna">
+
+                <h4>AYUDA</h4>
+
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            Asistencia
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Seguimiento de pedidos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Envíos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Devoluciones
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="columna">
+
+                <h4>SHOESTYLE</h4>
+
+                <ul>
+
+                    <li>
+                        <strong>Teléfonos:</strong>
+                        +57 310 700 1125 /
+                        +57 302 200 1695
+                    </li>
+
+                    <li>
+                        <strong>Correo:</strong>
+                        shoestyle@gmail.com
+                    </li>
+
+                    <li>
+                        <strong>Horarios:</strong>
+                        8:00 a.m - 7:00 p.m
+                    </li>
+
+                    <li>
+                        <strong>Dirección:</strong>
+                        Por confirmar
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="columna">
+
+                <h4>INFORMACIÓN LEGAL</h4>
+
+                <ul>
+
+                    <li>
+                        <a href="../paginas/terminos.pdf"
+                            target="_blank">
+                            Términos y Condiciones
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Política de Privacidad
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Condiciones de Uso
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                &copy; 2025 SHOESTYLE.
+                Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<script>
+
+const botonMenu = document.querySelector(".menu-movil");
+const navegacion = document.querySelector(".navegacion");
+
+botonMenu.addEventListener("click", () => {
+
+    navegacion.classList.toggle("activo");
+
+    const icono = botonMenu.querySelector("i");
+
+    if (navegacion.classList.contains("activo")) {
+
+        icono.classList.remove("fa-bars");
+        icono.classList.add("fa-xmark");
+
+    } else {
+
+        icono.classList.remove("fa-xmark");
+        icono.classList.add("fa-bars");
+
     }
 
-    100% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-}
+});
 
-/* =========================================================
-   MAIN CONTACTO
-========================================================= */
+</script>
 
-main.contacto {
-    width: 100%;
-
-    padding: 110px 5% 100px;
-
-    background: linear-gradient(
-        180deg,
-        #050505 0%,
-        #080808 100%
-    );
-}
-
-/* =========================================================
-   CONTENEDOR PRINCIPAL
-========================================================= */
-
-.contacto-seccion {
-    width: min(1250px, 100%);
-    margin: 0 auto;
-
-    display: grid;
-
-    /*
-       IZQUIERDA = INFORMACIÓN
-       DERECHA = FORMULARIO
-    */
-
-    grid-template-columns: minmax(0, 1fr) minmax(450px, 1fr);
-
-    gap: 70px;
-
-    align-items: center;
-}
-
-/* =========================================================
-   INFORMACIÓN IZQUIERDA
-========================================================= */
-
-.contacto-info {
-    width: 100%;
-}
-
-.seccion-etiqueta {
-    display: block;
-
-    margin-bottom: 15px;
-
-    color: var(--rojo);
-
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.25rem;
-
-    letter-spacing: 4px;
-}
-
-.contacto-info h2 {
-    position: relative;
-
-    display: inline-block;
-
-    margin-bottom: 28px;
-
-    color: #fff;
-
-    font-family: 'Archivo Black', 'Arial Black', sans-serif;
-
-    font-size: clamp(2.8rem, 5vw, 4rem);
-
-    line-height: 1;
-}
-
-.contacto-info h2::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: -18px;
-
-    width: 54px;
-    height: 3px;
-
-    background: var(--rojo);
-}
-
-.texto-contacto {
-    max-width: 560px;
-
-    margin-top: 25px;
-
-    color: #c5c5c5;
-
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-/* =========================================================
-   DATOS
-========================================================= */
-
-.datos-contacto {
-    width: 100%;
-
-    margin-top: 38px;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 18px;
-}
-
-.dato {
-    min-height: 98px;
-
-    padding: 18px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 15px;
-
-    background: linear-gradient(
-        145deg,
-        #181818,
-        #101010
-    );
-
-    border: 1px solid rgba(255,255,255,.08);
-
-    border-radius: 12px;
-
-    transition: .3s;
-}
-
-.dato:hover {
-    transform: translateY(-4px);
-
-    border-color: rgba(225,6,32,.6);
-
-    background: #1c1c1c;
-}
-
-.dato-icono {
-    flex-shrink: 0;
-
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: rgba(225,6,32,.15);
-
-    color: var(--rojo);
-
-    font-size: 15px;
-}
-
-.dato h3 {
-    margin-bottom: 5px;
-
-    color: #fff;
-
-    font-family: Poppins, sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.dato p {
-    color: #888;
-
-    font-size: 11px;
-
-    line-height: 1.6;
-}
-
-/* =========================================================
-   FORMULARIO DERECHA
-========================================================= */
-
-.formulario-contacto {
-    position: relative;
-
-    width: 100%;
-
-    padding: 42px;
-
-    background: linear-gradient(
-        145deg,
-        #191919,
-        #111
-    );
-
-    border: 1px solid rgba(255,255,255,.1);
-
-    border-radius: 18px;
-
-    box-shadow: 0 20px 60px rgba(0,0,0,.45);
-
-    overflow: hidden;
-}
-
-.formulario-contacto::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 3px;
-
-    background: linear-gradient(
-        90deg,
-        var(--rojo),
-        #ff3838
-    );
-}
-
-/* =========================================================
-   HEADER FORMULARIO
-========================================================= */
-
-.formulario-header {
-    margin-bottom: 32px;
-}
-
-.formulario-etiqueta {
-    display: block;
-
-    margin-bottom: 12px;
-
-    color: var(--rojo);
-
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
-
-    letter-spacing: 3px;
-}
-
-.formulario-header h2 {
-    color: #fff;
-
-    font-family: 'Archivo Black', 'Arial Black', sans-serif;
-
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-
-    line-height: 1.1;
-}
-
-.formulario-header h2::after {
-    content: "";
-
-    display: block;
-
-    width: 44px;
-    height: 3px;
-
-    margin-top: 16px;
-
-    background: var(--rojo);
-}
-
-/* =========================================================
-   CAMPOS
-========================================================= */
-
-.formulario-contacto form {
-    width: 100%;
-}
-
-.campo {
-    width: 100%;
-    margin-bottom: 21px;
-}
-
-.campo label {
-    display: block;
-
-    margin-bottom: 9px;
-
-    color: #d7d7d7;
-
-    font-family: Poppins, sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.campo input,
-.campo textarea {
-    display: block;
-
-    width: 100%;
-
-    padding: 14px 15px;
-
-    background: #080808;
-
-    color: #fff;
-
-    border: 1px solid rgba(255,255,255,.12);
-
-    border-radius: 9px;
-
-    outline: none;
-
-    font-size: 13px;
-
-    transition: .3s;
-}
-
-.campo input {
-    height: 48px;
-}
-
-.campo textarea {
-    min-height: 140px;
-
-    resize: vertical;
-}
-
-.campo input::placeholder,
-.campo textarea::placeholder {
-    color: #555;
-}
-
-.campo input:focus,
-.campo textarea:focus {
-    border-color: var(--rojo);
-
-    box-shadow:
-        0 0 0 3px rgba(225,6,32,.08);
-}
-
-/* =========================================================
-   BOTÓN
-========================================================= */
-
-.formulario-contacto button {
-    width: 100%;
-
-    min-height: 50px;
-
-    margin-top: 5px;
-
-    border: none;
-    border-radius: 30px;
-
-    background: linear-gradient(
-        90deg,
-        var(--rojo),
-        #ff3838
-    );
-
-    color: #fff;
-
-    font-family: Poppins, sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-.formulario-contacto button:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 10px 25px rgba(225,6,32,.3);
-}
-
-.formulario-contacto button i {
-    margin-left: 8px;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    width: 100%;
-
-    padding: 70px 5% 25px;
-
-    background: linear-gradient(
-        180deg,
-        #0a0a0a,
-        #030303
-    );
-
-    border-top: 1px solid rgba(255,255,255,.08);
-
-    color: #fff;
-
-    text-align: center;
-}
-
-/* =========================================================
-   REDES
-========================================================= */
-
-.redes-sociales {
-    margin-bottom: 55px;
-}
-
-.redes-sociales h3 {
-    margin-bottom: 25px;
-
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 16px;
-}
-
-.iconos-redes {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 15px;
-}
-
-.iconos-redes a {
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid rgba(255,255,255,.15);
-
-    border-radius: 50%;
-
-    background: #111;
-
-    transition: .3s;
-}
-
-.iconos-redes a:hover {
-    transform: translateY(-5px);
-
-    border-color: var(--rojo);
-}
-
-.iconos-redes a img {
-    width: 25px;
-    height: 25px;
-
-    object-fit: contain;
-
-    border-radius: 50%;
-}
-
-/* =========================================================
-   FOOTER INFO
-========================================================= */
-
-.footer-info {
-    width: min(1250px, 100%);
-
-    margin: 0 auto;
-
-    padding: 45px 0;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 60px;
-
-    text-align: left;
-
-    border-top: 1px solid rgba(255,255,255,.07);
-    border-bottom: 1px solid rgba(255,255,255,.07);
-}
-
-.footer-info h4 {
-    margin-bottom: 22px;
-
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 13px;
-}
-
-.footer-info h4::after {
-    content: "";
-
-    display: block;
-
-    width: 30px;
-    height: 2px;
-
-    margin-top: 10px;
-
-    background: var(--rojo);
-}
-
-.footer-info ul {
-    list-style: none;
-}
-
-.footer-info ul li {
-    margin-bottom: 12px;
-
-    color: #888;
-
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-.footer-info ul li strong {
-    color: #d5d5d5;
-}
-
-.footer-info ul li a {
-    color: #888;
-}
-
-.footer-info ul li a:hover {
-    color: var(--rojo);
-}
-
-/* =========================================================
-   COPYRIGHT
-========================================================= */
-
-.copyright {
-    padding-top: 25px;
-}
-
-.copyright p {
-    color: #555;
-    font-size: 12px;
-}
-
-/* =========================================================
-   MENÚ MÓVIL
-========================================================= */
-
-.menu-movil {
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-    background: transparent;
-
-    color: #fff;
-
-    font-size: 22px;
-
-    cursor: pointer;
-}
-
-/* =========================================================
-   TABLET / MÓVIL
-========================================================= */
-
-@media (max-width: 800px) {
-
-    .top-bar {
-        min-height: 65px;
-        height: 65px;
-        padding: 0 16px;
-    }
-
-    .logo {
-        font-size: 1rem;
-    }
-
-    .navegacion {
-        display: none !important;
-    }
-
-    .top-icons {
-        display: none;
-    }
-
-    .menu-movil {
-        display: flex;
-    }
-
-    .navegacion.activo {
-        display: block !important;
-
-        position: fixed;
-
-        top: 70px;
-        left: 10px;
-        right: 10px;
-
-        padding: 8px;
-
-        background: rgba(10,10,10,.98);
-
-        border: 1px solid rgba(255,255,255,.12);
-
-        border-radius: 14px;
-
-        z-index: 100001;
-    }
-
-    .navegacion.activo ul {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 0;
-    }
-
-    .navegacion.activo li {
-        width: 100%;
-    }
-
-    .navegacion.activo a {
-        display: block;
-
-        width: 100%;
-
-        padding: 13px 10px;
-
-        border-bottom: 1px solid rgba(255,255,255,.07);
-
-        font-size: .75rem !important;
-    }
-
-    /* MAIN */
-
-    main.contacto {
-        padding: 70px 5% 80px;
-    }
-
-    .contacto-seccion {
-        grid-template-columns: 1fr;
-
-        gap: 55px;
-    }
-
-    .contacto-info {
-        text-align: center;
-    }
-
-    .seccion-etiqueta {
-        text-align: center;
-    }
-
-    .contacto-info h2::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .texto-contacto {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .datos-contacto {
-        width: min(650px, 100%);
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .formulario-contacto {
-        width: 100%;
-    }
-
-    .footer-info {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-    }
-}
-
-/* =========================================================
-   CELULARES
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .top-bar {
-        height: 60px;
-        min-height: 60px;
-        padding: 0 12px;
-    }
-
-    .logo {
-        font-size: .9rem;
-    }
-
-    .menu-movil {
-        width: 38px;
-        height: 38px;
-        font-size: 21px;
-    }
-
-    .banner-portada {
-        min-height: 540px;
-    }
-
-    .titulo-hero {
-        font-size: clamp(2.6rem, 13vw, 4rem);
-    }
-
-    .lema-centro p {
-        font-size: .9rem;
-        letter-spacing: 2px;
-        padding: 0 15px;
-    }
-
-    /* MAIN */
-
-    main.contacto {
-        padding: 60px 16px 70px;
-    }
-
-    .contacto-seccion {
-        width: 100%;
-        gap: 45px;
-    }
-
-    .contacto-info h2 {
-        font-size: clamp(2.3rem, 12vw, 3.3rem);
-    }
-
-    .texto-contacto {
-        font-size: 14px;
-    }
-
-    .datos-contacto {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        margin-top: 30px;
-    }
-
-    .dato {
-        min-height: 85px;
-        padding: 15px;
-    }
-
-    .formulario-contacto {
-        padding: 27px 20px;
-        border-radius: 15px;
-    }
-
-    .formulario-header h2 {
-        font-size: 1.9rem;
-    }
-
-    .campo input,
-    .campo textarea {
-        padding: 12px;
-        font-size: 12px;
-    }
-
-    .campo textarea {
-        min-height: 120px;
-    }
-
-    footer {
-        padding: 55px 16px 25px;
-    }
-
-    .footer-info {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding: 35px 0;
-        text-align: center;
-    }
-
-    .footer-info h4::after {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-/* =========================================================
-   CELULARES PEQUEÑOS
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .logo {
-        font-size: .82rem;
-    }
-
-    .banner-portada {
-        min-height: 500px;
-    }
-
-    .titulo-hero {
-        font-size: 2.4rem;
-    }
-
-    .formulario-contacto {
-        padding: 24px 16px;
-    }
-}
-
-/* =========================================================
-   PC
-========================================================= */
-
-@media (min-width: 801px) {
-
-    .menu-movil {
-        display: none !important;
-    }
-
-    .navegacion {
-        display: block !important;
-    }
-
-    .top-icons {
-        display: flex !important;
-    }
-}
-
-/* =========================================================
-   PORTÁTILES
-========================================================= */
-
-@media (min-width: 801px) and (max-width: 1250px) {
-
-    .top-bar {
-        padding: 0 3%;
-    }
-
-    .logo {
-        font-size: 1.2rem;
-    }
-
-    .navegacion ul {
-        gap: 13px;
-    }
-
-    .navegacion ul li a {
-        font-size: .63rem;
-        letter-spacing: .2px;
-    }
-
-    .top-icons {
-        gap: 12px;
-    }
-
-    .icon-link {
-        font-size: .95rem;
-    }
-
-    /*
-       FORMULARIO SIGUE A LA DERECHA
-    */
-
-    .contacto-seccion {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(420px, 1fr);
-
-        gap: 45px;
-    }
-
-    .formulario-contacto {
-        padding: 32px;
-    }
-}
+</body>
+</html>
