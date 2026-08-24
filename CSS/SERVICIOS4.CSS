@@ -902,7 +902,6 @@ footer {
 
 /* =========================================================
    MENÚ HAMBURGUESA
-   IGUAL A LA LÓGICA DEL INDEX
 ========================================================= */
 
 .menu-movil {
@@ -999,7 +998,7 @@ footer {
 
 
     /* =====================================================
-       MENÚ ABIERTO — MISMA ESTRUCTURA DEL INDEX
+       MENÚ ABIERTO 
     ===================================================== */
 
     .navegacion.activo {
@@ -1069,8 +1068,13 @@ footer {
     }
 
     .navegacion.activo li:last-child a {
-        border-bottom: none;
-    }
+    border-bottom: none;
+}
+
+
+.navegacion.activo li a::after {
+    display: none;
+}
 
 
     /* =====================================================
