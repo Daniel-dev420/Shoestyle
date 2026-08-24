@@ -12,18 +12,15 @@
 ========================================================= */
 
 :root {
-
     --rojo: #e10620;
     --rojo-hover: #ff243d;
 
     --negro: #050505;
     --negro-2: #0b0b0b;
     --negro-3: #121212;
-
     --tarjeta: #181818;
 
     --blanco: #ffffff;
-
     --gris: #999999;
     --gris-claro: #d0d0d0;
 
@@ -46,7 +43,6 @@ html {
 }
 
 body {
-
     width: 100%;
     min-height: 100vh;
 
@@ -68,10 +64,7 @@ img {
     display: block;
 }
 
-button,
-input,
-textarea,
-select {
+button {
     font-family: inherit;
 }
 
@@ -81,20 +74,17 @@ select {
 ========================================================= */
 
 #contenedor {
-
     width: 100%;
     min-height: 100vh;
-
     background: var(--negro);
 }
 
 
 /* =========================================================
-   HERO
+   HERO / BANNER
 ========================================================= */
 
 .banner-portada {
-
     position: relative;
 
     width: 100%;
@@ -113,9 +103,7 @@ select {
 ========================================================= */
 
 .imagen-banner {
-
     position: absolute;
-
     inset: 0;
 
     width: 100%;
@@ -125,7 +113,6 @@ select {
 }
 
 .imagen-banner img {
-
     width: 100%;
     height: 100%;
 
@@ -138,9 +125,7 @@ select {
 ========================================================= */
 
 .capa-oscura {
-
     position: absolute;
-
     inset: 0;
 
     background:
@@ -158,7 +143,6 @@ select {
 ========================================================= */
 
 .top-bar {
-
     position: relative;
 
     z-index: 50;
@@ -169,14 +153,12 @@ select {
     padding: 0 5%;
 
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
     background: rgba(0,0,0,.35);
 
-    border-bottom:
-        1px solid rgba(255,255,255,.12);
+    border-bottom: 1px solid rgba(255,255,255,.12);
 
     backdrop-filter: blur(10px);
 }
@@ -187,11 +169,9 @@ select {
 ========================================================= */
 
 .logo {
-
     flex-shrink: 0;
 
     font-size: 1.5rem;
-
     letter-spacing: 1px;
 
     font-family:
@@ -199,11 +179,10 @@ select {
         'Arial Black',
         sans-serif;
 
-    color: #ffffff;
+    color: #fff;
 }
 
 .logo span {
-
     color: var(--rojo);
 }
 
@@ -213,12 +192,10 @@ select {
 ========================================================= */
 
 .navegacion {
-
     display: block;
 }
 
 .navegacion ul {
-
     display: flex;
 
     align-items: center;
@@ -236,7 +213,6 @@ select {
 }
 
 .navegacion li a {
-
     position: relative;
 
     display: inline-block;
@@ -245,30 +221,20 @@ select {
 
     font-family: 'Poppins', sans-serif;
 
-    /* CORREGIDO: 0.85rem */
-
-    font-size: 0.85rem;
+    font-size: .85rem;
 
     font-weight: 600;
 
     letter-spacing: .7px;
 
-    transition:
-        color .3s ease;
+    transition: color .3s ease;
 }
 
 .navegacion li a:hover {
-
-    color: #ffffff;
+    color: #fff;
 }
 
-
-/* =========================================================
-   LÍNEA ROJA DEL MENÚ
-========================================================= */
-
 .navegacion li a::after {
-
     content: "";
 
     position: absolute;
@@ -281,28 +247,24 @@ select {
 
     background: var(--rojo);
 
-    transition:
-        width .3s ease;
+    transition: width .3s ease;
 }
 
 .navegacion li a:hover::after,
 .navegacion li a.activo::after {
-
     width: 100%;
 }
 
 .navegacion li a.activo {
-
-    color: #ffffff;
+    color: #fff;
 }
 
 
 /* =========================================================
-   ICONOS SUPERIORES
+   ICONOS DESKTOP
 ========================================================= */
 
 .top-icons {
-
     display: flex;
 
     align-items: center;
@@ -313,7 +275,6 @@ select {
 }
 
 .icon-link {
-
     width: 38px;
     height: 38px;
 
@@ -322,7 +283,7 @@ select {
     align-items: center;
     justify-content: center;
 
-    color: #ffffff;
+    color: #fff;
 
     font-size: 1rem;
 
@@ -332,22 +293,19 @@ select {
 }
 
 .icon-link:hover {
-
     color: var(--rojo);
 
-    background:
-        rgba(255,255,255,.08);
+    background: rgba(255,255,255,.08);
 
     transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   CONTENIDO HERO
+   HERO CONTENT
 ========================================================= */
 
 .contenido-centro {
-
     position: relative;
 
     z-index: 10;
@@ -362,61 +320,40 @@ select {
     text-align: center;
 }
 
-
-/* =========================================================
-   ETIQUETA
-========================================================= */
-
 .etiqueta-hero {
-
     margin-bottom: 15px;
 
     color: var(--rojo);
 
     font-family: 'Poppins', sans-serif;
 
-    font-size: .85rem;
+    font-size: .9rem;
 
     font-weight: 700;
 
     letter-spacing: 4px;
-
-    text-transform: uppercase;
 }
 
-
-/* =========================================================
-   TÍTULO
-========================================================= */
-
 .titulo-hero {
-
     font-family:
-        'Impact',
-        'Arial Black',
+        'Archivo Black',
         sans-serif;
 
     font-size:
         clamp(
-            4rem,
-            9vw,
-            7rem
+            3rem,
+            8vw,
+            6rem
         );
 
-    line-height: .9;
+    line-height: .95;
 
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 
     text-transform: uppercase;
 }
 
-
-/* =========================================================
-   SUBTÍTULO
-========================================================= */
-
 .subtitulo {
-
     margin: 25px auto 0;
 
     max-width: 700px;
@@ -434,7 +371,6 @@ select {
 ========================================================= */
 
 .scroll-indicator {
-
     position: relative;
 
     z-index: 10;
@@ -445,7 +381,6 @@ select {
 }
 
 .mouse {
-
     width: 25px;
     height: 40px;
 
@@ -455,14 +390,12 @@ select {
 
     padding-top: 7px;
 
-    border:
-        2px solid white;
+    border: 2px solid white;
 
     border-radius: 20px;
 }
 
 .rueda {
-
     width: 4px;
     height: 8px;
 
@@ -470,26 +403,19 @@ select {
 
     background: var(--rojo);
 
-    animation:
-        rueda 1.5s infinite;
+    animation: rueda 1.5s infinite;
 }
 
 @keyframes rueda {
 
     from {
-
         opacity: 1;
-
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 
     to {
-
         opacity: 0;
-
-        transform:
-            translateY(12px);
+        transform: translateY(12px);
     }
 }
 
@@ -499,10 +425,9 @@ select {
 ========================================================= */
 
 main {
-
     width: 100%;
 
-    padding: 90px 5%;
+    padding: 85px 5%;
 
     background:
         linear-gradient(
@@ -512,21 +437,14 @@ main {
         );
 }
 
-
-/* =========================================================
-   SECCIÓN SERVICIOS
-========================================================= */
-
 .servicios {
-
-    width: min(1300px, 100%);
+    width: min(1250px, 100%);
 
     margin: 0 auto;
 }
 
 .servicios > h2 {
-
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
     font-family:
         'Archivo Black',
@@ -543,14 +461,11 @@ main {
 }
 
 .descripcion-servicios {
-
-    max-width: 800px;
+    max-width: 850px;
 
     margin: 0 auto 60px;
 
     color: var(--gris-claro);
-
-    font-size: .95rem;
 
     line-height: 1.8;
 
@@ -564,13 +479,12 @@ main {
 
 .servicios-grid {
 
+    width: 100%;
+
     display: grid;
 
     grid-template-columns:
-        repeat(
-            3,
-            minmax(0, 1fr)
-        );
+        repeat(3, minmax(0, 1fr));
 
     gap: 25px;
 }
@@ -582,7 +496,8 @@ main {
 
 .servicio-card {
 
-    min-height: 350px;
+    min-width: 0;
+    min-height: 360px;
 
     padding: 35px 28px;
 
@@ -601,8 +516,7 @@ main {
             #101010
         );
 
-    border:
-        1px solid var(--borde);
+    border: 1px solid var(--borde);
 
     border-radius: 18px;
 
@@ -614,11 +528,9 @@ main {
 
 .servicio-card:hover {
 
-    transform:
-        translateY(-8px);
+    transform: translateY(-8px);
 
-    border-color:
-        var(--rojo);
+    border-color: var(--rojo);
 
     box-shadow:
         0 20px 40px rgba(0,0,0,.5);
@@ -626,7 +538,7 @@ main {
 
 
 /* =========================================================
-   ICONO SERVICIO
+   ICONOS SERVICIOS
 ========================================================= */
 
 .servicio-icono {
@@ -634,18 +546,17 @@ main {
     width: 70px;
     height: 70px;
 
-    margin-bottom: 25px;
-
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    background:
-        rgba(225,6,32,.10);
+    margin-bottom: 25px;
 
-    border:
-        1px solid rgba(225,6,32,.25);
+    background:
+        rgba(225,6,32,.12);
+
+    border: 1px solid rgba(225,6,32,.25);
 
     border-radius: 50%;
 
@@ -653,8 +564,7 @@ main {
 
     font-size: 27px;
 
-    transition:
-        .3s ease;
+    transition: .3s ease;
 }
 
 .servicio-card:hover .servicio-icono {
@@ -663,8 +573,7 @@ main {
 
     color: white;
 
-    transform:
-        scale(1.08);
+    transform: scale(1.08);
 }
 
 
@@ -680,11 +589,9 @@ main {
         'Archivo Black',
         sans-serif;
 
-    font-size: 15px;
+    font-size: 17px;
 
-    letter-spacing: .5px;
-
-    color: white;
+    line-height: 1.3;
 }
 
 
@@ -698,7 +605,7 @@ main {
 
     color: #aaa;
 
-    font-size: 13px;
+    font-size: 14px;
 
     line-height: 1.7;
 }
@@ -717,10 +624,9 @@ main {
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    gap: 9px;
 
-    padding:
-        11px 20px;
+    padding: 11px 20px;
 
     background: var(--rojo);
 
@@ -728,16 +634,13 @@ main {
 
     border-radius: 30px;
 
-    font-family:
-        'Poppins',
-        sans-serif;
+    font-family: 'Poppins', sans-serif;
 
-    font-size: .75rem;
+    font-size: 12px;
 
     font-weight: 600;
 
-    transition:
-        .3s ease;
+    transition: .3s ease;
 }
 
 .servicio-btn:hover {
@@ -746,13 +649,11 @@ main {
 
     color: black;
 
-    transform:
-        translateY(-2px);
+    transform: translateY(-3px);
 }
 
 .servicio-btn i {
-
-    font-size: .7rem;
+    font-size: 11px;
 }
 
 
@@ -766,12 +667,6 @@ footer {
 
     width: 100%;
 
-    display: block;
-
-    clear: both;
-
-    margin: 0;
-
     padding: 70px 5% 25px;
 
     background:
@@ -782,13 +677,12 @@ footer {
         );
 
     border-top:
-        1px solid rgba(255,255,255,.12);
+        1px solid
+        rgba(255,255,255,.12);
 
     color: white;
 
-    font-family:
-        'Manrope',
-        sans-serif;
+    text-align: left;
 }
 
 
@@ -808,16 +702,14 @@ footer {
 
     justify-content: center;
 
-    margin: 0 auto 55px;
+    margin-bottom: 55px;
 
     text-align: center;
 }
 
 .redes-sociales h3 {
 
-    display: block;
-
-    margin: 0 0 25px;
+    margin-bottom: 25px;
 
     color: white;
 
@@ -832,18 +724,12 @@ footer {
     letter-spacing: 1.5px;
 }
 
-
-/* =========================================================
-   ICONOS REDES
-========================================================= */
-
 .iconos-redes {
-
-    width: 100%;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 15px;
@@ -864,59 +750,32 @@ footer {
     align-items: center;
     justify-content: center;
 
-    padding: 0;
-    margin: 0;
-
     background: #171717;
 
-    border:
-        1px solid rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.18);
 
     border-radius: 50%;
 
     overflow: hidden;
 
-    transition:
-        transform .3s ease,
-        background .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
+    transition: .3s ease;
 }
 
 .iconos-redes a img {
 
-    display: block;
-
     width: 27px;
     height: 27px;
 
-    max-width: 27px;
-    max-height: 27px;
-
-    margin: 0;
-    padding: 0;
-
     object-fit: contain;
-
-    border: none;
-
-    border-radius: 0;
-
-    filter: none;
-
-    transform: none;
 }
 
 .iconos-redes a:hover {
 
-    transform:
-        translateY(-6px);
+    transform: translateY(-6px);
 
-    background:
-        var(--rojo);
+    background: var(--rojo);
 
-    border-color:
-        var(--rojo);
+    border-color: var(--rojo);
 
     box-shadow:
         0 10px 25px
@@ -925,7 +784,7 @@ footer {
 
 
 /* =========================================================
-   INFORMACIÓN FOOTER
+   FOOTER INFO
 ========================================================= */
 
 .footer-info {
@@ -939,37 +798,26 @@ footer {
     display: grid;
 
     grid-template-columns:
-        repeat(
-            3,
-            minmax(0, 1fr)
-        );
+        repeat(3, minmax(0, 1fr));
 
     gap: 60px;
 
     border-top:
-        1px solid rgba(255,255,255,.08);
+        1px solid
+        rgba(255,255,255,.08);
 
     border-bottom:
-        1px solid rgba(255,255,255,.08);
+        1px solid
+        rgba(255,255,255,.08);
 }
 
-
-/* =========================================================
-   COLUMNAS
-========================================================= */
-
 .columna {
-
     min-width: 0;
 }
 
 .columna h4 {
 
-    position: relative;
-
-    margin: 0 0 25px;
-
-    color: white;
+    margin-bottom: 25px;
 
     font-family:
         'Archivo Black',
@@ -993,14 +841,8 @@ footer {
 
     margin-top: 10px;
 
-    background:
-        var(--rojo);
+    background: var(--rojo);
 }
-
-
-/* =========================================================
-   LISTAS FOOTER
-========================================================= */
 
 .columna ul {
 
@@ -1022,31 +864,18 @@ footer {
 }
 
 .columna strong {
-
     color: #d5d5d5;
 }
 
-
-/* =========================================================
-   ENLACES FOOTER
-========================================================= */
-
-.columna li a {
-
-    display: inline;
+.columna a {
 
     color: #888;
 
-    text-decoration: none;
-
-    transition:
-        color .3s ease;
+    transition: color .3s ease;
 }
 
-.columna li a:hover {
-
-    color:
-        var(--rojo);
+.columna a:hover {
+    color: var(--rojo);
 }
 
 
@@ -1065,8 +894,6 @@ footer {
 
 .copyright p {
 
-    margin: 0;
-
     color: #555;
 
     font-size: 12px;
@@ -1074,7 +901,8 @@ footer {
 
 
 /* =========================================================
-   MENÚ MÓVIL
+   MENÚ HAMBURGUESA
+   IGUAL A LA LÓGICA DEL INDEX
 ========================================================= */
 
 .menu-movil {
@@ -1099,7 +927,7 @@ footer {
 
     cursor: pointer;
 
-    z-index: 10000;
+    z-index: 1000;
 }
 
 
@@ -1110,36 +938,28 @@ footer {
 @media (max-width: 1200px) and (min-width: 801px) {
 
     .top-bar {
-
         padding: 0 3%;
     }
 
     .navegacion ul {
-
         gap: 12px;
     }
 
     .navegacion li a {
-
         font-size: .62rem;
     }
 
     .top-icons {
-
         gap: 8px;
     }
 
     .servicios-grid {
-
-        grid-template-columns:
-            repeat(
-                3,
-                minmax(0, 1fr)
-            );
-
         gap: 18px;
     }
 
+    .servicio-card {
+        padding: 30px 20px;
+    }
 }
 
 
@@ -1158,37 +978,28 @@ footer {
     }
 
     .logo {
-
         font-size: 1.15rem;
     }
 
-
-    /* NAVEGACIÓN NORMAL OCULTA */
+    /* OCULTAR NAV NORMAL */
 
     .navegacion {
-
         display: none;
     }
-
-
-    /* ICONOS OCULTOS */
 
     .top-icons {
-
         display: none;
     }
 
-
-    /* HAMBURGUESA */
+    /* MOSTRAR HAMBURGUESA */
 
     .menu-movil {
-
         display: flex;
     }
 
 
     /* =====================================================
-       MENÚ ABIERTO
+       MENÚ ABIERTO — MISMA ESTRUCTURA DEL INDEX
     ===================================================== */
 
     .navegacion.activo {
@@ -1215,12 +1026,14 @@ footer {
             rgba(10,10,10,.98);
 
         border:
-            1px solid rgba(255,255,255,.15);
+            1px solid
+            rgba(255,255,255,.15);
 
         border-radius: 14px;
 
         box-shadow:
-            0 20px 50px rgba(0,0,0,.8);
+            0 20px 50px
+            rgba(0,0,0,.8);
 
         z-index: 9999;
     }
@@ -1237,7 +1050,6 @@ footer {
     }
 
     .navegacion.activo li {
-
         width: 100%;
     }
 
@@ -1250,9 +1062,14 @@ footer {
         padding: 13px;
 
         border-bottom:
-            1px solid rgba(255,255,255,.08);
+            1px solid
+            rgba(255,255,255,.08);
 
         font-size: .75rem;
+    }
+
+    .navegacion.activo li:last-child a {
+        border-bottom: none;
     }
 
 
@@ -1263,36 +1080,27 @@ footer {
     .servicios-grid {
 
         grid-template-columns:
-            repeat(
-                2,
-                minmax(0, 1fr)
-            );
+            repeat(2, minmax(0, 1fr));
 
-        gap: 20px;
+        gap: 18px;
     }
 
 
     /* =====================================================
-       FOOTER TABLET
+       FOOTER
     ===================================================== */
 
     footer {
-
-        padding:
-            55px 5% 25px;
+        padding: 55px 5% 25px;
     }
 
     .footer-info {
 
         grid-template-columns:
-            repeat(
-                2,
-                minmax(0, 1fr)
-            );
+            repeat(2, minmax(0, 1fr));
 
         gap: 40px;
     }
-
 }
 
 
@@ -1303,14 +1111,8 @@ footer {
 @media (max-width: 600px) {
 
     .banner-portada {
-
         min-height: 580px;
     }
-
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
 
     .top-bar {
 
@@ -1321,7 +1123,6 @@ footer {
     }
 
     .logo {
-
         font-size: .95rem;
     }
 
@@ -1335,7 +1136,7 @@ footer {
 
 
     /* =====================================================
-       MENÚ
+       MENÚ MÓVIL
     ===================================================== */
 
     .navegacion.activo {
@@ -1346,43 +1147,28 @@ footer {
         right: 8px;
     }
 
-    .navegacion.activo li a {
-
-        padding: 13px;
-
-        font-size: .75rem;
-    }
-
 
     /* =====================================================
        HERO
     ===================================================== */
 
     .contenido-centro {
-
-        padding:
-            25px 18px;
+        padding: 20px 18px;
     }
 
     .etiqueta-hero {
-
-        font-size: .7rem;
-
+        font-size: .75rem;
         letter-spacing: 3px;
-
-        margin-bottom: 12px;
     }
 
     .titulo-hero {
 
         font-size:
             clamp(
-                2.8rem,
+                2.4rem,
                 12vw,
                 4rem
             );
-
-        letter-spacing: 2px;
     }
 
     .subtitulo {
@@ -1390,13 +1176,6 @@ footer {
         margin-top: 20px;
 
         font-size: .82rem;
-
-        line-height: 1.6;
-    }
-
-    .subtitulo br {
-
-        display: none;
     }
 
 
@@ -1413,23 +1192,19 @@ footer {
     .servicios > h2 {
 
         font-size: 1.9rem;
-
-        margin-bottom: 18px;
     }
 
     .descripcion-servicios {
 
         margin-bottom: 40px;
 
-        font-size: .82rem;
-
-        line-height: 1.7;
+        font-size: .85rem;
     }
 
 
     /* =====================================================
        SERVICIOS
-       1 COLUMNA — NO 3
+       !!! UNA SOLA COLUMNA !!!
     ===================================================== */
 
     .servicios-grid {
@@ -1449,44 +1224,38 @@ footer {
 
         min-height: 330px;
 
-        padding:
-            28px 20px;
+        padding: 30px 22px;
 
         border-radius: 14px;
     }
 
     .servicio-icono {
 
-        width: 60px;
-        height: 60px;
+        width: 62px;
+        height: 62px;
 
         margin-bottom: 20px;
 
-        font-size: 23px;
+        font-size: 24px;
     }
 
     .servicio-card h3 {
 
-        font-size: 13px;
-
-        margin-bottom: 12px;
+        font-size: 15px;
     }
 
     .servicio-card p {
 
-        font-size: 11px;
+        font-size: 13px;
 
         line-height: 1.6;
-
-        margin-bottom: 22px;
     }
 
     .servicio-btn {
 
-        padding:
-            10px 17px;
+        padding: 10px 18px;
 
-        font-size: 10px;
+        font-size: 11px;
     }
 
 
@@ -1498,6 +1267,8 @@ footer {
 
         padding:
             50px 18px 20px;
+
+        margin: 0;
     }
 
     .redes-sociales {
@@ -1530,15 +1301,7 @@ footer {
 
         width: 23px;
         height: 23px;
-
-        max-width: 23px;
-        max-height: 23px;
     }
-
-
-    /* =====================================================
-       COLUMNAS FOOTER
-    ===================================================== */
 
     .footer-info {
 
@@ -1562,16 +1325,9 @@ footer {
         font-size: 12px;
     }
 
-
-    /* =====================================================
-       COPYRIGHT
-    ===================================================== */
-
     .copyright p {
-
         font-size: 11px;
     }
-
 }
 
 
@@ -1582,26 +1338,11 @@ footer {
 @media (max-width: 380px) {
 
     .logo {
-
         font-size: .82rem;
     }
 
     .top-bar {
-
         padding: 0 10px;
-    }
-
-    .menu-movil {
-
-        width: 36px;
-        height: 36px;
-
-        font-size: 20px;
-    }
-
-    .servicios-grid {
-
-        gap: 12px;
     }
 
     .servicio-card {
@@ -1609,17 +1350,18 @@ footer {
         min-height: 315px;
 
         padding:
-            24px 16px;
+            25px 18px;
     }
 
     .servicio-card h3 {
-
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .servicio-card p {
-
-        font-size: 10.5px;
+        font-size: 12px;
     }
 
+    .servicio-btn {
+        font-size: 10px;
+    }
 }
