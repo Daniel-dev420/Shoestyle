@@ -15,7 +15,6 @@
 
     --rojo: #e10620;
     --rojo-hover: #ff243d;
-    --rojo-brillante: #ff3b30;
 
     --negro: #050505;
     --negro-2: #0b0b0b;
@@ -29,7 +28,6 @@
     --gris-claro: #d0d0d0;
 
     --borde: rgba(255,255,255,.10);
-
 }
 
 
@@ -67,7 +65,6 @@ a {
 
 img {
     max-width: 100%;
-    height: auto;
     display: block;
 }
 
@@ -89,8 +86,6 @@ select {
     min-height: 100vh;
 
     background: var(--negro);
-
-    overflow-x: hidden;
 }
 
 
@@ -114,7 +109,7 @@ select {
 
 
 /* =========================================================
-   IMAGEN HERO
+   IMAGEN DEL BANNER
 ========================================================= */
 
 .imagen-banner {
@@ -135,8 +130,6 @@ select {
     height: 100%;
 
     object-fit: cover;
-
-    display: block;
 }
 
 
@@ -152,10 +145,8 @@ select {
 
     background:
         linear-gradient(
-            180deg,
-            rgba(0,0,0,.65) 0%,
-            rgba(0,0,0,.35) 45%,
-            rgba(0,0,0,.88) 100%
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.88)
         );
 
     z-index: 2;
@@ -182,15 +173,12 @@ select {
     align-items: center;
     justify-content: space-between;
 
-    gap: 20px;
-
     background: rgba(0,0,0,.35);
 
     border-bottom:
         1px solid rgba(255,255,255,.12);
 
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 
@@ -212,26 +200,21 @@ select {
         sans-serif;
 
     color: #ffffff;
-
-    white-space: nowrap;
 }
 
 .logo span {
+
     color: var(--rojo);
 }
 
 
 /* =========================================================
-   NAVEGACIÓN DESKTOP
+   NAVEGACIÓN
 ========================================================= */
 
 .navegacion {
 
     display: block;
-
-    flex-shrink: 1;
-
-    z-index: 100;
 }
 
 .navegacion ul {
@@ -262,29 +245,26 @@ select {
 
     font-family: 'Poppins', sans-serif;
 
-    /* IGUAL AL INDEX */
+    /* CORREGIDO: 0.85rem */
 
-    font-size: 0.8 5rem;
+    font-size: 0.85rem;
 
     font-weight: 600;
 
-    letter-spacing: 0.7px;
-
-    white-space: nowrap;
+    letter-spacing: .7px;
 
     transition:
         color .3s ease;
 }
 
-.navegacion li a:hover,
-.navegacion li a.activo {
+.navegacion li a:hover {
 
     color: #ffffff;
 }
 
 
 /* =========================================================
-   LÍNEA NAVEGACIÓN
+   LÍNEA ROJA DEL MENÚ
 ========================================================= */
 
 .navegacion li a::after {
@@ -311,9 +291,14 @@ select {
     width: 100%;
 }
 
+.navegacion li a.activo {
+
+    color: #ffffff;
+}
+
 
 /* =========================================================
-   ICONOS DESKTOP
+   ICONOS SUPERIORES
 ========================================================= */
 
 .top-icons {
@@ -343,8 +328,7 @@ select {
 
     border-radius: 50%;
 
-    transition:
-        .3s ease;
+    transition: .3s ease;
 }
 
 .icon-link:hover {
@@ -354,63 +338,12 @@ select {
     background:
         rgba(255,255,255,.08);
 
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   MENÚ HAMBURGUESA
-   IGUAL AL INDEX
-========================================================= */
-
-.menu-movil {
-
-    display: none;
-
-    width: 42px;
-    height: 42px;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-    margin: 0;
-
-    border: none;
-    outline: none;
-
-    background: transparent;
-
-    color: #ffffff;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-    z-index: 1000;
-
-    flex-shrink: 0;
-
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-.menu-movil:hover {
-    color: #ffffff;
-}
-
-.menu-movil:focus {
-    outline: none;
-}
-
-.menu-movil:active {
-    transform: scale(.95);
-}
-
-
-/* =========================================================
-   HERO CONTENIDO
+   CONTENIDO HERO
 ========================================================= */
 
 .contenido-centro {
@@ -436,22 +369,24 @@ select {
 
 .etiqueta-hero {
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
     color: var(--rojo);
 
     font-family: 'Poppins', sans-serif;
 
-    font-size: 13px;
+    font-size: .85rem;
 
-    font-weight: 600;
+    font-weight: 700;
 
     letter-spacing: 4px;
+
+    text-transform: uppercase;
 }
 
 
 /* =========================================================
-   TÍTULO HERO
+   TÍTULO
 ========================================================= */
 
 .titulo-hero {
@@ -462,32 +397,17 @@ select {
         sans-serif;
 
     font-size:
-        clamp(3.5rem, 8vw, 6rem);
+        clamp(
+            4rem,
+            9vw,
+            7rem
+        );
 
-    line-height: .95;
+    line-height: .9;
 
     letter-spacing: 3px;
 
     text-transform: uppercase;
-}
-
-.titulo-hero::after {
-
-    content: "";
-
-    display: block;
-
-    width: 80px;
-    height: 4px;
-
-    margin: 25px auto 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--rojo),
-            var(--rojo-brillante)
-        );
 }
 
 
@@ -501,7 +421,7 @@ select {
 
     max-width: 700px;
 
-    color: var(--gris-claro);
+    color: #d0d0d0;
 
     font-size: 1rem;
 
@@ -536,7 +456,7 @@ select {
     padding-top: 7px;
 
     border:
-        2px solid #ffffff;
+        2px solid white;
 
     border-radius: 20px;
 }
@@ -582,8 +502,7 @@ main {
 
     width: 100%;
 
-    padding:
-        90px 5% 110px;
+    padding: 90px 5%;
 
     background:
         linear-gradient(
@@ -595,90 +514,65 @@ main {
 
 
 /* =========================================================
-   SERVICIOS
+   SECCIÓN SERVICIOS
 ========================================================= */
 
 .servicios {
 
-    width: min(1400px, 100%);
+    width: min(1300px, 100%);
 
     margin: 0 auto;
+}
+
+.servicios > h2 {
+
+    margin-bottom: 20px;
+
+    font-family:
+        'Archivo Black',
+        sans-serif;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3rem
+        );
+
+    text-align: center;
+}
+
+.descripcion-servicios {
+
+    max-width: 800px;
+
+    margin: 0 auto 60px;
+
+    color: var(--gris-claro);
+
+    font-size: .95rem;
+
+    line-height: 1.8;
 
     text-align: center;
 }
 
 
 /* =========================================================
-   TÍTULO SERVICIOS
-========================================================= */
-
-.servicios h2 {
-
-    font-family:
-        'Archivo Black',
-        'Arial Black',
-        sans-serif;
-
-    font-size:
-        clamp(2.2rem, 5vw, 4rem);
-
-    line-height: 1.05;
-
-    color: #ffffff;
-}
-
-.servicios h2::after {
-
-    content: "";
-
-    display: block;
-
-    width: 60px;
-    height: 3px;
-
-    margin: 22px auto 0;
-
-    background: var(--rojo);
-}
-
-
-/* =========================================================
-   DESCRIPCIÓN
-========================================================= */
-
-.descripcion-servicios {
-
-    width: min(750px, 100%);
-
-    margin:
-        25px auto 65px;
-
-    color: var(--gris-claro);
-
-    font-size: 16px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================================
-   GRID SERVICIOS — PC
+   GRID SERVICIOS
 ========================================================= */
 
 .servicios-grid {
 
-    width: min(1250px, 100%);
-
-    margin: 0 auto;
-
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
 
     gap: 25px;
-
-    align-items: stretch;
 }
 
 
@@ -688,13 +582,9 @@ main {
 
 .servicio-card {
 
-    width: 100%;
-    min-width: 0;
-
     min-height: 350px;
 
-    padding:
-        40px 30px;
+    padding: 35px 28px;
 
     display: flex;
 
@@ -716,11 +606,6 @@ main {
 
     border-radius: 18px;
 
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.35);
-
-    overflow: hidden;
-
     transition:
         transform .35s ease,
         border-color .35s ease,
@@ -733,11 +618,10 @@ main {
         translateY(-8px);
 
     border-color:
-        rgba(225,6,32,.65);
+        var(--rojo);
 
     box-shadow:
-        0 20px 45px rgba(0,0,0,.5),
-        0 0 25px rgba(225,6,32,.08);
+        0 20px 40px rgba(0,0,0,.5);
 }
 
 
@@ -750,8 +634,6 @@ main {
     width: 70px;
     height: 70px;
 
-    flex-shrink: 0;
-
     margin-bottom: 25px;
 
     display: flex;
@@ -759,30 +641,30 @@ main {
     align-items: center;
     justify-content: center;
 
-    border-radius: 50%;
-
     background:
         rgba(225,6,32,.10);
 
     border:
         1px solid rgba(225,6,32,.25);
 
+    border-radius: 50%;
+
     color: var(--rojo);
 
     font-size: 27px;
 
     transition:
-        transform .3s ease,
-        background .3s ease;
+        .3s ease;
 }
 
 .servicio-card:hover .servicio-icono {
 
+    background: var(--rojo);
+
+    color: white;
+
     transform:
         scale(1.08);
-
-    background:
-        rgba(225,6,32,.18);
 }
 
 
@@ -792,22 +674,17 @@ main {
 
 .servicio-card h3 {
 
-    width: 100%;
-
     margin-bottom: 15px;
-
-    color: #ffffff;
 
     font-family:
         'Archivo Black',
-        'Arial Black',
         sans-serif;
 
-    font-size: 18px;
+    font-size: 15px;
 
-    line-height: 1.3;
+    letter-spacing: .5px;
 
-    overflow-wrap: break-word;
+    color: white;
 }
 
 
@@ -817,22 +694,18 @@ main {
 
 .servicio-card p {
 
-    width: 100%;
-
     margin-bottom: 25px;
 
-    color: var(--gris);
+    color: #aaa;
 
-    font-size: 14px;
+    font-size: 13px;
 
     line-height: 1.7;
-
-    overflow-wrap: break-word;
 }
 
 
 /* =========================================================
-   BOTÓN TARJETA
+   BOTÓN SERVICIO
 ========================================================= */
 
 .servicio-btn {
@@ -844,42 +717,42 @@ main {
     align-items: center;
     justify-content: center;
 
-    gap: 8px;
+    gap: 10px;
 
     padding:
-        11px 22px;
+        11px 20px;
+
+    background: var(--rojo);
+
+    color: white;
 
     border-radius: 30px;
 
-    background:
-        linear-gradient(
-            90deg,
-            var(--rojo),
-            var(--rojo-brillante)
-        );
+    font-family:
+        'Poppins',
+        sans-serif;
 
-    color: #ffffff;
-
-    font-family: 'Poppins', sans-serif;
-
-    font-size: 12px;
+    font-size: .75rem;
 
     font-weight: 600;
 
-    white-space: nowrap;
-
     transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+        .3s ease;
 }
 
 .servicio-btn:hover {
 
-    transform:
-        translateY(-3px);
+    background: white;
 
-    box-shadow:
-        0 8px 20px rgba(225,6,32,.25);
+    color: black;
+
+    transform:
+        translateY(-2px);
+}
+
+.servicio-btn i {
+
+    font-size: .7rem;
 }
 
 
@@ -889,24 +762,33 @@ main {
 
 footer {
 
+    position: relative;
+
     width: 100%;
 
-    padding:
-        70px 5% 25px;
+    display: block;
+
+    clear: both;
+
+    margin: 0;
+
+    padding: 70px 5% 25px;
 
     background:
         linear-gradient(
             180deg,
-            #111111,
-            #030303
+            #111111 0%,
+            #030303 100%
         );
 
     border-top:
         1px solid rgba(255,255,255,.12);
 
-    color: #ffffff;
+    color: white;
 
-    text-align: center;
+    font-family:
+        'Manrope',
+        sans-serif;
 }
 
 
@@ -918,15 +800,26 @@ footer {
 
     width: 100%;
 
-    margin:
-        0 auto 55px;
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
 }
 
 .redes-sociales h3 {
 
-    margin-bottom: 25px;
+    display: block;
 
-    color: #ffffff;
+    margin: 0 0 25px;
+
+    color: white;
 
     font-family:
         'Archivo Black',
@@ -934,8 +827,15 @@ footer {
 
     font-size: 16px;
 
+    font-weight: normal;
+
     letter-spacing: 1.5px;
 }
+
+
+/* =========================================================
+   ICONOS REDES
+========================================================= */
 
 .iconos-redes {
 
@@ -964,6 +864,9 @@ footer {
     align-items: center;
     justify-content: center;
 
+    padding: 0;
+    margin: 0;
+
     background: #171717;
 
     border:
@@ -980,33 +883,49 @@ footer {
         box-shadow .3s ease;
 }
 
+.iconos-redes a img {
+
+    display: block;
+
+    width: 27px;
+    height: 27px;
+
+    max-width: 27px;
+    max-height: 27px;
+
+    margin: 0;
+    padding: 0;
+
+    object-fit: contain;
+
+    border: none;
+
+    border-radius: 0;
+
+    filter: none;
+
+    transform: none;
+}
+
 .iconos-redes a:hover {
 
     transform:
         translateY(-6px);
 
-    background: var(--rojo);
+    background:
+        var(--rojo);
 
     border-color:
         var(--rojo);
 
     box-shadow:
-        0 10px 25px rgba(225,6,32,.3);
-}
-
-.iconos-redes img {
-
-    width: 27px;
-    height: 27px;
-
-    object-fit: contain;
-
-    border-radius: 0;
+        0 10px 25px
+        rgba(225,6,32,.3);
 }
 
 
 /* =========================================================
-   FOOTER INFO
+   INFORMACIÓN FOOTER
 ========================================================= */
 
 .footer-info {
@@ -1015,17 +934,17 @@ footer {
 
     margin: 0 auto;
 
-    padding:
-        45px 0;
+    padding: 45px 0;
 
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
 
     gap: 60px;
-
-    text-align: left;
 
     border-top:
         1px solid rgba(255,255,255,.08);
@@ -1039,16 +958,18 @@ footer {
    COLUMNAS
 ========================================================= */
 
-.footer-info .columna {
+.columna {
 
     min-width: 0;
 }
 
-.footer-info h4 {
+.columna h4 {
 
-    margin-bottom: 25px;
+    position: relative;
 
-    color: #ffffff;
+    margin: 0 0 25px;
+
+    color: white;
 
     font-family:
         'Archivo Black',
@@ -1056,10 +977,12 @@ footer {
 
     font-size: 14px;
 
+    font-weight: normal;
+
     letter-spacing: 1.5px;
 }
 
-.footer-info h4::after {
+.columna h4::after {
 
     content: "";
 
@@ -1070,10 +993,16 @@ footer {
 
     margin-top: 10px;
 
-    background: var(--rojo);
+    background:
+        var(--rojo);
 }
 
-.footer-info ul {
+
+/* =========================================================
+   LISTAS FOOTER
+========================================================= */
+
+.columna ul {
 
     margin: 0;
     padding: 0;
@@ -1081,7 +1010,7 @@ footer {
     list-style: none;
 }
 
-.footer-info li {
+.columna li {
 
     margin-bottom: 13px;
 
@@ -1090,24 +1019,34 @@ footer {
     font-size: 13px;
 
     line-height: 1.6;
-
-    overflow-wrap: anywhere;
 }
 
-.footer-info strong {
+.columna strong {
+
     color: #d5d5d5;
 }
 
-.footer-info li a {
+
+/* =========================================================
+   ENLACES FOOTER
+========================================================= */
+
+.columna li a {
+
+    display: inline;
 
     color: #888;
+
+    text-decoration: none;
 
     transition:
         color .3s ease;
 }
 
-.footer-info li a:hover {
-    color: var(--rojo);
+.columna li a:hover {
+
+    color:
+        var(--rojo);
 }
 
 
@@ -1131,141 +1070,132 @@ footer {
     color: #555;
 
     font-size: 12px;
-
-    line-height: 1.5;
 }
 
 
 /* =========================================================
-   PC
+   MENÚ MÓVIL
 ========================================================= */
 
-@media (min-width: 1201px) {
+.menu-movil {
 
-    .menu-movil {
-        display: none !important;
-    }
+    display: none;
 
-    .navegacion {
-        display: block !important;
-    }
+    width: 42px;
+    height: 42px;
 
-    .top-icons {
-        display: flex !important;
-    }
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 10000;
 }
 
 
 /* =========================================================
    LAPTOP
-   801px - 1200px
 ========================================================= */
 
-@media (min-width: 801px) and (max-width: 1200px) {
+@media (max-width: 1200px) and (min-width: 801px) {
 
     .top-bar {
 
-        padding:
-            0 3%;
-
-        gap: 12px;
-    }
-
-    .logo {
-        font-size: 1.2rem;
+        padding: 0 3%;
     }
 
     .navegacion ul {
+
         gap: 12px;
     }
 
     .navegacion li a {
 
         font-size: .62rem;
-
-        letter-spacing: .2px;
     }
 
     .top-icons {
+
         gap: 8px;
     }
-
-    .icon-link {
-        font-size: .95rem;
-    }
-
-
-    /* ==============================================
-       SERVICIOS — 2 COLUMNAS
-    ============================================== */
 
     .servicios-grid {
 
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
 
-        gap: 22px;
+        gap: 18px;
     }
 
-    .servicio-card {
-
-        min-height: 340px;
-
-        padding:
-            35px 25px;
-    }
-
-
-    /* FOOTER */
-
-    .footer-info {
-        gap: 35px;
-    }
 }
 
 
 /* =========================================================
    TABLET
-   601px - 800px
 ========================================================= */
 
-@media (min-width: 601px) and (max-width: 800px) {
-
-    /* HEADER */
+@media (max-width: 800px) {
 
     .top-bar {
 
         min-height: 65px;
         height: 65px;
 
-        padding:
-            0 18px;
+        padding: 0 18px;
     }
 
     .logo {
+
         font-size: 1.15rem;
     }
 
+
+    /* NAVEGACIÓN NORMAL OCULTA */
+
     .navegacion {
-        display: none !important;
+
+        display: none;
     }
+
+
+    /* ICONOS OCULTOS */
 
     .top-icons {
-        display: none !important;
+
+        display: none;
     }
+
+
+    /* HAMBURGUESA */
 
     .menu-movil {
-        display: flex !important;
+
+        display: flex;
     }
 
 
-    /* MENÚ */
+    /* =====================================================
+       MENÚ ABIERTO
+    ===================================================== */
 
     .navegacion.activo {
 
         position: fixed;
 
-        display: block !important;
+        display: block;
 
         top: 72px;
 
@@ -1280,7 +1210,6 @@ footer {
         padding: 8px;
 
         overflow-y: auto;
-        overflow-x: hidden;
 
         background:
             rgba(10,10,10,.98);
@@ -1294,21 +1223,17 @@ footer {
             0 20px 50px rgba(0,0,0,.8);
 
         z-index: 9999;
-
-        backdrop-filter: blur(15px);
     }
 
     .navegacion.activo ul {
 
-        width: 100%;
-
-        display: flex !important;
+        display: flex;
 
         flex-direction: column;
 
-        align-items: stretch;
-
         gap: 0;
+
+        width: 100%;
     }
 
     .navegacion.activo li {
@@ -1328,92 +1253,79 @@ footer {
             1px solid rgba(255,255,255,.08);
 
         font-size: .75rem;
-
-        white-space: normal;
     }
 
 
-    /* SERVICIOS — 2 COLUMNAS */
+    /* =====================================================
+       SERVICIOS TABLET
+    ===================================================== */
 
     .servicios-grid {
 
-        width: 100%;
-
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
 
         gap: 20px;
     }
 
-    .servicio-card {
 
-        min-height: 330px;
+    /* =====================================================
+       FOOTER TABLET
+    ===================================================== */
+
+    footer {
 
         padding:
-            35px 22px;
+            55px 5% 25px;
     }
-
-
-    /* FOOTER */
 
     .footer-info {
 
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
 
         gap: 40px;
     }
+
 }
 
 
 /* =========================================================
    CELULAR
-   600px HACIA ABAJO
 ========================================================= */
 
 @media (max-width: 600px) {
 
-    /* ==============================================
-       HERO
-    ============================================== */
-
     .banner-portada {
+
         min-height: 580px;
     }
 
 
-    /* ==============================================
+    /* =====================================================
        HEADER
-    ============================================== */
+    ===================================================== */
 
     .top-bar {
 
         min-height: 60px;
         height: 60px;
 
-        padding:
-            0 13px;
+        padding: 0 13px;
     }
 
     .logo {
 
         font-size: .95rem;
-
-        max-width:
-            calc(100% - 50px);
-    }
-
-    .navegacion {
-        display: none !important;
-    }
-
-    .top-icons {
-        display: none !important;
     }
 
     .menu-movil {
-
-        display: flex !important;
 
         width: 38px;
         height: 38px;
@@ -1422,120 +1334,50 @@ footer {
     }
 
 
-    /* ==============================================
-       MENÚ ABIERTO
-    ============================================== */
+    /* =====================================================
+       MENÚ
+    ===================================================== */
 
     .navegacion.activo {
-
-        position: fixed;
-
-        display: block !important;
 
         top: 67px;
 
         left: 8px;
         right: 8px;
-
-        width: auto;
-
-        max-height:
-            calc(100vh - 80px);
-
-        padding: 8px;
-
-        overflow-y: auto;
-        overflow-x: hidden;
-
-        background:
-            rgba(10,10,10,.98);
-
-        border:
-            1px solid rgba(255,255,255,.15);
-
-        border-radius: 14px;
-
-        box-shadow:
-            0 20px 50px rgba(0,0,0,.8);
-
-        z-index: 9999;
-
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-    }
-
-    .navegacion.activo ul {
-
-        width: 100%;
-
-        display: flex !important;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 0;
-    }
-
-    .navegacion.activo li {
-
-        width: 100%;
     }
 
     .navegacion.activo li a {
 
-        display: block;
-
-        width: 100%;
-
-        padding: 13px 12px;
-
-        border-bottom:
-            1px solid rgba(255,255,255,.08);
+        padding: 13px;
 
         font-size: .75rem;
-
-        white-space: normal;
-
-        line-height: 1.4;
-    }
-
-    .navegacion.activo li:last-child a {
-        border-bottom: none;
     }
 
 
-    /* QUITAR LÍNEA ROJA DEL MENÚ MÓVIL */
-
-    .navegacion.activo li a::after {
-        display: none;
-    }
-
-
-    /* ==============================================
+    /* =====================================================
        HERO
-    ============================================== */
+    ===================================================== */
 
     .contenido-centro {
 
-        width: 100%;
-
         padding:
-            25px 15px;
+            25px 18px;
     }
 
     .etiqueta-hero {
 
-        font-size: 11px;
+        font-size: .7rem;
 
         letter-spacing: 3px;
+
+        margin-bottom: 12px;
     }
 
     .titulo-hero {
 
         font-size:
             clamp(
-                2.5rem,
+                2.8rem,
                 12vw,
                 4rem
             );
@@ -1545,97 +1387,96 @@ footer {
 
     .subtitulo {
 
+        margin-top: 20px;
+
         font-size: .82rem;
 
         line-height: 1.6;
     }
 
+    .subtitulo br {
 
-    /* ==============================================
+        display: none;
+    }
+
+
+    /* =====================================================
        MAIN
-    ============================================== */
+    ===================================================== */
 
     main {
 
         padding:
-            60px 5% 80px;
+            60px 4%;
     }
 
-    .servicios h2 {
+    .servicios > h2 {
 
-        font-size:
-            clamp(
-                1.9rem,
-                9vw,
-                2.6rem
-            );
+        font-size: 1.9rem;
+
+        margin-bottom: 18px;
     }
 
     .descripcion-servicios {
 
-        margin-bottom: 45px;
+        margin-bottom: 40px;
 
-        font-size: 14px;
+        font-size: .82rem;
 
         line-height: 1.7;
     }
 
 
-    /* ==============================================
-       SERVICIOS — UNA SOLA COLUMNA
-    ============================================== */
+    /* =====================================================
+       SERVICIOS
+       1 COLUMNA — NO 3
+    ===================================================== */
 
     .servicios-grid {
 
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
         width: 100%;
-
-        display: grid !important;
-
-        grid-template-columns: 1fr !important;
-
-        grid-template-rows: none !important;
-
-        gap: 22px;
-
-        margin: 0 auto;
     }
 
     .servicio-card {
 
-        width: 100% !important;
+        width: 100%;
 
-        min-width: 0 !important;
-
-        min-height: 0;
+        min-height: 330px;
 
         padding:
-            32px 22px;
+            28px 20px;
 
-        border-radius: 16px;
+        border-radius: 14px;
     }
 
     .servicio-icono {
 
-        width: 65px;
-        height: 65px;
+        width: 60px;
+        height: 60px;
 
         margin-bottom: 20px;
 
-        font-size: 24px;
+        font-size: 23px;
     }
 
     .servicio-card h3 {
 
-        font-size: 16px;
+        font-size: 13px;
 
         margin-bottom: 12px;
     }
 
     .servicio-card p {
 
-        font-size: 13px;
+        font-size: 11px;
 
-        line-height: 1.65;
+        line-height: 1.6;
 
         margin-bottom: 22px;
     }
@@ -1643,15 +1484,15 @@ footer {
     .servicio-btn {
 
         padding:
-            10px 18px;
+            10px 17px;
 
-        font-size: 11px;
+        font-size: 10px;
     }
 
 
-    /* ==============================================
+    /* =====================================================
        FOOTER
-    ============================================== */
+    ===================================================== */
 
     footer {
 
@@ -1685,16 +1526,19 @@ footer {
         min-height: 45px;
     }
 
-    .iconos-redes img {
+    .iconos-redes a img {
 
         width: 23px;
         height: 23px;
+
+        max-width: 23px;
+        max-height: 23px;
     }
 
 
-    /* ==============================================
-       FOOTER COLUMNAS
-    ============================================== */
+    /* =====================================================
+       COLUMNAS FOOTER
+    ===================================================== */
 
     .footer-info {
 
@@ -1702,44 +1546,32 @@ footer {
 
         gap: 30px;
 
-        padding:
-            35px 0;
+        padding: 35px 0;
 
         text-align: center;
     }
 
-    .footer-info h4 {
-
-        font-size: 13px;
-
-        margin-bottom: 18px;
-    }
-
-    .footer-info h4::after {
+    .columna h4::after {
 
         margin:
             10px auto 0;
     }
 
-    .footer-info li {
+    .columna li {
 
         font-size: 12px;
     }
 
 
-    /* ==============================================
+    /* =====================================================
        COPYRIGHT
-    ============================================== */
-
-    .copyright {
-
-        padding-top: 20px;
-    }
+    ===================================================== */
 
     .copyright p {
 
         font-size: 11px;
     }
+
 }
 
 
@@ -1749,12 +1581,14 @@ footer {
 
 @media (max-width: 380px) {
 
-    .top-bar {
-        padding: 0 10px;
+    .logo {
+
+        font-size: .82rem;
     }
 
-    .logo {
-        font-size: .82rem;
+    .top-bar {
+
+        padding: 0 10px;
     }
 
     .menu-movil {
@@ -1766,24 +1600,26 @@ footer {
     }
 
     .servicios-grid {
-        gap: 18px;
+
+        gap: 12px;
     }
 
     .servicio-card {
 
+        min-height: 315px;
+
         padding:
-            28px 18px;
+            24px 16px;
     }
 
     .servicio-card h3 {
-        font-size: 15px;
-    }
 
-    .servicio-card p {
         font-size: 12px;
     }
 
-    .servicio-btn {
-        font-size: 10px;
+    .servicio-card p {
+
+        font-size: 10.5px;
     }
+
 }
